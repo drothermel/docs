@@ -1,0 +1,248 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `models`
+Pydantic data models for Claude conversation parsing.
+
+
+## Table of Contents
+- [`ClaudeMessage`](./parse_claude.models#class-claudemessage)
+- [`Message`](./parse_claude.models#class-message)
+- [`TextContent`](./parse_claude.models#class-textcontent)
+- [`ThinkingContent`](./parse_claude.models#class-thinkingcontent)
+- [`ToolUseContent`](./parse_claude.models#class-toolusecontent)
+- [`Usage`](./parse_claude.models#class-usage)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `TextContent`
+Text content block in a message.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ToolUseContent`
+Tool use content block in a message.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ThinkingContent`
+Thinking content block in a message.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Usage`
+Token usage information for a message.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Message`
+A message from Claude containing content blocks.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/models.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ClaudeMessage`
+Top-level Claude conversation message with metadata.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

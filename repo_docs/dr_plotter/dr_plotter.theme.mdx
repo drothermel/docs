@@ -1,0 +1,560 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `theme`
+
+
+
+## Table of Contents
+- [`AxesStyles`](./dr_plotter.theme#class-axesstyles)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`from_input`](./dr_plotter.theme#classmethod-from-input)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`merge_style`](./dr_plotter.theme#method-merge-style)
+- [`FigureStyles`](./dr_plotter.theme#class-figurestyles)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`from_input`](./dr_plotter.theme#classmethod-from-input)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`merge_style`](./dr_plotter.theme#method-merge-style)
+- [`PlotStyles`](./dr_plotter.theme#class-plotstyles)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`from_input`](./dr_plotter.theme#classmethod-from-input)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`merge_style`](./dr_plotter.theme#method-merge-style)
+- [`PostStyles`](./dr_plotter.theme#class-poststyles)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`from_input`](./dr_plotter.theme#classmethod-from-input)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`merge_style`](./dr_plotter.theme#method-merge-style)
+- [`Style`](./dr_plotter.theme#class-style)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`merge_style`](./dr_plotter.theme#method-merge-style)
+- [`Theme`](./dr_plotter.theme#class-theme)
+	- [`__init__`](./dr_plotter.theme#constructor---init--)
+	- [`add`](./dr_plotter.theme#method-add)
+	- [`get`](./dr_plotter.theme#method-get)
+	- [`get_all_styles`](./dr_plotter.theme#method-get-all-styles)
+
+
+**Global Variables**
+---------------
+- **TYPE_CHECKING**
+- **ALPHA_MIN_DEFAULT**
+- **ALPHA_MAX_DEFAULT**
+- **DEFAULT_TEXT_FONTSIZE**
+- **BASE_COLORS**
+- **BASE_THEME**
+- **DARK_X_AXIS_STYLE**
+- **LINE_THEME**
+- **SCATTER_THEME**
+- **BAR_THEME**
+- **HISTOGRAM_THEME**
+- **VIOLIN_THEME**
+- **HEATMAP_THEME**
+- **BUMP_PLOT_THEME**
+- **CONTOUR_THEME**
+- **GROUPED_BAR_THEME**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L16"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Style`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Style(
+    name: 'str | None' = None,
+    styles_to_merge: 'list[Style] | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_style`
+
+```python
+merge_style(other: 'Style') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `PlotStyles`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Style(
+    name: 'str | None' = None,
+    styles_to_merge: 'list[Style] | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_input`
+
+```python
+from_input(value: 'dict | PlotStyles | None') → PlotStyles
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_style`
+
+```python
+merge_style(other: 'Style') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L60"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `PostStyles`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Style(
+    name: 'str | None' = None,
+    styles_to_merge: 'list[Style] | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L63"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_input`
+
+```python
+from_input(value: 'dict | PostStyles | None') → PostStyles
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_style`
+
+```python
+merge_style(other: 'Style') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L75"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `AxesStyles`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Style(
+    name: 'str | None' = None,
+    styles_to_merge: 'list[Style] | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_input`
+
+```python
+from_input(value: 'dict | AxesStyles | None') → AxesStyles
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_style`
+
+```python
+merge_style(other: 'Style') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `FigureStyles`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Style(
+    name: 'str | None' = None,
+    styles_to_merge: 'list[Style] | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_input`
+
+```python
+from_input(value: 'dict | FigureStyles | None') → FigureStyles
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_style`
+
+```python
+merge_style(other: 'Style') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Theme`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L106"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Theme(
+    name: 'str',
+    parent: 'Theme | None' = None,
+    plot_styles: 'PlotStyles | dict | None' = None,
+    post_styles: 'PostStyles | dict | None' = None,
+    axes_styles: 'AxesStyles | dict | None' = None,
+    figure_styles: 'FigureStyles | dict | None' = None,
+    legend_config: 'LegendConfig | None' = None,
+    **styles: 'Any'
+) → None
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> axes_styles
+
+
+
+
+---
+
+#### <kbd>property</kbd> figure_styles
+
+
+
+
+---
+
+#### <kbd>property</kbd> general_styles
+
+
+
+
+---
+
+#### <kbd>property</kbd> plot_styles
+
+
+
+
+---
+
+#### <kbd>property</kbd> post_styles
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L177"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(key: 'str', value: 'Any', source: 'str | None' = None) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L167"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get`
+
+```python
+get(key: 'str', default: 'Any' = None, source: 'str | None' = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/theme.py#L160"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_styles`
+
+```python
+get_all_styles(cls: 'type') → dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

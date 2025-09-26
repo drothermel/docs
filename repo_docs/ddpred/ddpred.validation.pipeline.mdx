@@ -1,0 +1,120 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `validation.pipeline`
+
+
+
+## Table of Contents
+- [`ValidationConfig`](./ddpred.validation.pipeline#dataclass-validationconfig)
+	- [`__init__`](./ddpred.validation.pipeline#constructor---init--)
+- [`ValidationPipeline`](./ddpred.validation.pipeline#class-validationpipeline)
+	- [`__init__`](./ddpred.validation.pipeline#constructor---init--)
+	- [`run_evaluation_only`](./ddpred.validation.pipeline#method-run-evaluation-only)
+	- [`run_full_pipeline`](./ddpred.validation.pipeline#method-run-full-pipeline)
+	- [`run_optimization_only`](./ddpred.validation.pipeline#method-run-optimization-only)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `ValidationConfig`
+ValidationConfig(output_dir: str = 'results/validation_pipeline', model_types: list = None, holdout_params: list = None)
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ValidationConfig(
+    output_dir: str = 'results/validation_pipeline',
+    model_types: list = None,
+    holdout_params: list = None
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```holdout_params``` (list)
+- ```model_types``` (list)
+- ```output_dir``` (str)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ValidationPipeline`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ValidationPipeline(config: ValidationConfig) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run_evaluation_only`
+
+```python
+run_evaluation_only(config_source: Optional[str] = None) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L31"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run_full_pipeline`
+
+```python
+run_full_pipeline() → Dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/validation/pipeline.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run_optimization_only`
+
+```python
+run_optimization_only() → Dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

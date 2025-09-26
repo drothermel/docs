@@ -1,0 +1,122 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analysis.validation`
+
+
+
+## Table of Contents
+- [`analyze_cv_folds`](./ddpred.analysis.validation#function-analyze-cv-folds)
+- [`analyze_horizon_performance`](./ddpred.analysis.validation#function-analyze-horizon-performance)
+- [`analyze_sweep_results`](./ddpred.analysis.validation#function-analyze-sweep-results)
+- [`apply_max_step_filter`](./ddpred.analysis.validation#function-apply-max-step-filter)
+- [`apply_seed_validation_1b`](./ddpred.analysis.validation#function-apply-seed-validation-1b)
+- [`compare_models_across_horizons`](./ddpred.analysis.validation#function-compare-models-across-horizons)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_seed_validation_1b`
+
+```python
+apply_seed_validation_1b(df: DataFrame, min_steps: int = 20) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_max_step_filter`
+
+```python
+apply_max_step_filter(data: DataFrame, max_step: float) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_sweep_results`
+
+```python
+analyze_sweep_results(results_df: DataFrame) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L175"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `compare_models_across_horizons`
+
+```python
+compare_models_across_horizons(
+    models_results: Dict[str, Dict[float, Dict[str, Any]]]
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L206"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_horizon_performance`
+
+```python
+analyze_horizon_performance(
+    X_eval: ndarray,
+    y_eval: ndarray,
+    predictions: ndarray,
+    target_percentages_actual: ndarray,
+    target_percentages_list: List[float],
+    std_predictions: Optional[ndarray] = None
+) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/validation.py#L251"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_cv_folds`
+
+```python
+analyze_cv_folds(
+    X: DataFrame,
+    groups: Series,
+    cv_folds: int = 3
+) → Dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

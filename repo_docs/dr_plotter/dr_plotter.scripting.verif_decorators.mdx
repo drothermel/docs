@@ -1,0 +1,84 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verif_decorators.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.verif_decorators`
+
+
+
+## Table of Contents
+- [`inspect_plot_properties`](./dr_plotter.scripting.verif_decorators#function-inspect-plot-properties)
+- [`verify_figure_legends`](./dr_plotter.scripting.verif_decorators#function-verify-figure-legends)
+- [`verify_plot`](./dr_plotter.scripting.verif_decorators#function-verify-plot)
+
+
+**Global Variables**
+---------------
+- **MAX_DISPLAY_ITEMS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verif_decorators.py#L138"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_plot`
+
+```python
+verify_plot(
+    expected_legends: 'int' = 0,
+    expected_channels: 'ExpectedChannels | None' = None,
+    expected_legend_entries: 'dict[SubplotCoord, dict[str, int | str]] | None' = None,
+    verify_legend_consistency: 'bool' = False,
+    min_unique_threshold: 'int' = 2,
+    tolerance: 'float | None' = None,
+    fail_on_missing: 'bool' = True,
+    subplot_descriptions: 'dict[int, str] | None' = None
+) → Callable
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verif_decorators.py#L378"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `inspect_plot_properties`
+
+```python
+inspect_plot_properties() → Callable
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verif_decorators.py#L545"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_figure_legends`
+
+```python
+verify_figure_legends(
+    expected_legend_count: 'int',
+    legend_strategy: 'str',
+    expected_total_entries: 'int | None' = None,
+    expected_channel_entries: 'dict[str, int] | None' = None,
+    expected_channels: 'list[str] | None' = None,
+    tolerance: 'float | None' = None,
+    fail_on_missing: 'bool' = True
+) → Callable
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

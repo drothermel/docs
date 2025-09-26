@@ -1,0 +1,143 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `lifecycle`
+File lifecycle tracking components.
+
+
+## Table of Contents
+- [`LifecycleTracker`](./parse_git.lifecycle#class-lifecycletracker)
+	- [`__init__`](./parse_git.lifecycle#constructor---init--)
+	- [`build_lifecycles`](./parse_git.lifecycle#method-build-lifecycles)
+	- [`enrich_with_commit_counts`](./parse_git.lifecycle#method-enrich-with-commit-counts)
+	- [`record_change`](./parse_git.lifecycle#method-record-change)
+- [`get_file_id_from_path`](./parse_git.lifecycle#function-get-file-id-from-path)
+
+
+**Global Variables**
+---------------
+- **UTC**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_file_id_from_path`
+
+```python
+get_file_id_from_path(filepath: str) → str
+```
+
+Generate a stable file ID from filepath.
+
+This is a simple implementation that uses the filename.
+More sophisticated tracking could use git file tracking
+or content hashing to handle renames better.
+
+
+**Args:**
+
+- <b>`filepath`</b>: Path to the file.
+
+
+**Returns:**
+
+Stable identifier for the file.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `LifecycleTracker`
+Tracks file lifecycles from change events.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+LifecycleTracker() → None
+```
+
+Initialize the lifecycle tracker.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `build_lifecycles`
+
+```python
+build_lifecycles() → list[FileLifecycle]
+```
+
+Convert raw changes into FileLifecycle objects.
+
+
+**Returns:**
+
+    List of FileLifecycle objects with complete information.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L92"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `enrich_with_commit_counts`
+
+```python
+enrich_with_commit_counts(
+    lifecycles: list[FileLifecycle],
+    commit_counter: Any
+) → list[FileLifecycle]
+```
+
+Enrich lifecycles with related commit counts.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to enrich.
+- <b>`commit_counter`</b>: Object that can count commits in date ranges.
+
+
+**Returns:**
+
+Enhanced lifecycles with commit count data.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/lifecycle.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `record_change`
+
+```python
+record_change(change_event: ChangeEvent, file_id: str) → None
+```
+
+Record a change event for a file.
+
+
+**Args:**
+
+- <b>`change_event`</b>: The change event to record.
+- <b>`file_id`</b>: Stable identifier for the file.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

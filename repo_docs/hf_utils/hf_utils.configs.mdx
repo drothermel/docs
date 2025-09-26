@@ -1,0 +1,149 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `configs`
+Model configuration downloading and analysis functions.
+
+
+## Table of Contents
+- [`analyze_model_config`](./hf_utils.configs#function-analyze-model-config)
+- [`download_config_file`](./hf_utils.configs#function-download-config-file)
+- [`estimate_parameter_count`](./hf_utils.configs#function-estimate-parameter-count)
+- [`extract_model_architecture_info`](./hf_utils.configs#function-extract-model-architecture-info)
+- [`print_config_analysis`](./hf_utils.configs#function-print-config-analysis)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_config_file`
+
+```python
+download_config_file(
+    repo_id: str,
+    branch: str = 'main',
+    local_dir: Optional[str] = None
+) → Tuple[Optional[str], bool, str]
+```
+
+Download config.json file from Hugging Face repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID (e.g., "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-60M")
+- <b>`branch`</b>: Branch/revision to download from (e.g., "step0-seed-default")
+- <b>`local_dir`</b>: Local directory to save file (optional)
+
+
+**Returns:**
+
+Tuple of (file_path, success, error_message)
+- <b>`- file_path`</b>: Path to downloaded file if successful, None otherwise
+- <b>`- success`</b>: True if download succeeded, False otherwise
+- <b>`- error_message`</b>: Error description if failed, empty string if succeeded
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py#L43"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_model_config`
+
+```python
+analyze_model_config(config_path: str) → Dict[str, Any]
+```
+
+Load and analyze model configuration file.
+
+
+**Args:**
+
+- <b>`config_path`</b>: Path to the config.json file
+
+
+**Returns:**
+
+Dictionary containing configuration analysis
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py#L70"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_model_architecture_info`
+
+```python
+extract_model_architecture_info(config: Dict[str, Any]) → Dict[str, Any]
+```
+
+Extract key model architecture information from config.
+
+
+**Args:**
+
+- <b>`config`</b>: Raw configuration dictionary
+
+
+**Returns:**
+
+Dictionary with structured architecture information
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py#L137"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `estimate_parameter_count`
+
+```python
+estimate_parameter_count(arch_info: Dict[str, Any]) → Dict[str, int]
+```
+
+Estimate parameter count from architecture info.
+
+
+**Args:**
+
+- <b>`arch_info`</b>: Architecture information dictionary
+
+
+**Returns:**
+
+Dictionary with parameter count estimates
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/configs.py#L182"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_config_analysis`
+
+```python
+print_config_analysis(analysis: Dict[str, Any], branch_name: str = None) → None
+```
+
+Pretty print the configuration analysis results.
+
+
+**Args:**
+
+- <b>`analysis`</b>: Configuration analysis dictionary
+- <b>`branch_name`</b>: Branch name for header (optional)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

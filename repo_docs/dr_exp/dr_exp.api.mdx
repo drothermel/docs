@@ -1,0 +1,89 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/api.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `api`
+Public API for dr_exp.
+
+
+## Table of Contents
+- [`submit_job`](./dr_exp.api#function-submit-job)
+- [`submit_jobs`](./dr_exp.api#function-submit-jobs)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/api.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `submit_job`
+
+```python
+submit_job(
+    base_path: str | Path,
+    experiment: str,
+    config: dict[str, Any],
+    priority: int = 100,
+    tags: list[str] | None = None
+) → str
+```
+
+Submit a job to dr_exp programmatically.
+
+
+**Args:**
+
+- <b>`base_path`</b>: Base directory for experiments
+- <b>`experiment`</b>: Experiment name
+- <b>`config`</b>: Job configuration dict (must include _target_)
+- <b>`priority`</b>: Job priority (0-1000)
+- <b>`tags`</b>: Optional list of tags
+
+
+**Returns:**
+
+- <b>`str`</b>: Job ID (UUID)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/api.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `submit_jobs`
+
+```python
+submit_jobs(
+    base_path: str | Path,
+    experiment: str,
+    configs: list[dict[str, Any]],
+    priority: int = 100,
+    tags: list[str] | None = None
+) → list[str]
+```
+
+Submit a job to dr_exp programmatically.
+
+
+**Args:**
+
+- <b>`base_path`</b>: Base directory for experiments
+- <b>`experiment`</b>: Experiment name
+- <b>`configs`</b>: List of job configuration dict (must include _target_)
+- <b>`priority`</b>: Job priority (0-1000)
+- <b>`tags`</b>: Optional list of tags
+
+
+**Returns:**
+
+- <b>`str`</b>: Job ID (UUID)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

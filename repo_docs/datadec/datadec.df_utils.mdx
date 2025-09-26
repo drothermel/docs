@@ -1,0 +1,135 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `df_utils`
+
+
+
+## Table of Contents
+- [`create_mean_std_df`](./datadec.df_utils#function-create-mean-std-df)
+- [`filter_by_max_step_to_use`](./datadec.df_utils#function-filter-by-max-step-to-use)
+- [`filter_olmes_rows`](./datadec.df_utils#function-filter-olmes-rows)
+- [`filter_ppl_rows`](./datadec.df_utils#function-filter-ppl-rows)
+- [`melt_for_plotting`](./datadec.df_utils#function-melt-for-plotting)
+- [`print_shape`](./datadec.df_utils#function-print-shape)
+- [`select_by_data_param_combos`](./datadec.df_utils#function-select-by-data-param-combos)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_shape`
+
+```python
+print_shape(df: DataFrame, msg: str = '', verbose: bool = False)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_by_max_step_to_use`
+
+```python
+filter_by_max_step_to_use(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_ppl_rows`
+
+```python
+filter_ppl_rows(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_olmes_rows`
+
+```python
+filter_olmes_rows(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_by_data_param_combos`
+
+```python
+select_by_data_param_combos(
+    df: DataFrame,
+    data: Optional[List[str]] = None,
+    params: Optional[List[str]] = None,
+    data_param_combos: Optional[List[Tuple[str, str]]] = None
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_mean_std_df`
+
+```python
+create_mean_std_df(merged_df: DataFrame) → Tuple[DataFrame, DataFrame]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/df_utils.py#L64"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `melt_for_plotting`
+
+```python
+melt_for_plotting(
+    df: DataFrame,
+    metrics: Optional[List[str]] = None,
+    include_seeds: bool = True,
+    drop_na: bool = True,
+    id_columns: Optional[List[str]] = None
+) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

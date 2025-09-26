@@ -1,0 +1,443 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `sync.supabase_client`
+Supabase client for remote storage and database operations.
+
+
+## Table of Contents
+- [`SupabaseClient`](./dr_exp.sync.supabase_client#class-supabaseclient)
+	- [`__init__`](./dr_exp.sync.supabase_client#constructor---init--)
+	- [`batch_sync_jobs`](./dr_exp.sync.supabase_client#method-batch-sync-jobs)
+	- [`create_sync_status`](./dr_exp.sync.supabase_client#method-create-sync-status)
+	- [`delete_file`](./dr_exp.sync.supabase_client#method-delete-file)
+	- [`download_file`](./dr_exp.sync.supabase_client#method-download-file)
+	- [`get_experiment_jobs`](./dr_exp.sync.supabase_client#method-get-experiment-jobs)
+	- [`get_experiment_stats`](./dr_exp.sync.supabase_client#method-get-experiment-stats)
+	- [`get_job_sync_status`](./dr_exp.sync.supabase_client#method-get-job-sync-status)
+	- [`get_or_create_experiment`](./dr_exp.sync.supabase_client#method-get-or-create-experiment)
+	- [`get_signed_url`](./dr_exp.sync.supabase_client#method-get-signed-url)
+	- [`list_files`](./dr_exp.sync.supabase_client#method-list-files)
+	- [`sync_job`](./dr_exp.sync.supabase_client#method-sync-job)
+	- [`test_connection`](./dr_exp.sync.supabase_client#method-test-connection)
+	- [`update_sync_status`](./dr_exp.sync.supabase_client#method-update-sync-status)
+	- [`upload_file`](./dr_exp.sync.supabase_client#method-upload-file)
+
+
+**Global Variables**
+---------------
+- **UTC**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SupabaseClient`
+Client for interacting with Supabase storage and database.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L17"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SupabaseClient(url: str | None = None, key: str | None = None) → None
+```
+
+Initialize Supabase client with retry logic.
+
+
+**Args:**
+
+- <b>`url`</b>: Supabase project URL (defaults to SUPABASE_URL env var)
+- <b>`key`</b>: Supabase service role key (defaults to SUPABASE_KEY env var)
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L545"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `batch_sync_jobs`
+
+```python
+batch_sync_jobs(jobs: list[dict[str, Any]], experiment_id: str) → dict[str, int]
+```
+
+Sync multiple jobs in batch.
+
+
+**Args:**
+
+- <b>`jobs`</b>: List of job data dictionaries
+- <b>`experiment_id`</b>: Experiment ID
+
+
+**Returns:**
+
+Dictionary with success/failed counts
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L370"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_sync_status`
+
+```python
+create_sync_status(
+    job_id: str,
+    file_path: str,
+    file_type: str,
+    checksum: str,
+    size_bytes: int,
+    storage_url: str,
+    metadata: dict[str, Any] | None = None
+) → str
+```
+
+Create a sync status record.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job that created the file
+- <b>`file_path`</b>: Original file path
+- <b>`file_type`</b>: Type of file
+- <b>`checksum`</b>: File checksum
+- <b>`size_bytes`</b>: File size
+- <b>`storage_url`</b>: URL in storage
+- <b>`metadata`</b>: Optional metadata
+
+
+**Returns:**
+
+Sync status ID
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L242"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `delete_file`
+
+```python
+delete_file(storage_path: str) → bool
+```
+
+Delete a file from storage.
+
+
+**Args:**
+
+- <b>`storage_path`</b>: Path in storage bucket
+
+
+**Returns:**
+
+True if deleted successfully
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L187"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `download_file`
+
+```python
+download_file(storage_path: str, local_path: Path) → Path
+```
+
+Download a file from Supabase storage.
+
+
+**Args:**
+
+- <b>`storage_path`</b>: Path in storage bucket
+- <b>`local_path`</b>: Local path to save file
+
+
+**Returns:**
+
+Path to downloaded file
+
+
+**Raises:**
+
+- <b>`Exception`</b>: If download fails
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L452"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_experiment_jobs`
+
+```python
+get_experiment_jobs(
+    experiment_id: str,
+    status: str | None = None,
+    limit: int = 100
+) → list[dict[str, Any]]
+```
+
+Get jobs for an experiment.
+
+
+**Args:**
+
+- <b>`experiment_id`</b>: Experiment ID
+- <b>`status`</b>: Optional status filter
+- <b>`limit`</b>: Maximum number of jobs
+
+
+**Returns:**
+
+List of job records
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L484"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_experiment_stats`
+
+```python
+get_experiment_stats(experiment_id: str) → dict[str, Any]
+```
+
+Get statistics for an experiment.
+
+
+**Args:**
+
+- <b>`experiment_id`</b>: Experiment ID
+
+
+**Returns:**
+
+Dictionary with experiment statistics
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L522"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_job_sync_status`
+
+```python
+get_job_sync_status(job_id: str) → list[dict[str, Any]]
+```
+
+Get sync status for all files from a job.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID
+
+
+**Returns:**
+
+List of sync status records
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L277"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_or_create_experiment`
+
+```python
+get_or_create_experiment(
+    experiment_name: str,
+    base_path: str,
+    metadata: dict[str, Any] | None = None
+) → str
+```
+
+Get or create an experiment in the database.
+
+
+**Args:**
+
+- <b>`experiment_name`</b>: Name of the experiment
+- <b>`base_path`</b>: Base path for the experiment
+- <b>`metadata`</b>: Optional metadata
+
+
+**Returns:**
+
+Experiment ID (UUID string)
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L257"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_signed_url`
+
+```python
+get_signed_url(storage_path: str, expires_in: int = 3600) → str
+```
+
+Get a signed URL for temporary access to a file.
+
+
+**Args:**
+
+- <b>`storage_path`</b>: Path in storage bucket
+- <b>`expires_in`</b>: Seconds until URL expires
+
+
+**Returns:**
+
+Signed URL
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L218"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `list_files`
+
+```python
+list_files(prefix: str, limit: int = 100) → list[dict[str, Any]]
+```
+
+List files in storage with a given prefix.
+
+
+**Args:**
+
+- <b>`prefix`</b>: Path prefix to filter by
+- <b>`limit`</b>: Maximum number of files to return
+
+
+**Returns:**
+
+List of file metadata dictionaries
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L323"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `sync_job`
+
+```python
+sync_job(job_data: dict[str, Any], experiment_id: str) → bool
+```
+
+Sync a job to the database.
+
+
+**Args:**
+
+- <b>`job_data`</b>: Job data from local JobDB
+- <b>`experiment_id`</b>: Experiment ID
+
+
+**Returns:**
+
+True if synced successfully
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L570"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `test_connection`
+
+```python
+test_connection() → bool
+```
+
+Test connection to Supabase.
+
+
+**Returns:**
+
+    True if connection successful
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L417"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `update_sync_status`
+
+```python
+update_sync_status(sync_id: str, status: str, error: str | None = None) → bool
+```
+
+Update sync status for a file.
+
+
+**Args:**
+
+- <b>`sync_id`</b>: Sync status ID
+- <b>`status`</b>: New status
+- <b>`error`</b>: Optional error message
+
+
+**Returns:**
+
+True if updated successfully
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/supabase_client.py#L80"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `upload_file`
+
+```python
+upload_file(
+    file_path: Path,
+    experiment_name: str,
+    job_id: str,
+    file_type: str,
+    metadata: dict[str, Any] | None = None
+) → tuple[str, str]
+```
+
+Upload a file to Supabase storage.
+
+Storage Limits:
+    - Maximum file size: 5GB for direct upload
+    - For files > 100MB, consider using multipart uploads
+    - For files > 5GB, use resumable uploads or external storage
+
+
+**Args:**
+
+- <b>`file_path`</b>: Local file path
+- <b>`experiment_name`</b>: Experiment name
+- <b>`job_id`</b>: Job ID that created this file
+- <b>`file_type`</b>: Type of file (metrics, model, etc.)
+- <b>`metadata`</b>: Optional metadata
+
+
+**Returns:**
+
+Tuple of (storage_url, checksum)
+
+
+**Raises:**
+
+- <b>`Exception`</b>: If upload fails
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

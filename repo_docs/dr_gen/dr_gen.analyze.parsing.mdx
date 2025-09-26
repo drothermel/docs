@@ -1,0 +1,481 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.parsing`
+JSONL parsing utilities and run data extraction for experiment analysis.
+
+
+## Table of Contents
+- [`Hpm`](./dr_gen.analyze.parsing#class-hpm)
+	- [`__init__`](./dr_gen.analyze.parsing#constructor---init--)
+	- [`as_dict`](./dr_gen.analyze.parsing#method-as-dict)
+	- [`as_strings`](./dr_gen.analyze.parsing#method-as-strings)
+	- [`as_tupledict`](./dr_gen.analyze.parsing#method-as-tupledict)
+	- [`as_valstrings`](./dr_gen.analyze.parsing#method-as-valstrings)
+	- [`exclude_from_important`](./dr_gen.analyze.parsing#method-exclude-from-important)
+	- [`exclude_prefixes_from_important`](./dr_gen.analyze.parsing#method-exclude-prefixes-from-important)
+	- [`get_from_all`](./dr_gen.analyze.parsing#method-get-from-all)
+	- [`reset_important`](./dr_gen.analyze.parsing#method-reset-important)
+	- [`set_important`](./dr_gen.analyze.parsing#method-set-important)
+- [`RunData`](./dr_gen.analyze.parsing#class-rundata)
+	- [`__init__`](./dr_gen.analyze.parsing#constructor---init--)
+	- [`get_split_metrics`](./dr_gen.analyze.parsing#method-get-split-metrics)
+	- [`parse_log_file`](./dr_gen.analyze.parsing#method-parse-log-file)
+- [`check_prefix_exclude`](./dr_gen.analyze.parsing#function-check-prefix-exclude)
+- [`convert_legacy_format`](./dr_gen.analyze.parsing#function-convert-legacy-format)
+- [`get_config_from_metrics_path`](./dr_gen.analyze.parsing#function-get-config-from-metrics-path)
+- [`get_config_path`](./dr_gen.analyze.parsing#function-get-config-path)
+- [`get_logged_metrics_infer_epoch`](./dr_gen.analyze.parsing#function-get-logged-metrics-infer-epoch)
+- [`get_logged_strings`](./dr_gen.analyze.parsing#function-get-logged-strings)
+- [`get_run_id`](./dr_gen.analyze.parsing#function-get-run-id)
+- [`get_train_time`](./dr_gen.analyze.parsing#function-get-train-time)
+- [`load_runs_from_dir`](./dr_gen.analyze.parsing#function-load-runs-from-dir)
+- [`parse_cfg_log_line`](./dr_gen.analyze.parsing#function-parse-cfg-log-line)
+- [`parse_jsonl_file`](./dr_gen.analyze.parsing#function-parse-jsonl-file)
+- [`records_to_metrics_dict`](./dr_gen.analyze.parsing#function-records-to-metrics-dict)
+- [`validate_metrics`](./dr_gen.analyze.parsing#function-validate-metrics)
+
+
+**Global Variables**
+---------------
+- **UTC**
+- **TYPE_CHECKING**
+- **MIN_FILE_LINES**
+- **TRAIN_TIME_OFFSET_FROM_END**
+- **EPOCHS_KEY**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `check_prefix_exclude`
+
+```python
+check_prefix_exclude(check_string: 'str', excluded_prefixes: 'list[str]') → bool
+```
+
+Check if string starts with any of the excluded prefixes.
+
+
+**Args:**
+
+- <b>`check_string`</b>: String to check
+- <b>`excluded_prefixes`</b>: List of prefix strings to check against
+
+
+**Returns:**
+
+True if check_string starts with any excluded prefix, False otherwise
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_run_id`
+
+```python
+get_run_id(metrics_path: 'Path') → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_config_path`
+
+```python
+get_config_path(metrics_path: 'Path') → Path
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_config_from_metrics_path`
+
+```python
+get_config_from_metrics_path(metrics_path: 'Path') → dict | None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L62"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `records_to_metrics_dict`
+
+```python
+records_to_metrics_dict(records)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L101"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_cfg_log_line`
+
+```python
+parse_cfg_log_line(
+    cfg_json: 'dict[str, Any]'
+) → tuple[dict[str, Any], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L116"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_train_time`
+
+```python
+get_train_time(train_time_json: 'dict[str, Any]') → str | None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L122"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_logged_strings`
+
+```python
+get_logged_strings(jsonl_contents: 'list[dict[str, Any]]') → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L130"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_logged_metrics_infer_epoch`
+
+```python
+get_logged_metrics_infer_epoch(
+    hpm: 'Hpm',
+    jsonl_contents: 'list[dict[str, Any]]'
+) → dict[str, SplitMetrics]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L158"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_metrics`
+
+```python
+validate_metrics(
+    expected_epochs: 'list[int]',
+    metrics_by_split: 'dict[str, SplitMetrics]'
+) → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L178"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_jsonl_file`
+
+```python
+parse_jsonl_file(filepath: 'Path') → tuple[list[dict[str, Any]], list[str]]
+```
+
+Parse a JSONL file and return valid records and errors.
+
+
+**Returns:**
+
+    Tuple of (valid_records, error_messages)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L203"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_runs_from_dir`
+
+```python
+load_runs_from_dir(directory: 'Path', pattern: 'str' = '*.jsonl') → list[Run]
+```
+
+Load all runs from JSONL files in a directory.
+
+
+**Args:**
+
+- <b>`directory`</b>: Directory containing JSONL files
+- <b>`pattern`</b>: Glob pattern for files to load
+
+
+**Returns:**
+
+List of validated Run models
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L234"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_legacy_format`
+
+```python
+convert_legacy_format(legacy_data: 'dict') → dict
+```
+
+Convert legacy experiment format to new Run model format.
+
+
+**Args:**
+
+- <b>`legacy_data`</b>: Dictionary in old analysis system format
+
+
+**Returns:**
+
+Dictionary compatible with Run model
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L269"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Hpm`
+A mutable mapping for hyperparameters with important value tracking.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L272"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Hpm(all_vals=None) → None
+```
+
+Initialize the Hpm instance.
+
+
+**Args:**
+
+- <b>`all_vals`</b>: Dictionary of all hyperparameter values. Defaults to None.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L349"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `as_dict`
+
+```python
+as_dict()
+```
+
+Return the important values as a dictionary.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L359"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `as_strings`
+
+```python
+as_strings()
+```
+
+Return important values as a list of key=value strings.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L353"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `as_tupledict`
+
+```python
+as_tupledict(important_vals=None)
+```
+
+Convert important values to a sorted tuple dictionary.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L364"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `as_valstrings`
+
+```python
+as_valstrings(remap_kvs=None)
+```
+
+Return values as strings with optional remapping.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L330"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `exclude_from_important`
+
+```python
+exclude_from_important(excludes) → None
+```
+
+Exclude specified keys from important values.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L336"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `exclude_prefixes_from_important`
+
+```python
+exclude_prefixes_from_important(exclude_prefixes) → None
+```
+
+Exclude keys with specified prefixes from important values.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L322"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_from_all`
+
+```python
+get_from_all(key)
+```
+
+Get a value from all values, returning None if not found.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L326"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `reset_important`
+
+```python
+reset_important() → None
+```
+
+Reset important values to include all values.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L345"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `set_important`
+
+```python
+set_important(keys) → None
+```
+
+Set important values to only the specified keys.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L375"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `RunData`
+Container for a single run's data including hyperparameters and metrics.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L378"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+RunData(file_path, rid=None) → None
+```
+
+Initialize RunData from a log file.
+
+
+**Args:**
+
+- <b>`file_path`</b>: Path to the log file to parse.
+- <b>`rid`</b>: Optional run identifier.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L424"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_split_metrics`
+
+```python
+get_split_metrics(split)
+```
+
+Get metrics for a specific data split.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/parsing.py#L394"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_log_file`
+
+```python
+parse_log_file() → None
+```
+
+Parse the log file and extract hyperparameters, metadata, and metrics.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

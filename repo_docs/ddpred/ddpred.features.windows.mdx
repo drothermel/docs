@@ -1,0 +1,362 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `features.windows`
+
+
+
+## Table of Contents
+- [`EarlyWindowData`](./ddpred.features.windows#class-earlywindowdata)
+	- [`__init__`](./ddpred.features.windows#constructor---init--)
+	- [`add_indexed_point_window`](./ddpred.features.windows#method-add-indexed-point-window)
+	- [`add_percentage_window`](./ddpred.features.windows#method-add-percentage-window)
+	- [`add_point_window`](./ddpred.features.windows#method-add-point-window)
+	- [`add_window_to_config`](./ddpred.features.windows#method-add-window-to-config)
+	- [`build_early_window_dfs`](./ddpred.features.windows#method-build-early-window-dfs)
+	- [`create_dfs`](./ddpred.features.windows#method-create-dfs)
+	- [`get_exact_step_windows`](./ddpred.features.windows#method-get-exact-step-windows)
+	- [`max_step_perc`](./ddpred.features.windows#method-max-step-perc)
+- [`ExactStepWindow`](./ddpred.features.windows#class-exactstepwindow)
+	- [`__init__`](./ddpred.features.windows#constructor---init--)
+	- [`extract_exact_steps`](./ddpred.features.windows#method-extract-exact-steps)
+	- [`get_step_specific_windows`](./ddpred.features.windows#method-get-step-specific-windows)
+	- [`validate_exact_steps_exist`](./ddpred.features.windows#method-validate-exact-steps-exist)
+- [`WindowFeature`](./ddpred.features.windows#dataclass-windowfeature)
+	- [`__init__`](./ddpred.features.windows#constructor---init--)
+- [`WindowRangeConfig`](./ddpred.features.windows#class-windowrangeconfig)
+	- [`__init__`](./ddpred.features.windows#constructor---init--)
+	- [`apply_max_to_df`](./ddpred.features.windows#method-apply-max-to-df)
+	- [`apply_min_to_df`](./ddpred.features.windows#method-apply-min-to-df)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L16"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `WindowFeature`
+WindowFeature(window_name: str, feature_name: str, axis_type: str = 'xlinylin')
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WindowFeature(
+    window_name: str,
+    feature_name: str,
+    axis_type: str = 'xlinylin'
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```axis_type``` (str)
+- ```feature_name``` (str)
+- ```window_name``` (str)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `WindowRangeConfig`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WindowRangeConfig(
+    early_window_data: 'EarlyWindowData',
+    min_step_col_name: Optional[str] = None,
+    max_step_col_name: Optional[str] = None,
+    min_step_col_fxn: Optional[Callable[[DataFrame], Series]] = None,
+    max_step_col_fxn: Optional[Callable[[DataFrame], Series]] = None,
+    num_points: Optional[int] = None,
+    start_index: Optional[int] = None,
+    point_count: Optional[int] = None,
+    step_col: str = 'step',
+    min_inclusive: bool = True,
+    max_inclusive: bool = True
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `apply_max_to_df`
+
+```python
+apply_max_to_df(df: DataFrame, wiggle: int = 0) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L77"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `apply_min_to_df`
+
+```python
+apply_min_to_df(df: DataFrame, wiggle: int = 0) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L104"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ExactStepWindow`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ExactStepWindow(
+    step_values: List[int],
+    step_col: str = 'step',
+    params_col: str = 'params',
+    data_col: str = 'data'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L136"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `extract_exact_steps`
+
+```python
+extract_exact_steps(df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L139"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_step_specific_windows`
+
+```python
+get_step_specific_windows(df: DataFrame) → Dict[int, DataFrame]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L120"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `validate_exact_steps_exist`
+
+```python
+validate_exact_steps_exist(df: DataFrame) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L163"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `EarlyWindowData`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L164"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+EarlyWindowData(
+    wiggle_room: int = 0,
+    drop_max_step: bool = True,
+    percentage_windows: Optional[List[str]] = None,
+    point_windows: Optional[Dict[str, int]] = None,
+    indexed_point_windows: Optional[Dict[str, Tuple[int, int]]] = None
+) → None
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> window_names
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L325"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_indexed_point_window`
+
+```python
+add_indexed_point_window(
+    base_window_name: str,
+    start_index: int,
+    point_count: int
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L258"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_percentage_window`
+
+```python
+add_percentage_window(
+    window_name: str,
+    start_pct: Optional[float] = None,
+    end_pct: Optional[float] = None,
+    start_inclusive: bool = True,
+    end_inclusive: bool = True
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L319"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_point_window`
+
+```python
+add_point_window(window_name: str, num_points: int) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L297"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_window_to_config`
+
+```python
+add_window_to_config(
+    window_name: str,
+    min_step_col_name: Optional[str] = None,
+    max_step_col_name: Optional[str] = None,
+    min_step_col_fxn: Optional[Callable[[DataFrame], Series]] = None,
+    max_step_col_fxn: Optional[Callable[[DataFrame], Series]] = None,
+    step_col: str = 'step',
+    min_inclusive: bool = True,
+    max_inclusive: bool = True
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L343"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `build_early_window_dfs`
+
+```python
+build_early_window_dfs(df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L340"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_dfs`
+
+```python
+create_dfs(df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L400"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_exact_step_windows`
+
+```python
+get_exact_step_windows(
+    df: DataFrame,
+    step_values: List[int]
+) → Dict[int, DataFrame]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/windows.py#L255"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `max_step_perc`
+
+```python
+max_step_perc(df: DataFrame, percent: float) → Series
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

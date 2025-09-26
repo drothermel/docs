@@ -1,0 +1,428 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `metrics`
+
+
+
+## Table of Contents
+- [`HydraLogger`](./dr_util.metrics#class-hydralogger)
+	- [`__init__`](./dr_util.metrics#constructor---init--)
+	- [`log`](./dr_util.metrics#method-log)
+- [`JsonLogger`](./dr_util.metrics#class-jsonlogger)
+	- [`__init__`](./dr_util.metrics#constructor---init--)
+	- [`log`](./dr_util.metrics#method-log)
+- [`LoggerType`](./dr_util.metrics#enum-loggertype)
+- [`MetricType`](./dr_util.metrics#enum-metrictype)
+- [`Metrics`](./dr_util.metrics#class-metrics)
+	- [`__init__`](./dr_util.metrics#constructor---init--)
+	- [`agg`](./dr_util.metrics#method-agg)
+	- [`agg_log`](./dr_util.metrics#method-agg-log)
+	- [`log`](./dr_util.metrics#method-log)
+	- [`train`](./dr_util.metrics#method-train)
+	- [`val`](./dr_util.metrics#method-val)
+- [`MetricsSubgroup`](./dr_util.metrics#class-metricssubgroup)
+	- [`__init__`](./dr_util.metrics#constructor---init--)
+	- [`add`](./dr_util.metrics#method-add)
+	- [`agg`](./dr_util.metrics#method-agg)
+- [`add_list`](./dr_util.metrics#function-add-list)
+- [`add_sum`](./dr_util.metrics#function-add-sum)
+- [`agg_batch_weighted_list_avg`](./dr_util.metrics#function-agg-batch-weighted-list-avg)
+- [`agg_none`](./dr_util.metrics#function-agg-none)
+- [`agg_passthrough`](./dr_util.metrics#function-agg-passthrough)
+- [`create_logger`](./dr_util.metrics#function-create-logger)
+
+
+**Global Variables**
+---------------
+- **TYPE_CHECKING**
+- **BATCH_KEY**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_logger`
+
+```python
+create_logger(
+    cfg: DictConfig,
+    logger_type: str
+) → Union[ForwardRef('HydraLogger'), ForwardRef('JsonLogger')]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L131"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_sum`
+
+```python
+add_sum(data: dict[str, Any], key: str, val: Any) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L135"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_list`
+
+```python
+add_list(data: dict[str, Any], key: str, val: Any) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L139"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `agg_passthrough`
+
+```python
+agg_passthrough(data: dict[str, Any], key: str) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L143"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `agg_none`
+
+```python
+agg_none(data: dict[str, Any], key: str) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L147"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `agg_batch_weighted_list_avg`
+
+```python
+agg_batch_weighted_list_avg(data: dict[str, Any], key: str) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>enum</kbd> `LoggerType`
+Enum for different logger types.
+
+
+### <kbd>symbols</kbd>
+- **HYDRA** = hydra
+- **JSON** = json
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `HydraLogger`
+Logger that outputs to Hydra's logging system.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+HydraLogger(cfg: DictConfig) → None
+```
+
+Initialize HydraLogger.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log`
+
+```python
+log(value: Any) → None
+```
+
+Log a value using the appropriate logging method.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L79"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `JsonLogger`
+Logger that outputs to JSON lines file.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L82"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+JsonLogger(cfg: DictConfig) → None
+```
+
+Initialize JsonLogger.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log`
+
+```python
+log(value: Any) → None
+```
+
+Log a value using singledispatch based on type.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L123"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>enum</kbd> `MetricType`
+Enumeration of supported metric aggregation types.
+
+
+### <kbd>symbols</kbd>
+- **BATCH_WEIGHTED_AVG_LIST** = batch_weighted_avg_list
+- **INT** = int
+- **LIST** = list
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L156"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MetricsSubgroup`
+Handles metrics collection for a specific group (e.g., train, val).
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L159"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MetricsSubgroup(
+    cfg: DictConfig,
+    name: str = '',
+    metrics: Any | None = None
+) → None
+```
+
+Initialize MetricsSubgroup.
+
+
+**Args:**
+
+- <b>`cfg`</b>: Configuration object containing metrics settings.
+- <b>`name`</b>: Name of the metrics group.
+- <b>`metrics`</b>: Optional metrics configuration.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L206"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add`
+
+```python
+add(data: Any, ns: int = 1) → None
+```
+
+Add data to metrics collection - base method for single dispatch.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L223"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `agg`
+
+```python
+agg() → dict[str, Any]
+```
+
+Aggregate collected metrics data.
+
+
+**Returns:**
+
+    Dictionary of aggregated metrics.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L237"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Metrics`
+Main metrics collection and logging system.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L240"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Metrics(cfg: DictConfig) → None
+```
+
+Initialize Metrics system.
+
+
+**Args:**
+
+- <b>`cfg`</b>: Configuration object containing metrics and logging settings.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L280"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `agg`
+
+```python
+agg(data_name: str) → dict[str, Any]
+```
+
+Aggregate metrics for a specific data group.
+
+
+**Args:**
+
+- <b>`data_name`</b>: Name of the data group (e.g., 'train', 'val').
+
+
+**Returns:**
+
+Dictionary of aggregated metrics.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L292"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `agg_log`
+
+```python
+agg_log(data_name: str) → None
+```
+
+Aggregate metrics and log the results.
+
+
+**Args:**
+
+- <b>`data_name`</b>: Name of the data group to aggregate and log.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L253"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log`
+
+```python
+log(value: Any) → None
+```
+
+Log a value to all configured loggers.
+
+
+**Args:**
+
+- <b>`value`</b>: The value to log.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L262"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `train`
+
+```python
+train(data: tuple[str, Any] | dict[str, Any], ns: int = 1) → None
+```
+
+Add training data to metrics.
+
+
+**Args:**
+
+- <b>`data`</b>: Training data as tuple (key, value) or dict.
+- <b>`ns`</b>: Number of samples (batch size).
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/metrics.py#L271"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `val`
+
+```python
+val(data: tuple[str, Any] | dict[str, Any], ns: int = 1) → None
+```
+
+Add validation data to metrics.
+
+
+**Args:**
+
+- <b>`data`</b>: Validation data as tuple (key, value) or dict.
+- <b>`ns`</b>: Number of samples (batch size).
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

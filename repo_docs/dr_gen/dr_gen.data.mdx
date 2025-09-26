@@ -1,0 +1,146 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `data`
+Simplified data loading for train/val/eval splits with transforms.
+
+
+## Table of Contents
+- [`build_transforms`](./dr_gen.data#function-build-transforms)
+- [`create_eval_transform`](./dr_gen.data#function-create-eval-transform)
+- [`create_train_transform`](./dr_gen.data#function-create-train-transform)
+- [`get_dataloaders`](./dr_gen.data#function-get-dataloaders)
+- [`get_dataloaders`](./dr_gen.data#function-get-dataloaders)
+- [`get_dataset`](./dr_gen.data#function-get-dataset)
+
+
+**Global Variables**
+---------------
+- **AVAIL_DATASETS**
+- **DEFAULT_DATASET_CACHE_ROOT**
+- **DEFAULT_DOWNLOAD**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_dataset`
+
+```python
+get_dataset(
+    dataset_name: str,
+    source_split: str,
+    root: str = '../data/',
+    transform: Callable[[Any], Any] | None = None,
+    download: bool = True
+) → Dataset[Any]
+```
+
+Load a dataset by name and split.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_transforms`
+
+```python
+build_transforms(xfm_cfg: DictConfig | None) → Callable[[Any], Any] | None
+```
+
+Build transform pipeline from configuration.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L85"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_train_transform`
+
+```python
+create_train_transform(
+    cfg: DictConfig,
+    model: Module
+) → Callable[[Any], Any] | None
+```
+
+Create training transforms (with data augmentation).
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L97"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_eval_transform`
+
+```python
+create_eval_transform(
+    cfg: DictConfig,
+    model: Module
+) → Callable[[Any], Any] | None
+```
+
+Create evaluation transforms (no data augmentation).
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_dataloaders`
+
+```python
+get_dataloaders(
+    cfg: DictConfig,
+    generator: Generator,
+    model: Module
+) → dict[str, DataLoader[Any]]
+```
+
+Create train/val/eval dataloaders with simplified logic.
+
+1. Load dataset's train and test splits
+2. Split train into train/val using configured ratio
+3. Apply training transforms to train split
+4. Apply eval transforms to val and eval splits
+5. Create dataloaders with appropriate settings
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/data.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_dataloaders`
+
+```python
+get_dataloaders(
+    cfg: DictConfig,
+    generator: Generator,
+    model: Module
+) → dict[str, DataLoader[Any]]
+```
+
+Create train/val/eval dataloaders with simplified logic.
+
+1. Load dataset's train and test splits
+2. Split train into train/val using configured ratio
+3. Apply training transforms to train split
+4. Apply eval transforms to val and eval splits
+5. Create dataloaders with appropriate settings
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

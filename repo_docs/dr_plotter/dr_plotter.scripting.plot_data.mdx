@@ -1,0 +1,69 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.plot_data`
+
+
+
+## Table of Contents
+- [`experimental_data`](./dr_plotter.scripting.plot_data#function-experimental-data)
+- [`matrix_data`](./dr_plotter.scripting.plot_data#function-matrix-data)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `experimental_data`
+
+```python
+experimental_data(
+    n_samples: 'int' = 120,
+    time_points: 'int' = 20,
+    categories: 'list[str] | None' = None,
+    groups: 'list[str] | None' = None,
+    experiments: 'list[str] | None' = None,
+    conditions: 'list[str] | None' = None,
+    metrics: 'list[str] | None' = None,
+    pattern_type: 'str' = 'time_series',
+    noise_level: 'float' = 0.05,
+    trend_strength: 'float' = 0.1,
+    seed: 'int' = 42
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data.py#L58"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `matrix_data`
+
+```python
+matrix_data(
+    rows: 'int' = 8,
+    cols: 'int' = 6,
+    row_names: 'list[str] | None' = None,
+    col_names: 'list[str] | None' = None,
+    pattern_type: 'str' = 'heatmap',
+    correlation_strength: 'float' = 0.3,
+    seed: 'int' = 42
+) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

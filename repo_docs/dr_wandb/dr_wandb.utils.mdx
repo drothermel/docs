@@ -1,0 +1,100 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `utils`
+
+
+
+## Table of Contents
+- [`convert_large_ints_in_data`](./dr_wandb.utils#function-convert-large-ints-in-data)
+- [`default_progress_callback`](./dr_wandb.utils#function-default-progress-callback)
+- [`extract_as_datetime`](./dr_wandb.utils#function-extract-as-datetime)
+- [`safe_convert_for_parquet`](./dr_wandb.utils#function-safe-convert-for-parquet)
+- [`select_updated_runs`](./dr_wandb.utils#function-select-updated-runs)
+
+
+**Global Variables**
+---------------
+- **MAX_INT**
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_as_datetime`
+
+```python
+extract_as_datetime(data: dict[str, Any], key: str) → datetime | None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py#L17"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_updated_runs`
+
+```python
+select_updated_runs(
+    all_runs: list[Run],
+    existing_run_states: dict[RunId, RunState]
+) → list[Run]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_progress_callback`
+
+```python
+default_progress_callback(run_index: int, total_runs: int, message: str) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_large_ints_in_data`
+
+```python
+convert_large_ints_in_data(data: Any, max_int: int = 2147483647) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/utils.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `safe_convert_for_parquet`
+
+```python
+safe_convert_for_parquet(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

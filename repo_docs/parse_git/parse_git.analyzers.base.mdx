@@ -1,0 +1,154 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyzers.base`
+Abstract base class for file analyzers.
+
+
+## Table of Contents
+- [`FileAnalyzer`](./parse_git.analyzers.base#class-fileanalyzer)
+	- [`__init__`](./parse_git.analyzers.base#constructor---init--)
+	- [`analyze`](./parse_git.analyzers.base#method-analyze)
+	- [`export_json`](./parse_git.analyzers.base#method-export-json)
+	- [`generate_summary_markdown`](./parse_git.analyzers.base#method-generate-summary-markdown)
+	- [`get_file_id`](./parse_git.analyzers.base#method-get-file-id)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `FileAnalyzer`
+Abstract base class for analyzing specific file types in git repositories.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+FileAnalyzer(
+    repo_path: str | Path,
+    start_date: datetime,
+    end_date: datetime
+) → None
+```
+
+Initialize the analyzer.
+
+
+**Args:**
+
+- <b>`repo_path`</b>: Path to the git repository.
+- <b>`start_date`</b>: Start date for the analysis period.
+- <b>`end_date`</b>: End date for the analysis period.
+
+
+
+---
+
+#### <kbd>property</kbd> file_patterns
+
+File extensions this analyzer handles.
+
+
+**Returns:**
+
+    Tuple of file extensions (e.g., ('.md', '.markdown')).
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L36"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `analyze`
+
+```python
+analyze() → list[FileLifecycle]
+```
+
+Perform the complete analysis.
+
+
+**Returns:**
+
+    List of FileLifecycle objects for analyzed files.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `export_json`
+
+```python
+export_json(lifecycles: list[FileLifecycle], output_path: str | Path) → None
+```
+
+Export analysis results to JSON.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to export.
+- <b>`output_path`</b>: Path where JSON file should be written.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `generate_summary_markdown`
+
+```python
+generate_summary_markdown(
+    lifecycles: list[FileLifecycle],
+    output_path: str | Path
+) → None
+```
+
+Generate a markdown summary of the analysis.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to summarize.
+- <b>`output_path`</b>: Path where markdown summary should be written.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/base.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_file_id`
+
+```python
+get_file_id(filepath: str) → str
+```
+
+Generate a stable identifier for a file.
+
+
+**Args:**
+
+- <b>`filepath`</b>: Path to the file.
+
+
+**Returns:**
+
+Stable identifier for tracking the file across renames.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

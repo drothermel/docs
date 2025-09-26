@@ -1,0 +1,256 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `file_utils`
+
+
+
+## Table of Contents
+- [`dump_file`](./dr_util.file_utils#function-dump-file)
+- [`dumpjson`](./dr_util.file_utils#function-dumpjson)
+- [`dumpjsonl`](./dr_util.file_utils#function-dumpjsonl)
+- [`dumpnpy`](./dr_util.file_utils#function-dumpnpy)
+- [`dumpomega`](./dr_util.file_utils#function-dumpomega)
+- [`dumppkl`](./dr_util.file_utils#function-dumppkl)
+- [`dumptxt`](./dr_util.file_utils#function-dumptxt)
+- [`fu_help`](./dr_util.file_utils#function-fu-help)
+- [`jsonl_generator`](./dr_util.file_utils#function-jsonl-generator)
+- [`load_file`](./dr_util.file_utils#function-load-file)
+- [`load_files`](./dr_util.file_utils#function-load-files)
+- [`loadjsonl`](./dr_util.file_utils#function-loadjsonl)
+- [`loadomega`](./dr_util.file_utils#function-loadomega)
+- [`loadpkl`](./dr_util.file_utils#function-loadpkl)
+- [`pathlib_help`](./dr_util.file_utils#function-pathlib-help)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fu_help`
+
+```python
+fu_help() → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L36"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `pathlib_help`
+
+```python
+pathlib_help() → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L102"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `jsonl_generator`
+
+```python
+jsonl_generator(path: str) → Generator[Any, None, None]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L107"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_files`
+
+```python
+load_files(path_list: list[str]) → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L115"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dump_file`
+
+```python
+dump_file(
+    data: Any,
+    path: str,
+    force_suffix: str | None = None,
+    verbose: bool = True
+) → bool
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L142"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_file`
+
+```python
+load_file(
+    path: str,
+    force_suffix: str | None = None,
+    mmm: Optional[Literal['r+', 'r', 'w+', 'c']] = None,
+    verbose: bool = True
+) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L176"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `loadjsonl`
+
+```python
+loadjsonl(pl_path: Path) → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L180"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `loadpkl`
+
+```python
+loadpkl(pl_path: Path) → Any
+```
+
+Load pickle file.
+
+> [!WARNING] Only use with trusted data - pickle can execute arbitrary code.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L188"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `loadomega`
+
+```python
+loadomega(pl_path: Path) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L192"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumptxt`
+
+```python
+dumptxt(data: str, pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L199"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumpjsonl`
+
+```python
+dumpjsonl(data: list[Any], pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L207"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumpjson`
+
+```python
+dumpjson(data: Any, pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L213"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumppkl`
+
+```python
+dumppkl(data: Any, pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L220"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumpnpy`
+
+```python
+dumpnpy(data: Any, pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/file_utils.py#L226"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dumpomega`
+
+```python
+dumpomega(data: Any, pl_path: Path, verbose: bool = True) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

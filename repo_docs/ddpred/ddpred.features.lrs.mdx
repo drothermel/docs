@@ -1,0 +1,93 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/lrs.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `features.lrs`
+
+
+
+## Table of Contents
+- [`add_lr_cols`](./ddpred.features.lrs#function-add-lr-cols)
+- [`calculate_cumulative_lr`](./ddpred.features.lrs#function-calculate-cumulative-lr)
+- [`get_lr_at_step`](./ddpred.features.lrs#function-get-lr-at-step)
+- [`numerical_cosine_integral`](./ddpred.features.lrs#function-numerical-cosine-integral)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/lrs.py#L4"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_lr_cols`
+
+```python
+add_lr_cols(df)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/lrs.py#L56"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `numerical_cosine_integral`
+
+```python
+numerical_cosine_integral(lr_max, lr_final, lr_decay_steps, decay_step)
+```
+
+Numerically integrate the cosine annealing schedule.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/lrs.py#L71"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_cumulative_lr`
+
+```python
+calculate_cumulative_lr(
+    step,
+    lr_warmup_start,
+    lr_max,
+    lr_final,
+    warmup_steps,
+    lr_decay_steps
+)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/lrs.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_lr_at_step`
+
+```python
+get_lr_at_step(
+    step,
+    lr_warmup_start,
+    lr_max,
+    lr_final,
+    warmup_steps,
+    lr_decay_steps
+)
+```
+
+Get the learning rate at a specific step.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

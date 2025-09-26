@@ -1,0 +1,73 @@
+---
+title: parse_claude
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`__main__`](./parse_claude.__main__#module-parse-claude--main--): Entry point for running parse_claude as a module.
+- [`cli`](./parse_claude.cli#module-parse-claudecli): CLI interface for Claude conversation parsing.
+- [`core`](./parse_claude.core#module-parse-claudecore): Core analysis and loading functions for Claude conversation parsing.
+- [`formatting`](./parse_claude.formatting#module-parse-claudeformatting): Formatting utilities for Claude conversation parsing.
+- [`formatting.content`](./parse_claude.formatting.content#module-parse-claudeformattingcontent): Content formatting utilities including mistune-based text rendering.
+- [`formatting.text`](./parse_claude.formatting.text#module-parse-claudeformattingtext): Text formatting and wrapping utilities.
+- [`formatting.timestamp`](./parse_claude.formatting.timestamp#module-parse-claudeformattingtimestamp): Timestamp formatting utilities.
+- [`handlers`](./parse_claude.handlers#module-parse-claudehandlers): Message handlers for Claude conversation parsing.
+- [`handlers.assistant`](./parse_claude.handlers.assistant#module-parse-claudehandlersassistant): Assistant message handlers for different content types.
+- [`handlers.base`](./parse_claude.handlers.base#module-parse-claudehandlersbase): Base handler classes and registry system for message type handling.
+- [`handlers.system`](./parse_claude.handlers.system#module-parse-claudehandlerssystem): System and summary message handlers.
+- [`handlers.tool_results`](./parse_claude.handlers.tool_results#module-parse-claudehandlerstool-results): Tool result message handlers.
+- [`handlers.user`](./parse_claude.handlers.user#module-parse-claudehandlersuser): User message handlers.
+- [`legacy`](./parse_claude.legacy#module-parse-claudelegacy): Legacy formatting functions for backward compatibility.
+- [`models`](./parse_claude.models#module-parse-claudemodels): Pydantic data models for Claude conversation parsing.
+
+## Classes
+
+- [`content.WrappedTextRenderer`](./parse_claude.formatting.content#class-wrappedtextrenderer): Custom mistune renderer that produces wrapped text output.
+- [`assistant.AssistantMessageHandler`](./parse_claude.handlers.assistant#class-assistantmessagehandler): Handler for assistant text messages.
+- [`assistant.AssistantThinkingHandler`](./parse_claude.handlers.assistant#class-assistantthinkinghandler): Handler for assistant thinking messages.
+- [`assistant.AssistantToolHandler`](./parse_claude.handlers.assistant#class-assistanttoolhandler): Handler for assistant tool use messages.
+- [`base.CategoryRegistry`](./parse_claude.handlers.base#class-categoryregistry): Registry for mapping categories to handlers.
+- [`base.MessageTypeHandler`](./parse_claude.handlers.base#class-messagetypehandler): Abstract base class for message type handlers.
+- [`base.MessageTypeRegistry`](./parse_claude.handlers.base#class-messagetyperegistry): Registry for managing message type handlers.
+- [`system.SummaryHandler`](./parse_claude.handlers.system#class-summaryhandler): Handler for summary messages.
+- [`system.SystemHandler`](./parse_claude.handlers.system#class-systemhandler): Handler for system messages.
+- [`tool_results.GeneralToolResultHandler`](./parse_claude.handlers.tool_results#class-generaltoolresulthandler): Handler for general tool result messages.
+- [`tool_results.ReadToolResultHandler`](./parse_claude.handlers.tool_results#class-readtoolresulthandler): Handler for Read tool result messages.
+- [`tool_results.TodoToolResultHandler`](./parse_claude.handlers.tool_results#class-todotoolresulthandler): Handler for TodoWrite tool result messages.
+- [`user.UserHandler`](./parse_claude.handlers.user#class-userhandler): Handler for user messages.
+- [`models.ClaudeMessage`](./parse_claude.models#class-claudemessage): Top-level Claude conversation message with metadata.
+- [`models.Message`](./parse_claude.models#class-message): A message from Claude containing content blocks.
+- [`models.TextContent`](./parse_claude.models#class-textcontent): Text content block in a message.
+- [`models.ThinkingContent`](./parse_claude.models#class-thinkingcontent): Thinking content block in a message.
+- [`models.ToolUseContent`](./parse_claude.models#class-toolusecontent): Tool use content block in a message.
+- [`models.Usage`](./parse_claude.models#class-usage): Token usage information for a message.
+
+## Functions
+
+- [`cli.check_old_syntax`](./parse_claude.cli#function-check-old-syntax): Check if user is using old -t flag and provide helpful error.
+- [`cli.list_categories`](./parse_claude.cli#function-list-categories): Display available categories in a formatted way.
+- [`cli.main`](./parse_claude.cli#function-main): Main entry point for the CLI.
+- [`cli.parse_args`](./parse_claude.cli#function-parse-args): Parse command line arguments.
+- [`core.analyze_messages`](./parse_claude.core#function-analyze-messages): Analyze messages by type and show counts with examples.
+- [`core.expand_categories`](./parse_claude.core#function-expand-categories): Expand category specifications to handler names.
+- [`core.filter_message`](./parse_claude.core#function-filter-message): Remove blacklisted keys and null values from message.
+- [`core.load_messages`](./parse_claude.core#function-load-messages): Stream-load a .jsonl file, yielding one parsed JSON object per line.
+- [`content.format_content_with_mistune`](./parse_claude.formatting.content#function-format-content-with-mistune): Format content using mistune with custom text renderer.
+- [`content.format_content_without_label`](./parse_claude.formatting.content#function-format-content-without-label): Format content without a key label, using mistune for smart formatting.
+- [`content.format_content_without_label_fallback`](./parse_claude.formatting.content#function-format-content-without-label-fallback): Fallback text formatting that preserves structural newlines.
+- [`content.format_content_without_wrapping`](./parse_claude.formatting.content#function-format-content-without-wrapping): Format content without line wrapping, preserving original line structure.
+- [`text.format_wrapped_field`](./parse_claude.formatting.text#function-format-wrapped-field): Format a field with proper wrapping and indentation for short mode.
+- [`text.get_model_short_name`](./parse_claude.formatting.text#function-get-model-short-name): Convert model name to short string.
+- [`text.truncate_json_values`](./parse_claude.formatting.text#function-truncate-json-values): Recursively truncate string values in JSON data.
+- [`timestamp.format_timestamp`](./parse_claude.formatting.timestamp#function-format-timestamp): Convert timestamp string to human-readable format.
+- [`assistant.format_todo_list`](./parse_claude.handlers.assistant#function-format-todo-list): Format a list of todos for display.
+- [`user.format_assistant_short_message`](./parse_claude.handlers.user#function-format-assistant-short-message): Format assistant message in compact text format.
+- [`user.format_short_message`](./parse_claude.handlers.user#function-format-short-message): Format message in compact text format.
+- [`user.format_user_short_message`](./parse_claude.handlers.user#function-format-user-short-message): Format user message in compact text format.
+- [`legacy.format_message`](./parse_claude.legacy#function-format-message): Return a concise, human-readable representation of a message.
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

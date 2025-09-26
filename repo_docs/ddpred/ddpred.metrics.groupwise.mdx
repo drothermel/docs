@@ -1,0 +1,58 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/groupwise.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `metrics.groupwise`
+
+
+
+## Table of Contents
+- [`calc_within_param_decision_accuracy`](./ddpred.metrics.groupwise#function-calc-within-param-decision-accuracy)
+- [`calc_within_param_ndcg_metrics`](./ddpred.metrics.groupwise#function-calc-within-param-ndcg-metrics)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/groupwise.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_within_param_decision_accuracy`
+
+```python
+calc_within_param_decision_accuracy(
+    preds: ndarray,
+    true_vals: ndarray,
+    groups: ndarray
+) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/groupwise.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_within_param_ndcg_metrics`
+
+```python
+calc_within_param_ndcg_metrics(
+    preds: ndarray,
+    true_vals: ndarray,
+    groups: ndarray,
+    k_values: List[int]
+) → Dict[str, float]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

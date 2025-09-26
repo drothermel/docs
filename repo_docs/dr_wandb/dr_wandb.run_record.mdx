@@ -1,0 +1,109 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `run_record`
+
+
+
+## Table of Contents
+- [`RunRecord`](./dr_wandb.run_record#class-runrecord)
+	- [`from_wandb_run`](./dr_wandb.run_record#classmethod-from-wandb-run)
+	- [`standard_fields`](./dr_wandb.run_record#classmethod-standard-fields)
+	- [`to_dict`](./dr_wandb.run_record#method-to-dict)
+	- [`update_from_wandb_run`](./dr_wandb.run_record#method-update-from-wandb-run)
+- [`build_run_query`](./dr_wandb.run_record#function-build-run-query)
+
+
+**Global Variables**
+---------------
+- **SUPPORTED_FILTER_FIELDS**
+- **RUN_DATA_COMPONENTS**
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L102"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_run_query`
+
+```python
+build_run_query(
+    kwargs: 'dict[FilterField, Any] | None' = None
+) → Select[RunRecord]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `RunRecord`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L63"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_wandb_run`
+
+```python
+from_wandb_run(wandb_run: 'Run') → RunRecord
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `standard_fields`
+
+```python
+standard_fields() → list[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L89"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `to_dict`
+
+```python
+to_dict(include: 'list[RunDataComponent] | All | None' = None) → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/run_record.py#L83"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `update_from_wandb_run`
+
+```python
+update_from_wandb_run(wandb_run: 'Run') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,207 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `worker.base`
+Base worker implementation for job execution.
+
+
+## Table of Contents
+- [`Worker`](./dr_exp.worker.base#class-worker)
+	- [`__init__`](./dr_exp.worker.base#constructor---init--)
+	- [`add_artifact_to_sync`](./dr_exp.worker.base#method-add-artifact-to-sync)
+	- [`execute_job`](./dr_exp.worker.base#method-execute-job)
+	- [`run`](./dr_exp.worker.base#method-run)
+	- [`run_one_job`](./dr_exp.worker.base#method-run-one-job)
+	- [`shutdown`](./dr_exp.worker.base#method-shutdown)
+	- [`start_background_threads`](./dr_exp.worker.base#method-start-background-threads)
+	- [`stop_background_threads`](./dr_exp.worker.base#method-stop-background-threads)
+
+
+**Global Variables**
+---------------
+- **UTC**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Worker`
+Base worker that executes jobs from JobDB with background sync.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+Worker(
+    job_db: JobDB,
+    worker_id: str,
+    working_dir: str | None = None,
+    experiment_path: str | None = None,
+    sync_interval: int = 30,
+    heartbeat_interval: int = 60,
+    sync_enabled: bool = True,
+    supabase_url: str | None = None,
+    supabase_key: str | None = None
+) → None
+```
+
+Initialize worker.
+
+
+**Args:**
+
+- <b>`job_db`</b>: JobDB instance to get jobs from
+- <b>`worker_id`</b>: Unique identifier for this worker
+- <b>`working_dir`</b>: Directory to run jobs in (defaults to current dir)
+- <b>`experiment_path`</b>: Path to experiment directory for logs (optional)
+- <b>`sync_interval`</b>: Seconds between sync attempts
+- <b>`heartbeat_interval`</b>: Seconds between heartbeats
+- <b>`sync_enabled`</b>: Whether to enable background sync
+- <b>`supabase_url`</b>: Optional Supabase URL
+- <b>`supabase_key`</b>: Optional Supabase key
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L245"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_artifact_to_sync`
+
+```python
+add_artifact_to_sync(
+    job_id: str,
+    file_path: str,
+    file_type: str,
+    metadata: dict[str, Any] | None = None
+) → None
+```
+
+Add a file to the sync queue.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job that created this file
+- <b>`file_path`</b>: Path to file
+- <b>`file_type`</b>: Type of file (metrics, logs, model, etc.)
+- <b>`metadata`</b>: Optional metadata
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L274"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute_job`
+
+```python
+execute_job(job: dict[str, Any]) → dict[str, Any]
+```
+
+Execute a single job using Hydra.
+
+
+**Args:**
+
+- <b>`job`</b>: Job data from JobDB
+
+
+**Returns:**
+
+Result dict with status and optional error
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L420"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run`
+
+```python
+run(max_jobs: int | None = None) → dict[str, int]
+```
+
+Run worker until no more jobs or max_jobs reached.
+
+
+**Args:**
+
+- <b>`max_jobs`</b>: Maximum number of jobs to execute (None = unlimited)
+
+
+**Returns:**
+
+Dict with counts of completed, failed, and total jobs
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L375"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run_one_job`
+
+```python
+run_one_job() → str
+```
+
+Claim and execute one job.
+
+
+**Returns:**
+
+- <b>`Status`</b>: 'completed', 'failed', or 'no_job'
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L463"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `shutdown`
+
+```python
+shutdown(reason: str = 'signal') → None
+```
+
+Shutdown worker gracefully.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L189"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `start_background_threads`
+
+```python
+start_background_threads() → None
+```
+
+Start background sync and heartbeat threads.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/base.py#L205"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `stop_background_threads`
+
+```python
+stop_background_threads() → None
+```
+
+Stop background threads gracefully.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

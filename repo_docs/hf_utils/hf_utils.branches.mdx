@@ -1,0 +1,269 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `branches`
+Core branch discovery and parsing functions for HuggingFace repositories.
+
+
+## Table of Contents
+- [`create_branch_metadata`](./hf_utils.branches#function-create-branch-metadata)
+- [`extract_seed_from_branch`](./hf_utils.branches#function-extract-seed-from-branch)
+- [`extract_step_from_branch`](./hf_utils.branches#function-extract-step-from-branch)
+- [`get_all_repo_branches`](./hf_utils.branches#function-get-all-repo-branches)
+- [`get_checkpoint_branches`](./hf_utils.branches#function-get-checkpoint-branches)
+- [`get_step_range_for_seed`](./hf_utils.branches#function-get-step-range-for-seed)
+- [`group_branches_by_seed`](./hf_utils.branches#function-group-branches-by-seed)
+- [`is_checkpoint_branch`](./hf_utils.branches#function-is-checkpoint-branch)
+- [`parse_branch_name`](./hf_utils.branches#function-parse-branch-name)
+- [`sort_branches_by_step`](./hf_utils.branches#function-sort-branches-by-step)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_all_repo_branches`
+
+```python
+get_all_repo_branches(repo_id: str) → List[str]
+```
+
+Get all branch names from a HuggingFace repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+List of all branch names
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `is_checkpoint_branch`
+
+```python
+is_checkpoint_branch(branch: str) → bool
+```
+
+Check if branch name matches checkpoint pattern.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name to check
+
+
+**Returns:**
+
+True if branch follows step-seed pattern
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_checkpoint_branches`
+
+```python
+get_checkpoint_branches(repo_id: str) → List[str]
+```
+
+Get all checkpoint branches from a repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+List of checkpoint branch names, sorted by step number
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_branch_name`
+
+```python
+parse_branch_name(branch: str) → Dict[str, Any]
+```
+
+Parse branch name into components.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name to parse
+
+
+**Returns:**
+
+Dictionary with step, seed, and validity info
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L77"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_step_from_branch`
+
+```python
+extract_step_from_branch(branch: str) → int
+```
+
+Extract step number from branch name.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name
+
+
+**Returns:**
+
+Step number, or 0 if not found
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_seed_from_branch`
+
+```python
+extract_seed_from_branch(branch: str) → str
+```
+
+Extract seed configuration from branch name.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name
+
+
+**Returns:**
+
+Seed configuration string, or "unknown" if not found
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `sort_branches_by_step`
+
+```python
+sort_branches_by_step(branches: List[str]) → List[str]
+```
+
+Sort branches by their step number.
+
+
+**Args:**
+
+- <b>`branches`</b>: List of branch names
+
+
+**Returns:**
+
+Sorted list of branch names
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L115"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `group_branches_by_seed`
+
+```python
+group_branches_by_seed(branches: List[str]) → Dict[str, List[str]]
+```
+
+Group branches by their seed configuration.
+
+
+**Args:**
+
+- <b>`branches`</b>: List of branch names
+
+
+**Returns:**
+
+Dictionary mapping seed configs to branch lists
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L138"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_step_range_for_seed`
+
+```python
+get_step_range_for_seed(branches: List[str]) → Tuple[int, int]
+```
+
+Get the step range for a list of branches.
+
+
+**Args:**
+
+- <b>`branches`</b>: List of branch names (should be same seed)
+
+
+**Returns:**
+
+Tuple of (min_step, max_step)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/branches.py#L154"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_branch_metadata`
+
+```python
+create_branch_metadata(repo_id: str) → Dict[str, Any]
+```
+
+Create comprehensive branch metadata for a repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+Structured metadata dictionary
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

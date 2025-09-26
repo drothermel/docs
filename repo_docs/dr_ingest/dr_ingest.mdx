@@ -1,0 +1,96 @@
+---
+title: dr_ingest
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`df_ops`](./dr_ingest.df_ops#module-dr-ingestdf-ops)
+- [`json_utils`](./dr_ingest.json_utils#module-dr-ingestjson-utils): Utility helpers for tolerant JSON parsing.
+- [`normalization`](./dr_ingest.normalization#module-dr-ingestnormalization)
+- [`qa`](./dr_ingest.qa#module-dr-ingestqa): QA ingestion utilities.
+- [`qa.extraction`](./dr_ingest.qa.extraction#module-dr-ingestqaextraction): Utilities for working with QA evaluation tarballs.
+- [`qa.schemas`](./dr_ingest.qa.schemas#module-dr-ingestqaschemas): Typed schemas for QA evaluation instances.
+- [`qa.transform`](./dr_ingest.qa.transform#module-dr-ingestqatransform): Transformation helpers for QA evaluation records.
+- [`serialization`](./dr_ingest.serialization#module-dr-ingestserialization)
+- [`wandb`](./dr_ingest.wandb#module-dr-ingestwandb): WandB ingestion utilities.
+- [`wandb.classifier`](./dr_ingest.wandb.classifier#module-dr-ingestwandbclassifier)
+- [`wandb.config`](./dr_ingest.wandb.config#module-dr-ingestwandbconfig)
+- [`wandb.constants`](./dr_ingest.wandb.constants#module-dr-ingestwandbconstants): Shared constants for WandB run parsing.
+- [`wandb.hooks`](./dr_ingest.wandb.hooks#module-dr-ingestwandbhooks)
+- [`wandb.hydration`](./dr_ingest.wandb.hydration#module-dr-ingestwandbhydration)
+- [`wandb.metrics`](./dr_ingest.wandb.metrics#module-dr-ingestwandbmetrics)
+- [`wandb.normalization_pipeline`](./dr_ingest.wandb.normalization_pipeline#module-dr-ingestwandbnormalization-pipeline)
+- [`wandb.pattern_builders`](./dr_ingest.wandb.pattern_builders#module-dr-ingestwandbpattern-builders)
+- [`wandb.patterns`](./dr_ingest.wandb.patterns#module-dr-ingestwandbpatterns)
+- [`wandb.postprocess`](./dr_ingest.wandb.postprocess#module-dr-ingestwandbpostprocess)
+- [`wandb.processing_context`](./dr_ingest.wandb.processing_context#module-dr-ingestwandbprocessing-context)
+- [`wandb.summary`](./dr_ingest.wandb.summary#module-dr-ingestwandbsummary): Helpers for normalizing WandB summary blobs.
+- [`wandb.tokens`](./dr_ingest.wandb.tokens#module-dr-ingestwandbtokens)
+
+## Classes
+
+- [`schemas.ModelAnswerOutput`](./dr_ingest.qa.schemas#class-modelansweroutput)
+- [`schemas.QuestionOutputData`](./dr_ingest.qa.schemas#class-questionoutputdata)
+- [`schemas.TaskOutputData`](./dr_ingest.qa.schemas#class-taskoutputdata)
+- [`classifier.RunClassification`](./dr_ingest.wandb.classifier#dataclass-runclassification): RunClassification(run_id: 'str', run_type: 'str', metadata: 'dict[str, str | None]')
+- [`hydration.HydrationExecutor`](./dr_ingest.wandb.hydration#class-hydrationexecutor)
+- [`hydration.HydrationPlan`](./dr_ingest.wandb.hydration#class-hydrationplan)
+- [`hydration.HydrationStageConfig`](./dr_ingest.wandb.hydration#class-hydrationstageconfig)
+- [`metrics.Entry`](./dr_ingest.wandb.metrics#class-entry)
+- [`metrics.MetricCatalog`](./dr_ingest.wandb.metrics#class-metriccatalog)
+- [`metrics.TaskMetricUnmatched`](./dr_ingest.wandb.metrics#class-taskmetricunmatched)
+- [`normalization_pipeline.RunNormalizationExecutor`](./dr_ingest.wandb.normalization_pipeline#class-runnormalizationexecutor)
+- [`patterns.PatternSpec`](./dr_ingest.wandb.patterns#class-patternspec)
+- [`processing_context.ProcessingContext`](./dr_ingest.wandb.processing_context#class-processingcontext)
+
+## Functions
+
+- [`df_ops.apply_column_converters`](./dr_ingest.df_ops#function-apply-column-converters)
+- [`df_ops.apply_if_column`](./dr_ingest.df_ops#function-apply-if-column)
+- [`df_ops.apply_row_updates`](./dr_ingest.df_ops#function-apply-row-updates)
+- [`df_ops.ensure_column`](./dr_ingest.df_ops#function-ensure-column)
+- [`df_ops.fill_missing_values`](./dr_ingest.df_ops#function-fill-missing-values)
+- [`df_ops.force_set_cell`](./dr_ingest.df_ops#function-force-set-cell)
+- [`df_ops.force_setter`](./dr_ingest.df_ops#function-force-setter)
+- [`df_ops.map_column_with_fallback`](./dr_ingest.df_ops#function-map-column-with-fallback)
+- [`df_ops.masked_getter`](./dr_ingest.df_ops#function-masked-getter)
+- [`df_ops.masked_setter`](./dr_ingest.df_ops#function-masked-setter)
+- [`df_ops.maybe_update_cell`](./dr_ingest.df_ops#function-maybe-update-cell)
+- [`df_ops.maybe_update_setter`](./dr_ingest.df_ops#function-maybe-update-setter)
+- [`df_ops.rename_columns`](./dr_ingest.df_ops#function-rename-columns)
+- [`df_ops.require_row_index`](./dr_ingest.df_ops#function-require-row-index)
+- [`json_utils.safe_load_json`](./dr_ingest.json_utils#function-safe-load-json): Load JSON from strings or mappings, returning ``None`` on failure.
+- [`normalization.convert_string_to_number`](./dr_ingest.normalization#function-convert-string-to-number)
+- [`normalization.convert_timestamp`](./dr_ingest.normalization#function-convert-timestamp)
+- [`normalization.df_coerce_to_numeric`](./dr_ingest.normalization#function-df-coerce-to-numeric)
+- [`normalization.is_nully`](./dr_ingest.normalization#function-is-nully)
+- [`normalization.normalize_numeric`](./dr_ingest.normalization#function-normalize-numeric)
+- [`normalization.normalize_str`](./dr_ingest.normalization#function-normalize-str)
+- [`extraction.ensure_extracted`](./dr_ingest.qa.extraction#function-ensure-extracted): Extract ``tar_path`` into ``dest_root`` if not already present.
+- [`extraction.list_tarballs`](./dr_ingest.qa.extraction#function-list-tarballs): Return sorted tar.gz files for the given dataset/config tuple.
+- [`transform.build_file_metadata`](./dr_ingest.qa.transform#function-build-file-metadata): Deduplicate task/model metadata for a QA JSONL file.
+- [`transform.extract_question_payloads`](./dr_ingest.qa.transform#function-extract-question-payloads): Prepare per-question payloads by stripping metrics and renaming.
+- [`transform.model_output_keys`](./dr_ingest.qa.transform#function-model-output-keys): Return sorted keys present in the first model output payload.
+- [`transform.preview_agg_metrics`](./dr_ingest.qa.transform#function-preview-agg-metrics): Return aggregated metric rows for inspection.
+- [`serialization.compare_sizes`](./dr_ingest.serialization#function-compare-sizes)
+- [`serialization.dump_jsonl`](./dr_ingest.serialization#function-dump-jsonl)
+- [`serialization.ensure_convert_json_to_parquet`](./dr_ingest.serialization#function-ensure-convert-json-to-parquet)
+- [`serialization.file_size_mb`](./dr_ingest.serialization#function-file-size-mb)
+- [`serialization.json_to_parquet`](./dr_ingest.serialization#function-json-to-parquet)
+- [`serialization.write_parquet`](./dr_ingest.serialization#function-write-parquet)
+- [`hooks.normalize_matched_run_type`](./dr_ingest.wandb.hooks#function-normalize-matched-run-type)
+- [`metrics.canonicalize_metric_label`](./dr_ingest.wandb.metrics#function-canonicalize-metric-label)
+- [`metrics.parse_metric_label`](./dr_ingest.wandb.metrics#function-parse-metric-label)
+- [`pattern_builders.build_composite_pattern`](./dr_ingest.wandb.pattern_builders#function-build-composite-pattern)
+- [`postprocess.apply_processing`](./dr_ingest.wandb.postprocess#function-apply-processing)
+- [`summary.group_oe_metrics_by_task`](./dr_ingest.wandb.summary#function-group-oe-metrics-by-task)
+- [`summary.normalize_oe_summary`](./dr_ingest.wandb.summary#function-normalize-oe-summary)
+- [`summary.select_oe_eval_metrics`](./dr_ingest.wandb.summary#function-select-oe-eval-metrics)
+- [`tokens.ensure_full_finetune_defaults`](./dr_ingest.wandb.tokens#function-ensure-full-finetune-defaults)
+- [`tokens.fill_missing_token_totals`](./dr_ingest.wandb.tokens#function-fill-missing-token-totals)
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

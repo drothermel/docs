@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": ":: Dr. Docs ::",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#fcba03",
     "light": "#07C983",
     "dark": "#15803D"
   },
@@ -14,86 +14,32 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Repo Docs",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "repo_docs/dr_ingest/dr_ingest",
+              "repo_docs/datadec/datadec",
+              "repo_docs/ddpred/ddpred",
+              "repo_docs/dr_wandb/dr_wandb",
+              "repo_docs/dr_plotter/dr_plotter",
+              "repo_docs/dr_setup/dr_setup",
+              "repo_docs/dr_showntell/dr_showntell",
+              "repo_docs/dr_exp/dr_exp",
+              "repo_docs/dr_gen/dr_gen",
+              "repo_docs/dr_util/dr_util",
+              "repo_docs/hf_utils/hf_utils",
+              "repo_docs/connector_test/connector_test",
+              "repo_docs/data_viz/data_viz",
+              "repo_docs/parse_claude/parse_claude",
+              "repo_docs/parse_git/parse_git",
+              "repo_docs/parse_hepta/parse_hepta"
             ]
           }
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "global": {}
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
@@ -112,11 +58,5 @@
      "vscode"
    ]
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
+  "footer": {}
 }

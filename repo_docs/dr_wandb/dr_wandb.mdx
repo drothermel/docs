@@ -1,0 +1,52 @@
+---
+title: dr_wandb
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`cli`](./dr_wandb.cli#module-dr-wandbcli)
+- [`cli.download`](./dr_wandb.cli.download#module-dr-wandbclidownload)
+- [`constants`](./dr_wandb.constants#module-dr-wandbconstants)
+- [`downloader`](./dr_wandb.downloader#module-dr-wandbdownloader)
+- [`fetch`](./dr_wandb.fetch#module-dr-wandbfetch): Lightweight WandB fetch utilities that avoid database storage.
+- [`history_entry_record`](./dr_wandb.history_entry_record#module-dr-wandbhistory-entry-record)
+- [`run_record`](./dr_wandb.run_record#module-dr-wandbrun-record)
+- [`store`](./dr_wandb.store#module-dr-wandbstore)
+- [`utils`](./dr_wandb.utils#module-dr-wandbutils)
+
+## Classes
+
+- [`download.ProjDownloadSettings`](./dr_wandb.cli.download#class-projdownloadsettings)
+- [`constants.Base`](./dr_wandb.constants#class-base)
+- [`downloader.Downloader`](./dr_wandb.downloader#class-downloader)
+- [`downloader.DownloaderStats`](./dr_wandb.downloader#dataclass-downloaderstats): DownloaderStats(num_wandb_runs: 'int' = 0, num_stored_runs: 'int' = 0, num_new_runs: 'int' = 0, num_updated_runs: 'int' = 0)
+- [`history_entry_record.HistoryEntryRecord`](./dr_wandb.history_entry_record#class-historyentryrecord)
+- [`run_record.RunRecord`](./dr_wandb.run_record#class-runrecord)
+- [`store.ProjectStore`](./dr_wandb.store#class-projectstore)
+
+## Functions
+
+- [`download.execute_download`](./dr_wandb.cli.download#function-execute-download)
+- [`download.resolve_config`](./dr_wandb.cli.download#function-resolve-config)
+- [`download.setup_logging`](./dr_wandb.cli.download#function-setup-logging)
+- [`download.validate_settings`](./dr_wandb.cli.download#function-validate-settings)
+- [`fetch.fetch_project_runs`](./dr_wandb.fetch#function-fetch-project-runs): Download runs (and optional history) without requiring Postgres.
+- [`fetch.serialize_history_entry`](./dr_wandb.fetch#function-serialize-history-entry): Convert a raw history payload into a structured dict.
+- [`fetch.serialize_run`](./dr_wandb.fetch#function-serialize-run): Convert a WandB run into a JSON-friendly dict.
+- [`history_entry_record.build_history_query`](./dr_wandb.history_entry_record#function-build-history-query)
+- [`run_record.build_run_query`](./dr_wandb.run_record#function-build-run-query)
+- [`store.delete_add_history`](./dr_wandb.store#function-delete-add-history)
+- [`store.delete_history_for_runs`](./dr_wandb.store#function-delete-history-for-runs)
+- [`store.ensure_database_exists`](./dr_wandb.store#function-ensure-database-exists)
+- [`store.save_update_run`](./dr_wandb.store#function-save-update-run)
+- [`utils.convert_large_ints_in_data`](./dr_wandb.utils#function-convert-large-ints-in-data)
+- [`utils.default_progress_callback`](./dr_wandb.utils#function-default-progress-callback)
+- [`utils.extract_as_datetime`](./dr_wandb.utils#function-extract-as-datetime)
+- [`utils.safe_convert_for_parquet`](./dr_wandb.utils#function-safe-convert-for-parquet)
+- [`utils.select_updated_runs`](./dr_wandb.utils#function-select-updated-runs)
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

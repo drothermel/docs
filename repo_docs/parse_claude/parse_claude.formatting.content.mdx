@@ -1,0 +1,334 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `formatting.content`
+Content formatting utilities including mistune-based text rendering.
+
+
+## Table of Contents
+- [`WrappedTextRenderer`](./parse_claude.formatting.content#class-wrappedtextrenderer)
+	- [`__init__`](./parse_claude.formatting.content#constructor---init--)
+	- [`block_code`](./parse_claude.formatting.content#method-block-code)
+	- [`block_quote`](./parse_claude.formatting.content#method-block-quote)
+	- [`codespan`](./parse_claude.formatting.content#method-codespan)
+	- [`emphasis`](./parse_claude.formatting.content#method-emphasis)
+	- [`heading`](./parse_claude.formatting.content#method-heading)
+	- [`image`](./parse_claude.formatting.content#method-image)
+	- [`linebreak`](./parse_claude.formatting.content#method-linebreak)
+	- [`link`](./parse_claude.formatting.content#method-link)
+	- [`list`](./parse_claude.formatting.content#method-list)
+	- [`list_item`](./parse_claude.formatting.content#method-list-item)
+	- [`paragraph`](./parse_claude.formatting.content#method-paragraph)
+	- [`softbreak`](./parse_claude.formatting.content#method-softbreak)
+	- [`strong`](./parse_claude.formatting.content#method-strong)
+	- [`text`](./parse_claude.formatting.content#method-text)
+	- [`wrap_text`](./parse_claude.formatting.content#method-wrap-text)
+- [`format_content_with_mistune`](./parse_claude.formatting.content#function-format-content-with-mistune)
+- [`format_content_without_label`](./parse_claude.formatting.content#function-format-content-without-label)
+- [`format_content_without_label_fallback`](./parse_claude.formatting.content#function-format-content-without-label-fallback)
+- [`format_content_without_wrapping`](./parse_claude.formatting.content#function-format-content-without-wrapping)
+
+
+**Global Variables**
+---------------
+- **MIN_LINES_FOR_STRUCTURE**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L161"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_content_with_mistune`
+
+```python
+format_content_with_mistune(
+    content: str,
+    width: int = 80,
+    truncate_length: int | None = None
+) → list[str]
+```
+
+Format content using mistune with custom text renderer.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L202"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_content_without_label_fallback`
+
+```python
+format_content_without_label_fallback(
+    value: str,
+    max_width: int = 80,
+    truncate_length: int | None = None
+) → list[str]
+```
+
+Fallback text formatting that preserves structural newlines.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L285"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_content_without_label`
+
+```python
+format_content_without_label(
+    value: str,
+    max_width: int = 80,
+    truncate_length: int | None = None
+) → list[str]
+```
+
+Format content without a key label, using mistune for smart formatting.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L292"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_content_without_wrapping`
+
+```python
+format_content_without_wrapping(
+    value: str,
+    truncate_length: int | None = None
+) → list[str]
+```
+
+Format content without line wrapping, preserving original line structure.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `WrappedTextRenderer`
+Custom mistune renderer that produces wrapped text output.
+
+Preserves structure during rendering.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WrappedTextRenderer(width: int = 80) → None
+```
+
+Initialize renderer with specified width.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L122"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `block_code`
+
+```python
+block_code(code: str, info: str | None = None) → str
+```
+
+Render code block preserving formatting.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L118"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `block_quote`
+
+```python
+block_quote(text: str) → str
+```
+
+Render block quote with indentation.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L144"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `codespan`
+
+```python
+codespan(text: str) → str
+```
+
+Render inline code as plain text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L128"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `emphasis`
+
+```python
+emphasis(text: str) → str
+```
+
+Render emphasis as plain text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `heading`
+
+```python
+heading(text: str, level: int) → str
+```
+
+Render heading preserving structure.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L140"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `image`
+
+```python
+image(alt: str, url: str, title: str | None = None) → str
+```
+
+Render image as alt text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L148"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `linebreak`
+
+```python
+linebreak() → str
+```
+
+Render line break.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L136"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `link`
+
+```python
+link(text: str, url: str, title: str | None = None) → str
+```
+
+Render link as plain text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L114"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `list`
+
+```python
+list(text: str, ordered: bool, **attrs: Any) → str
+```
+
+Render list preserving structure.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L102"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `list_item`
+
+```python
+list_item(text: str) → str
+```
+
+Render list item with proper indentation.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L88"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `paragraph`
+
+```python
+paragraph(text: str) → str
+```
+
+Render paragraph with proper wrapping and indentation.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L152"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `softbreak`
+
+```python
+softbreak() → str
+```
+
+Render soft break as space.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L132"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `strong`
+
+```python
+strong(text: str) → str
+```
+
+Render strong as plain text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L156"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `text`
+
+```python
+text(text: str) → str
+```
+
+Render plain text.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/content.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `wrap_text`
+
+```python
+wrap_text(text: str) → list[str]
+```
+
+Wrap text to available width while preserving structure.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,38 @@
+---
+title: parse_git
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`analyzers`](./parse_git.analyzers#module-parse-gitanalyzers): File analysis components for git repository analysis.
+- [`analyzers.base`](./parse_git.analyzers.base#module-parse-gitanalyzersbase): Abstract base class for file analyzers.
+- [`analyzers.markdown`](./parse_git.analyzers.markdown#module-parse-gitanalyzersmarkdown): Markdown file analyzer for tracking document lifecycles.
+- [`exporters`](./parse_git.exporters#module-parse-gitexporters): Exporters for analysis results in various formats.
+- [`exporters.base`](./parse_git.exporters.base#module-parse-gitexportersbase): Abstract base class and protocol for exporters.
+- [`exporters.json`](./parse_git.exporters.json#module-parse-gitexportersjson): JSON exporter for file lifecycle data.
+- [`exporters.markdown`](./parse_git.exporters.markdown#module-parse-gitexportersmarkdown): Markdown summary exporter for file lifecycle data.
+- [`lifecycle`](./parse_git.lifecycle#module-parse-gitlifecycle): File lifecycle tracking components.
+- [`repository`](./parse_git.repository#module-parse-gitrepository): Git repository wrapper for analysis operations.
+- [`types`](./parse_git.types#module-parse-gittypes): Core type definitions for git repository analysis.
+
+## Classes
+
+- [`base.FileAnalyzer`](./parse_git.analyzers.base#class-fileanalyzer): Abstract base class for analyzing specific file types in git repositories.
+- [`markdown.MarkdownAnalyzer`](./parse_git.analyzers.markdown#class-markdownanalyzer): Analyzes the lifecycle and evolution of markdown files in a Git repository.
+- [`base.BaseExporter`](./parse_git.exporters.base#class-baseexporter): Abstract base class for concrete exporters.
+- [`base.Exporter`](./parse_git.exporters.base#class-exporter): Protocol for exporting lifecycle data to various formats.
+- [`json.JSONExporter`](./parse_git.exporters.json#class-jsonexporter): Exports file lifecycle data to JSON format.
+- [`markdown.MarkdownSummaryExporter`](./parse_git.exporters.markdown#class-markdownsummaryexporter): Exports file lifecycle data as a markdown summary.
+- [`lifecycle.LifecycleTracker`](./parse_git.lifecycle#class-lifecycletracker): Tracks file lifecycles from change events.
+- [`repository.GitRepository`](./parse_git.repository#class-gitrepository): Wrapper around GitPython with analysis-focused interface.
+- [`types.ChangeEvent`](./parse_git.types#dataclass-changeevent): Represents a single change to a file in git history.
+
+## Functions
+
+- [`lifecycle.get_file_id_from_path`](./parse_git.lifecycle#function-get-file-id-from-path): Generate a stable file ID from filepath.
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

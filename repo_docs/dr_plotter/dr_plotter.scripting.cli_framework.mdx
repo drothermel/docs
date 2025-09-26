@@ -1,0 +1,301 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.cli_framework`
+
+
+
+## Table of Contents
+- [`CLIConfig`](./dr_plotter.scripting.cli_framework#class-cliconfig)
+	- [`__init__`](./dr_plotter.scripting.cli_framework#constructor---init--)
+	- [`from_yaml`](./dr_plotter.scripting.cli_framework#classmethod-from-yaml)
+	- [`load_or_default`](./dr_plotter.scripting.cli_framework#classmethod-load-or-default)
+	- [`merge_with_cli_args`](./dr_plotter.scripting.cli_framework#method-merge-with-cli-args)
+- [`add_cli_only_options`](./dr_plotter.scripting.cli_framework#function-add-cli-only-options)
+- [`add_options_from_config`](./dr_plotter.scripting.cli_framework#function-add-options-from-config)
+- [`build_configs`](./dr_plotter.scripting.cli_framework#function-build-configs)
+- [`build_faceting_config`](./dr_plotter.scripting.cli_framework#function-build-faceting-config)
+- [`build_layout_config`](./dr_plotter.scripting.cli_framework#function-build-layout-config)
+- [`build_legend_config`](./dr_plotter.scripting.cli_framework#function-build-legend-config)
+- [`build_plot_config`](./dr_plotter.scripting.cli_framework#function-build-plot-config)
+- [`build_style_config`](./dr_plotter.scripting.cli_framework#function-build-style-config)
+- [`dimensional_plotting_cli`](./dr_plotter.scripting.cli_framework#function-dimensional-plotting-cli)
+- [`generate_help_text`](./dr_plotter.scripting.cli_framework#function-generate-help-text)
+- [`infer_click_type`](./dr_plotter.scripting.cli_framework#function-infer-click-type)
+- [`validate_layout_options`](./dr_plotter.scripting.cli_framework#function-validate-layout-options)
+- [`validate_unused_parameters`](./dr_plotter.scripting.cli_framework#function-validate-unused-parameters)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `infer_click_type`
+
+```python
+infer_click_type(field_type: 'type', field_default: 'Any' = None) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L47"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `generate_help_text`
+
+```python
+generate_help_text(field: 'Any') → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_options_from_config`
+
+```python
+add_options_from_config(
+    config_class: 'type',
+    skip_fields: 'set[str] | None' = None
+) → Callable[[F], F]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L95"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_cli_only_options`
+
+```python
+add_cli_only_options() → Callable[[F], F]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L136"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_layout_options`
+
+```python
+validate_layout_options(ctx: 'Context', **kwargs: 'Any') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L148"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_faceting_config`
+
+```python
+build_faceting_config(
+    kwargs: 'dict[str, Any]'
+) → tuple[FacetingConfig, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L179"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_layout_config`
+
+```python
+build_layout_config(
+    kwargs: 'dict[str, Any]'
+) → tuple[LayoutConfig, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L196"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_legend_config`
+
+```python
+build_legend_config(
+    kwargs: 'dict[str, Any]'
+) → tuple[LegendConfig, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L205"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_style_config`
+
+```python
+build_style_config(
+    kwargs: 'dict[str, Any]'
+) → tuple[StyleConfig, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L214"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_configs`
+
+```python
+build_configs(kwargs: 'dict[str, Any]') → tuple[PlotConfig, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L230"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_unused_parameters`
+
+```python
+validate_unused_parameters(
+    unused_kwargs: 'dict[str, Any]',
+    allowed_params: 'set[str] | None' = None
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L241"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_plot_config`
+
+```python
+build_plot_config(
+    config: 'CLIConfig',
+    theme: 'str | None' = None,
+    **cli_overrides: 'Any'
+) → PlotConfig
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L259"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dimensional_plotting_cli`
+
+```python
+dimensional_plotting_cli(
+    skip_fields: 'set[str] | None' = None
+) → Callable[[F], F]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `CLIConfig`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L110"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+CLIConfig(config_data: 'dict[str, Any] | None' = None) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L113"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_yaml`
+
+```python
+from_yaml(config_path: 'str | Path') → CLIConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L123"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `load_or_default`
+
+```python
+load_or_default(kwargs: 'dict[str, Any]') → CLIConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/cli_framework.py#L128"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_with_cli_args`
+
+```python
+merge_with_cli_args(cli_args: 'dict[str, Any]') → dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,157 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `data_utils`
+
+
+
+## Table of Contents
+- [`TransformedSubset`](./dr_util.data_utils#class-transformedsubset)
+	- [`__init__`](./dr_util.data_utils#constructor---init--)
+- [`apply_tensor_transform`](./dr_util.data_utils#function-apply-tensor-transform)
+- [`get_cifar_dataset`](./dr_util.data_utils#function-get-cifar-dataset)
+- [`get_dataloader`](./dr_util.data_utils#function-get-dataloader)
+- [`get_tensor_transform`](./dr_util.data_utils#function-get-tensor-transform)
+- [`split_data`](./dr_util.data_utils#function-split-data)
+
+
+**Global Variables**
+---------------
+- **DEFAULT_DOWNLOAD**
+- **DEFAULT_TRANSFORM**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_cifar_dataset`
+
+```python
+get_cifar_dataset(
+    dataset_name: str,
+    source_split: str,
+    root: str,
+    transform: Any | None = None,
+    download: bool = True
+) → Dataset[Any]
+```
+
+Loads a specified dataset (CIFAR-10 or CIFAR-100).
+
+
+**Args:**
+
+- <b>`dataset_name`</b> (str): Name of the dataset ("cifar10" or "cifar100").
+- <b>`source_split`</b> (str): "train" or "test"
+- <b>`root`</b> (str): Root directory where the dataset is stored or will be downloaded.
+- <b>`transform`</b> (callable, optional): A function/transform to apply to the data.
+- <b>`download`</b> (bool): Whether to download the dataset if not found locally.
+
+
+**Returns:**
+
+- <b>`torch.utils.data.Dataset`</b>: The loaded dataset.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_tensor_transform`
+
+```python
+get_tensor_transform() → Compose
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L86"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_tensor_transform`
+
+```python
+apply_tensor_transform(data: Any) → Tensor
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_dataloader`
+
+```python
+get_dataloader(
+    dataset: Dataset[Any],
+    transform: Any | None,
+    batch_size: int,
+    shuffle: bool,
+    generator: Generator,
+    num_workers: int
+) → DataLoader[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L110"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_data`
+
+```python
+split_data(
+    dataset: Dataset[Any],
+    ratio: float,
+    data_split_seed: int | None = None
+) → tuple[Dataset[Any], Dataset[Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `TransformedSubset`
+A wrapper for a torch.utils.data.Subset that applies a transform.
+
+This is useful because Subsets themselves don't have a transform attribute
+that can be set after creation.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/data_utils.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+TransformedSubset(subset: Dataset[Any], transform: Any | None = None) → None
+```
+
+Initialize with a subset and optional transform.
+
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

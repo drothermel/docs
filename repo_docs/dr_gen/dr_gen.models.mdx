@@ -1,0 +1,144 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `models`
+
+
+
+## Table of Contents
+- [`checkpoint_model`](./dr_gen.models#function-checkpoint-model)
+- [`create_lrsched`](./dr_gen.models#function-create-lrsched)
+- [`create_model`](./dr_gen.models#function-create-model)
+- [`create_optim`](./dr_gen.models#function-create-optim)
+- [`create_optim_lrsched`](./dr_gen.models#function-create-optim-lrsched)
+- [`get_criterion`](./dr_gen.models#function-get-criterion)
+- [`get_model_optim_lrsched`](./dr_gen.models#function-get-model-optim-lrsched)
+
+
+**Global Variables**
+---------------
+- **OPTIM_DEFAULTS**
+- **LRSCHED_DEFAULTS**
+- **CRITERION_DEFAULTS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_optim`
+
+```python
+create_optim(
+    name: str,
+    model_params: Iterator[Parameter],
+    optim_params: dict[str, Any]
+) → Optimizer
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L101"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_lrsched`
+
+```python
+create_lrsched(cfg: Any, optimizer: Optimizer) → Any
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L126"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_model`
+
+```python
+create_model(cfg: Any, num_classes: int) → Module
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L160"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_optim_lrsched`
+
+```python
+create_optim_lrsched(cfg: DictConfig, model: Module) → tuple[Optimizer, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L179"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_model_optim_lrsched`
+
+```python
+get_model_optim_lrsched(
+    cfg: DictConfig,
+    num_classes: int,
+    md: Any = None
+) → tuple[Module, Optimizer | None, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L205"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_criterion`
+
+```python
+get_criterion(cfg)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/models.py#L215"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `checkpoint_model`
+
+```python
+checkpoint_model(
+    cfg,
+    model,
+    checkpoint_name,
+    optim=None,
+    lrsched=None,
+    md=None
+) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

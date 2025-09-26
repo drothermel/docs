@@ -1,0 +1,94 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `history_entry_record`
+
+
+
+## Table of Contents
+- [`HistoryEntryRecord`](./dr_wandb.history_entry_record#class-historyentryrecord)
+	- [`from_wandb_history`](./dr_wandb.history_entry_record#classmethod-from-wandb-history)
+	- [`standard_fields`](./dr_wandb.history_entry_record#classmethod-standard-fields)
+	- [`to_dict`](./dr_wandb.history_entry_record#method-to-dict)
+- [`build_history_query`](./dr_wandb.history_entry_record#function-build-history-query)
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py#L56"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_history_query`
+
+```python
+build_history_query(
+    run_ids: 'list[RunId] | None' = None
+) → Select[HistoryEntryRecord]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py#L16"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `HistoryEntryRecord`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_wandb_history`
+
+```python
+from_wandb_history(
+    history_entry: 'HistoryEntry',
+    run_id: 'str'
+) → HistoryEntryRecord
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `standard_fields`
+
+```python
+standard_fields() → list[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/history_entry_record.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `to_dict`
+
+```python
+to_dict(include_metadata: 'bool' = False) → dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

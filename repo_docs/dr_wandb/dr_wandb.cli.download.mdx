@@ -1,0 +1,126 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cli.download`
+
+
+
+## Table of Contents
+- [`ProjDownloadSettings`](./dr_wandb.cli.download#class-projdownloadsettings)
+- [`execute_download`](./dr_wandb.cli.download#function-execute-download)
+- [`resolve_config`](./dr_wandb.cli.download#function-resolve-config)
+- [`setup_logging`](./dr_wandb.cli.download#function-setup-logging)
+- [`validate_settings`](./dr_wandb.cli.download#function-validate-settings)
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `setup_logging`
+
+```python
+setup_logging(level: str = 'INFO') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_settings`
+
+```python
+validate_settings(entity: str | None, project: str | None) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `resolve_config`
+
+```python
+resolve_config(
+    entity: str | None,
+    project: str | None,
+    db_url: str | None,
+    output_dir: str | None
+) → ProjDownloadSettings
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `execute_download`
+
+```python
+execute_download(
+    cfg: ProjDownloadSettings,
+    runs_only: bool,
+    force_refresh: bool
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/cli/download.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ProjDownloadSettings`
+
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

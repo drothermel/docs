@@ -1,0 +1,130 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `sync.sync_handler`
+Sync handler that connects sync queue to Supabase.
+
+
+## Table of Contents
+- [`SyncHandler`](./dr_exp.sync.sync_handler#class-synchandler)
+	- [`__init__`](./dr_exp.sync.sync_handler#constructor---init--)
+	- [`is_available`](./dr_exp.sync.sync_handler#method-is-available)
+	- [`sync_file`](./dr_exp.sync.sync_handler#method-sync-file)
+	- [`sync_job_data`](./dr_exp.sync.sync_handler#method-sync-job-data)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SyncHandler`
+Handles syncing files from queue to Supabase.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SyncHandler(
+    experiment_name: str,
+    base_path: str,
+    supabase_url: str | None = None,
+    supabase_key: str | None = None
+) → None
+```
+
+Initialize sync handler.
+
+
+**Args:**
+
+- <b>`experiment_name`</b>: Name of the experiment
+- <b>`base_path`</b>: Base path for the experiment
+- <b>`supabase_url`</b>: Supabase URL (optional, uses env var)
+- <b>`supabase_key`</b>: Supabase key (optional, uses env var)
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py#L115"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `is_available`
+
+```python
+is_available() → bool
+```
+
+Check if sync is available.
+
+
+**Returns:**
+
+    True if Supabase connection is working
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `sync_file`
+
+```python
+sync_file(item: SyncItem) → dict[str, Any]
+```
+
+Sync a single file to Supabase.
+
+
+**Args:**
+
+- <b>`item`</b>: Sync item to process
+
+
+**Returns:**
+
+Dict with sync result including bytes_uploaded
+
+
+**Raises:**
+
+- <b>`Exception`</b>: If sync fails (for retry logic)
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/sync/sync_handler.py#L97"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `sync_job_data`
+
+```python
+sync_job_data(job_data: dict[str, Any]) → bool
+```
+
+Sync job metadata to Supabase.
+
+
+**Args:**
+
+- <b>`job_data`</b>: Job data dictionary
+
+
+**Returns:**
+
+True if synced successfully
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

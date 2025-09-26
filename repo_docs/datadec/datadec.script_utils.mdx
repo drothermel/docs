@@ -1,0 +1,217 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `script_utils`
+Shared utilities for datadec plotting scripts.
+
+Provides common functionality for CLI argument processing, data group resolution,
+formatting, and theme creation across different plotting scripts.
+
+
+## Table of Contents
+- [`convert_domain_args_to_faceting`](./datadec.script_utils#function-convert-domain-args-to-faceting)
+- [`create_bump_theme_with_colors`](./datadec.script_utils#function-create-bump-theme-with-colors)
+- [`create_extended_color_palette`](./datadec.script_utils#function-create-extended-color-palette)
+- [`format_perplexity`](./datadec.script_utils#function-format-perplexity)
+- [`format_step_label`](./datadec.script_utils#function-format-step-label)
+- [`format_token_count`](./datadec.script_utils#function-format-token-count)
+- [`numerical_sort_key`](./datadec.script_utils#function-numerical-sort-key)
+- [`resolve_data_groups`](./datadec.script_utils#function-resolve-data-groups)
+
+
+**Global Variables**
+---------------
+- **BASE_AND_QC**
+- **BASE_RECIPES**
+- **BILLION**
+- **CUSTOM_RECIPE_FAMILIES**
+- **MILLION**
+- **OLMES_PERFORMANCE_RECIPE_CHUNKS**
+- **PPL_PERFORMANCE_RECIPE_CHUNKS**
+- **RECIPES_WITHOUT_ABLATIONS**
+- **THOUSAND**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_domain_args_to_faceting`
+
+```python
+convert_domain_args_to_faceting(kwargs: 'dict[str, Any]') → dict[str, Any]
+```
+
+Convert domain-specific CLI args to faceting system format.
+
+Maps intuitive domain args (--params, --data, --exclude-params, --exclude-data)
+to the standard dr_plotter faceting system's order/exclude parameters.
+
+
+**Args:**
+
+- <b>`kwargs`</b>: CLI arguments dictionary
+
+
+**Returns:**
+
+Dictionary with faceting parameters (order, exclude) for use in FIXED_PARAMS
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `resolve_data_groups`
+
+```python
+resolve_data_groups(data_args: 'list[str]') → list[str]
+```
+
+Resolve named data groups to actual recipe lists.
+
+Expands named groups like "base", "base_qc" to their constituent recipes
+while preserving individual recipe names and the special "all" value.
+
+
+**Args:**
+
+- <b>`data_args`</b>: List of data group names or individual recipes
+
+
+**Returns:**
+
+List of resolved recipe names, with duplicates removed
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L120"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `numerical_sort_key`
+
+```python
+numerical_sort_key(param_size: 'str') → float
+```
+
+Convert parameter size string to numerical value for proper sorting.
+
+Handles sizes like "150M", "1.3B" by converting to float values where
+B (billion) = 1000 * M (million) for consistent ordering.
+
+
+**Args:**
+
+- <b>`param_size`</b>: Parameter size string (e.g., "150M", "1.3B")
+
+
+**Returns:**
+
+Numerical value for sorting
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L141"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_extended_color_palette`
+
+```python
+create_extended_color_palette() → list[str]
+```
+
+Create extended color palette for plots with many categories.
+
+Provides 40 distinct colors for cases where the default matplotlib
+color cycle isn't sufficient (e.g., bump plots with many data recipes).
+
+
+**Returns:**
+
+    List of hex color codes
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L195"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_bump_theme_with_colors`
+
+```python
+create_bump_theme_with_colors(
+    num_categories: 'int',
+    theme_name: 'str' = 'bump_custom'
+) → Theme
+```
+
+Create custom bump plot theme with extended color palette.
+
+Uses the extended color palette to ensure sufficient colors for
+plots with many categories (e.g., many data recipes or model sizes).
+
+
+**Args:**
+
+- <b>`num_categories`</b>: Number of categories that need distinct colors
+- <b>`theme_name`</b>: Name for the custom theme
+
+
+**Returns:**
+
+Custom theme with extended color cycle
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L226"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_perplexity`
+
+```python
+format_perplexity(ppl_value: 'float') → str
+```
+
+Format perplexity values for display.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L231"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_step_label`
+
+```python
+format_step_label(step: 'float') → str
+```
+
+Format training step values for axis labels.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/script_utils.py#L239"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_token_count`
+
+```python
+format_token_count(token_count: 'float') → str
+```
+
+Format token count values for axis labels.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

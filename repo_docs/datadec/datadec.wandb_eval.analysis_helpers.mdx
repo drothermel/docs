@@ -1,0 +1,202 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `wandb_eval.analysis_helpers`
+
+
+
+## Table of Contents
+- [`analyze_training_progression`](./datadec.wandb_eval.analysis_helpers#function-analyze-training-progression)
+- [`configure_pandas_display`](./datadec.wandb_eval.analysis_helpers#function-configure-pandas-display)
+- [`get_epoch_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-epoch-dynamics)
+- [`get_loss_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-loss-dynamics)
+- [`get_lr_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-lr-dynamics)
+- [`get_run_training_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-run-training-dynamics)
+- [`get_step_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-step-dynamics)
+- [`get_token_dynamics`](./datadec.wandb_eval.analysis_helpers#function-get-token-dynamics)
+- [`print_dataframe_coverage`](./datadec.wandb_eval.analysis_helpers#function-print-dataframe-coverage)
+- [`print_dynamics_summary_table`](./datadec.wandb_eval.analysis_helpers#function-print-dynamics-summary-table)
+- [`print_training_history_sample`](./datadec.wandb_eval.analysis_helpers#function-print-training-history-sample)
+
+
+**Global Variables**
+---------------
+- **DEFAULT_PANDAS_OPTIONS**
+- **DEFAULT_COLS**
+- **DEFAULT_COLUMN_WIDTHS**
+- **DEFAULT_COLUMN_HEADERS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `configure_pandas_display`
+
+```python
+configure_pandas_display(width: int = 300) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L59"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_dynamics_summary_table`
+
+```python
+print_dynamics_summary_table(
+    dynamics_list: List[Dict[str, Any]],
+    columns: List[str] = [],
+    column_widths: Dict[str, int] = {}
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_dataframe_coverage`
+
+```python
+print_dataframe_coverage(df: DataFrame, title: str = 'Column Coverage') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L112"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_step_dynamics`
+
+```python
+get_step_dynamics(run_history: DataFrame) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L122"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_token_dynamics`
+
+```python
+get_token_dynamics(run_history: DataFrame) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L132"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_loss_dynamics`
+
+```python
+get_loss_dynamics(run_history: DataFrame) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L147"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_lr_dynamics`
+
+```python
+get_lr_dynamics(run_history: DataFrame) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L158"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_epoch_dynamics`
+
+```python
+get_epoch_dynamics(run_history: DataFrame) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L167"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_run_training_dynamics`
+
+```python
+get_run_training_dynamics(history_df: DataFrame, run_id: str) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L189"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_training_progression`
+
+```python
+analyze_training_progression(
+    history_df: DataFrame,
+    run_ids: List[str]
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/analysis_helpers.py#L200"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_training_history_sample`
+
+```python
+print_training_history_sample(
+    run_id: str,
+    history_df: DataFrame,
+    sample_size: int = 3,
+    columns: List[str] = None
+) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

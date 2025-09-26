@@ -1,0 +1,92 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/basic.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `features.basic`
+
+
+
+## Table of Contents
+- [`extract_basic_features`](./ddpred.features.basic#function-extract-basic-features)
+- [`extract_first_last_values_and_diff`](./ddpred.features.basic#function-extract-first-last-values-and-diff)
+- [`extract_num_datapoints`](./ddpred.features.basic#function-extract-num-datapoints)
+- [`extract_temporal_statistics`](./ddpred.features.basic#function-extract-temporal-statistics)
+
+
+**Global Variables**
+---------------
+- **BASIC_FEATURES**
+- **FEATURE_GROUPS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/basic.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_num_datapoints`
+
+```python
+extract_num_datapoints(window_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/basic.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_first_last_values_and_diff`
+
+```python
+extract_first_last_values_and_diff(
+    window_df: DataFrame,
+    feature_col: str,
+    x_axis_col: str = 'step'
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/basic.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_temporal_statistics`
+
+```python
+extract_temporal_statistics(window_df: DataFrame, feature_col: str) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/basic.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_basic_features`
+
+```python
+extract_basic_features(
+    window_df: DataFrame,
+    feature_col: str,
+    features: List[str],
+    x_axis_col: str = 'step'
+) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

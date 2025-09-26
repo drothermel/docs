@@ -1,0 +1,84 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/ranking.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `metrics.ranking`
+
+
+
+## Table of Contents
+- [`calc_decision_accuracy`](./ddpred.metrics.ranking#function-calc-decision-accuracy)
+- [`calc_kendall_tau`](./ddpred.metrics.ranking#function-calc-kendall-tau)
+- [`calc_ndcg_at_k`](./ddpred.metrics.ranking#function-calc-ndcg-at-k)
+- [`calc_ndcg_metrics`](./ddpred.metrics.ranking#function-calc-ndcg-metrics)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/ranking.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_decision_accuracy`
+
+```python
+calc_decision_accuracy(preds: ndarray, true_vals: ndarray) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/ranking.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_kendall_tau`
+
+```python
+calc_kendall_tau(preds: ndarray, true_vals: ndarray) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/ranking.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_ndcg_at_k`
+
+```python
+calc_ndcg_at_k(preds: ndarray, true_vals: ndarray, k: int) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/metrics/ranking.py#L68"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_ndcg_metrics`
+
+```python
+calc_ndcg_metrics(
+    preds: ndarray,
+    true_vals: ndarray,
+    k_values: List[int],
+    include_all: bool = True
+) → Dict[str, float]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

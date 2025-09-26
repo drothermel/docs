@@ -1,0 +1,94 @@
+---
+title: dr_setup
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_setup/scripts/merge_pyproject.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripts.merge_pyproject`
+Merge pyproject.toml files, adding missing entries from default to existing.
+
+Usage:
+    python merge_pyproject.py existing.toml default.toml -o updated.toml
+    python merge_pyproject.py existing.toml default.toml --inplace
+
+
+## Table of Contents
+- [`deep_merge_tomlkit`](./dr_setup.scripts.merge_pyproject#function-deep-merge-tomlkit)
+- [`get_default_pyproject_path`](./dr_setup.scripts.merge_pyproject#function-get-default-pyproject-path)
+- [`main`](./dr_setup.scripts.merge_pyproject#function-main)
+- [`merge_tomlkit_arrays`](./dr_setup.scripts.merge_pyproject#function-merge-tomlkit-arrays)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_setup/scripts/merge_pyproject.py#L17"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `deep_merge_tomlkit`
+
+```python
+deep_merge_tomlkit(existing: Any, default: Any) → Any
+```
+
+Deep merge two tomlkit documents, keeping existing values and adding missing.
+
+Rules:
+- If key exists in existing, keep existing value (preserves comments)
+- If key only in default, add it with its formatting
+- If both have tables for same key, merge recursively
+- Lists are merged by adding unique items from default
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_setup/scripts/merge_pyproject.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `merge_tomlkit_arrays`
+
+```python
+merge_tomlkit_arrays(existing_array: Any, default_array: Any) → None
+```
+
+Merge two tomlkit arrays, adding unique items from default to existing.
+
+Special handling for:
+- Simple values: add if not present
+- Inline tables with 'include-group': add if not duplicate
+- String entries with version specs: keep existing version
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_setup/scripts/merge_pyproject.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_default_pyproject_path`
+
+```python
+get_default_pyproject_path() → Path
+```
+
+Get the default pyproject.toml path relative to this script.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_setup/scripts/merge_pyproject.py#L116"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `main`
+
+```python
+main() → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

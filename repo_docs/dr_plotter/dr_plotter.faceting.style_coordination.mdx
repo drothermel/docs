@@ -1,0 +1,97 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `faceting.style_coordination`
+
+
+
+## Table of Contents
+- [`FacetStyleCoordinator`](./dr_plotter.faceting.style_coordination#class-facetstylecoordinator)
+	- [`__init__`](./dr_plotter.faceting.style_coordination#constructor---init--)
+	- [`get_consistent_style`](./dr_plotter.faceting.style_coordination#method-get-consistent-style)
+	- [`get_subplot_styles`](./dr_plotter.faceting.style_coordination#method-get-subplot-styles)
+	- [`register_dimension_values`](./dr_plotter.faceting.style_coordination#method-register-dimension-values)
+
+
+**Global Variables**
+---------------
+- **DEFAULT_COLOR_CYCLE**
+- **DEFAULT_MARKER_CYCLE**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `FacetStyleCoordinator`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+FacetStyleCoordinator(theme: 'dict[str, Any] | None' = None) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_consistent_style`
+
+```python
+get_consistent_style(dimension: 'str', value: 'Any') → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_subplot_styles`
+
+```python
+get_subplot_styles(
+    row: 'int',
+    col: 'int',
+    dimension: 'str | None',
+    subplot_data: 'DataFrame',
+    **plot_kwargs: 'Any'
+) → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/faceting/style_coordination.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `register_dimension_values`
+
+```python
+register_dimension_values(dimension: 'str', values: 'list[Any]') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,320 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.unified_verification_engine`
+
+
+
+## Table of Contents
+- [`BaseVerificationRule`](./dr_plotter.scripting.unified_verification_engine#class-baseverificationrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`ChannelUniformityRule`](./dr_plotter.scripting.unified_verification_engine#class-channeluniformityrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`ChannelVariationRule`](./dr_plotter.scripting.unified_verification_engine#class-channelvariationrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`ConsistencyCheckRule`](./dr_plotter.scripting.unified_verification_engine#class-consistencycheckrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`FigureLegendStrategyRule`](./dr_plotter.scripting.unified_verification_engine#class-figurelegendstrategyrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`LegendPlotConsistencyRule`](./dr_plotter.scripting.unified_verification_engine#class-legendplotconsistencyrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`VerificationEngine`](./dr_plotter.scripting.unified_verification_engine#class-verificationengine)
+	- [`__init__`](./dr_plotter.scripting.unified_verification_engine#constructor---init--)
+	- [`execute_verification`](./dr_plotter.scripting.unified_verification_engine#method-execute-verification)
+	- [`register_rule`](./dr_plotter.scripting.unified_verification_engine#method-register-rule)
+- [`VerificationRule`](./dr_plotter.scripting.unified_verification_engine#class-verificationrule)
+	- [`execute`](./dr_plotter.scripting.unified_verification_engine#method-execute)
+- [`execute_verification`](./dr_plotter.scripting.unified_verification_engine#function-execute-verification)
+- [`register_verification_rule`](./dr_plotter.scripting.unified_verification_engine#function-register-verification-rule)
+- [`verify_plot_properties_for_subplot`](./dr_plotter.scripting.unified_verification_engine#function-verify-plot-properties-for-subplot)
+
+
+**Global Variables**
+---------------
+- **MIN_RGB_TUPLE_LENGTH**
+- **RANGE_OVERLAP_THRESHOLD**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L772"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `execute_verification`
+
+```python
+execute_verification(
+    rule_name: 'str',
+    params: 'VerificationParams'
+) → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L778"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `register_verification_rule`
+
+```python
+register_verification_rule(name: 'str', rule: 'VerificationRule') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L782"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_plot_properties_for_subplot`
+
+```python
+verify_plot_properties_for_subplot(
+    ax: 'Any',
+    expected_channels: 'list[str]',
+    min_unique_threshold: 'int' = 2
+) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `VerificationRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L30"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `VerificationEngine`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L31"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+VerificationEngine() → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute_verification`
+
+```python
+execute_verification(
+    rule_name: 'str',
+    params: 'VerificationParams'
+) → VerificationResult
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `register_rule`
+
+```python
+register_rule(name: 'str', rule: 'VerificationRule') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `BaseVerificationRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L53"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L75"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ChannelVariationRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L76"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L144"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ChannelUniformityRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L145"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L202"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ConsistencyCheckRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L203"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L431"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `LegendPlotConsistencyRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L432"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L589"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `FigureLegendStrategyRule`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/unified_verification_engine.py#L590"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `execute`
+
+```python
+execute(params: 'VerificationParams') → VerificationResult
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

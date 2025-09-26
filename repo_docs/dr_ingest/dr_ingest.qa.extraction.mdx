@@ -1,0 +1,54 @@
+---
+title: dr_ingest
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/extraction.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `qa.extraction`
+Utilities for working with QA evaluation tarballs.
+
+
+## Table of Contents
+- [`ensure_extracted`](./dr_ingest.qa.extraction#function-ensure-extracted)
+- [`list_tarballs`](./dr_ingest.qa.extraction#function-list-tarballs)
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/extraction.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `list_tarballs`
+
+```python
+list_tarballs(
+    root_dir: 'Path',
+    data: 'str',
+    params: 'str',
+    seed: 'int'
+) → list[Path]
+```
+
+Return sorted tar.gz files for the given dataset/config tuple.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/extraction.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `ensure_extracted`
+
+```python
+ensure_extracted(tar_path: 'Path', dest_root: 'Path') → Path
+```
+
+Extract ``tar_path`` into ``dest_root`` if not already present.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,390 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.metrics`
+
+
+
+## Table of Contents
+- [`MetricCurve`](./dr_gen.analyze.metrics#class-metriccurve)
+	- [`__init__`](./dr_gen.analyze.metrics#constructor---init--)
+	- [`add_curve`](./dr_gen.analyze.metrics#method-add-curve)
+	- [`add_x_v`](./dr_gen.analyze.metrics#method-add-x-v)
+	- [`get_by_xval`](./dr_gen.analyze.metrics#method-get-by-xval)
+	- [`sort_curve_by_x`](./dr_gen.analyze.metrics#method-sort-curve-by-x)
+- [`MetricCurves`](./dr_gen.analyze.metrics#class-metriccurves)
+	- [`__init__`](./dr_gen.analyze.metrics#constructor---init--)
+	- [`add_x_v`](./dr_gen.analyze.metrics#method-add-x-v)
+	- [`get_all_vals`](./dr_gen.analyze.metrics#method-get-all-vals)
+	- [`get_all_xs`](./dr_gen.analyze.metrics#method-get-all-xs)
+	- [`get_by_xval`](./dr_gen.analyze.metrics#method-get-by-xval)
+	- [`get_vals`](./dr_gen.analyze.metrics#method-get-vals)
+	- [`get_xs`](./dr_gen.analyze.metrics#method-get-xs)
+- [`SplitMetrics`](./dr_gen.analyze.metrics#class-splitmetrics)
+	- [`__init__`](./dr_gen.analyze.metrics#constructor---init--)
+	- [`add_x_v`](./dr_gen.analyze.metrics#method-add-x-v)
+	- [`get_all_vals`](./dr_gen.analyze.metrics#method-get-all-vals)
+	- [`get_all_vals_flat`](./dr_gen.analyze.metrics#method-get-all-vals-flat)
+	- [`get_all_xs`](./dr_gen.analyze.metrics#method-get-all-xs)
+	- [`get_all_xs_flat`](./dr_gen.analyze.metrics#method-get-all-xs-flat)
+	- [`get_by_xval`](./dr_gen.analyze.metrics#method-get-by-xval)
+	- [`get_vals`](./dr_gen.analyze.metrics#method-get-vals)
+	- [`get_xs`](./dr_gen.analyze.metrics#method-get-xs)
+
+
+**Global Variables**
+---------------
+- **TYPE_CHECKING**
+- **DEFAULT_XNAME**
+- **DEFAULT_METRIC_NAME**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SplitMetrics`
+Manages metric curves for a specific split (train/val/eval).
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L31"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SplitMetrics(config: 'Hpm | DictConfig | dict[str, Any]', split: str) → None
+```
+
+Initialize SplitMetrics for a given config and split.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_x_v`
+
+```python
+add_x_v(
+    x: float | str,
+    val: float,
+    metric_name: str,
+    x_name: str = 'epoch',
+    x_val_hashable: bool = True
+) → None
+```
+
+Add an x-value pair to the specified metric curve.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L91"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_vals`
+
+```python
+get_all_vals()
+```
+
+Get all metric values organized by metric name and x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_vals_flat`
+
+```python
+get_all_vals_flat()
+```
+
+Get all metric values as a flattened dictionary with tuple keys.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_xs`
+
+```python
+get_all_xs()
+```
+
+Get all x-values organized by metric name and x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L85"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_xs_flat`
+
+```python
+get_all_xs_flat()
+```
+
+Get all x-values as a flattened dictionary with tuple keys.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L104"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_by_xval`
+
+```python
+get_by_xval(xval, metric_name, x_name='epoch')
+```
+
+Get metric value at a specific x-value for a given metric.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L72"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_vals`
+
+```python
+get_vals(metric_name: str, x_name: str = 'epoch') → list[float]
+```
+
+Get metric values for a specific metric and x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L64"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_xs`
+
+```python
+get_xs(
+    metric_name: str = 'loss',
+    x_name: str = 'epoch'
+) → list[int | float | str]
+```
+
+Get x-values for a specific metric and x-axis name.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L111"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MetricCurves`
+Manages multiple curves for a specific metric.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L114"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MetricCurves(
+    config: 'Hpm | DictConfig | dict[str, Any]',
+    split: str,
+    metric_name: str
+) → None
+```
+
+Initialize MetricCurves for a specific metric.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_x_v`
+
+```python
+add_x_v(
+    x: float | str,
+    val: float,
+    x_name: str = 'epoch',
+    x_val_hashable: bool = True
+) → None
+```
+
+Add an x-value and metric value pair to the specified curve.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L162"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_vals`
+
+```python
+get_all_vals() → dict[str, list[float]]
+```
+
+Get all metric values organized by x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L155"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_all_xs`
+
+```python
+get_all_xs() → dict[str, list[int | float | str]]
+```
+
+Get all x-values organized by x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L169"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_by_xval`
+
+```python
+get_by_xval(xval: float | str, x_name: str = 'epoch') → float
+```
+
+Get metric value at a specific x-value for a given x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L150"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_vals`
+
+```python
+get_vals(x_name: str = 'epoch') → list[float]
+```
+
+Get metric values for a specific x-axis name.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L145"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_xs`
+
+```python
+get_xs(x_name: str = 'epoch') → list[int | float | str]
+```
+
+Get x-values for a specific x-axis name.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L175"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MetricCurve`
+Represents a single metric curve with x-values and metric values.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L178"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MetricCurve(
+    config: 'Hpm | DictConfig | dict[str, Any]',
+    split: str,
+    metric_name: str,
+    x_name: str = 'epoch',
+    x_val_hashable: bool = True
+) → None
+```
+
+Initialize MetricCurve for a single metric curve.
+
+
+
+---
+
+#### <kbd>property</kbd> vals
+
+Get metric values for this curve.
+
+
+---
+
+#### <kbd>property</kbd> xs
+
+Get x-values for this curve.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L216"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_curve`
+
+```python
+add_curve(xs: list[int | float | str], vals: list[float]) → None
+```
+
+Add entire lists of x-values and metric values to this curve.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L207"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_x_v`
+
+```python
+add_x_v(x: float | str, val: float) → None
+```
+
+Add a single x-value and metric value pair to this curve.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L237"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_by_xval`
+
+```python
+get_by_xval(xval: float | str) → float
+```
+
+Get metric value at a specific x-value.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/metrics.py#L226"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `sort_curve_by_x`
+
+```python
+sort_curve_by_x() → None
+```
+
+Sort the curve data by x-values in ascending order.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

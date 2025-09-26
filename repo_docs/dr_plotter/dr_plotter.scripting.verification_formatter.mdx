@@ -1,0 +1,637 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.verification_formatter`
+
+
+
+## Table of Contents
+- [`VerificationFormatter`](./dr_plotter.scripting.verification_formatter#class-verificationformatter)
+	- [`__init__`](./dr_plotter.scripting.verification_formatter#constructor---init--)
+	- [`format_critical_message`](./dr_plotter.scripting.verification_formatter#method-format-critical-message)
+	- [`format_detailed_issues_list`](./dr_plotter.scripting.verification_formatter#method-format-detailed-issues-list)
+	- [`format_failure_message`](./dr_plotter.scripting.verification_formatter#method-format-failure-message)
+	- [`format_final_success_message`](./dr_plotter.scripting.verification_formatter#method-format-final-success-message)
+	- [`format_info_line`](./dr_plotter.scripting.verification_formatter#method-format-info-line)
+	- [`format_item_result`](./dr_plotter.scripting.verification_formatter#method-format-item-result)
+	- [`format_section_header`](./dr_plotter.scripting.verification_formatter#method-format-section-header)
+	- [`format_subsection_header`](./dr_plotter.scripting.verification_formatter#method-format-subsection-header)
+	- [`format_success_message`](./dr_plotter.scripting.verification_formatter#method-format-success-message)
+	- [`format_suggestions_list`](./dr_plotter.scripting.verification_formatter#method-format-suggestions-list)
+	- [`format_summary_stats`](./dr_plotter.scripting.verification_formatter#method-format-summary-stats)
+	- [`format_warning_message`](./dr_plotter.scripting.verification_formatter#method-format-warning-message)
+	- [`print_critical`](./dr_plotter.scripting.verification_formatter#method-print-critical)
+	- [`print_detailed_issues`](./dr_plotter.scripting.verification_formatter#method-print-detailed-issues)
+	- [`print_failure`](./dr_plotter.scripting.verification_formatter#method-print-failure)
+	- [`print_final_success`](./dr_plotter.scripting.verification_formatter#method-print-final-success)
+	- [`print_info`](./dr_plotter.scripting.verification_formatter#method-print-info)
+	- [`print_item_result`](./dr_plotter.scripting.verification_formatter#method-print-item-result)
+	- [`print_section_header`](./dr_plotter.scripting.verification_formatter#method-print-section-header)
+	- [`print_subsection_header`](./dr_plotter.scripting.verification_formatter#method-print-subsection-header)
+	- [`print_success`](./dr_plotter.scripting.verification_formatter#method-print-success)
+	- [`print_suggestions`](./dr_plotter.scripting.verification_formatter#method-print-suggestions)
+	- [`print_summary_stats`](./dr_plotter.scripting.verification_formatter#method-print-summary-stats)
+	- [`print_warning`](./dr_plotter.scripting.verification_formatter#method-print-warning)
+- [`get_default_formatter`](./dr_plotter.scripting.verification_formatter#function-get-default-formatter)
+- [`print_critical`](./dr_plotter.scripting.verification_formatter#function-print-critical)
+- [`print_detailed_issues`](./dr_plotter.scripting.verification_formatter#function-print-detailed-issues)
+- [`print_failure`](./dr_plotter.scripting.verification_formatter#function-print-failure)
+- [`print_final_success`](./dr_plotter.scripting.verification_formatter#function-print-final-success)
+- [`print_info`](./dr_plotter.scripting.verification_formatter#function-print-info)
+- [`print_item_result`](./dr_plotter.scripting.verification_formatter#function-print-item-result)
+- [`print_section_header`](./dr_plotter.scripting.verification_formatter#function-print-section-header)
+- [`print_subsection_header`](./dr_plotter.scripting.verification_formatter#function-print-subsection-header)
+- [`print_success`](./dr_plotter.scripting.verification_formatter#function-print-success)
+- [`print_suggestions`](./dr_plotter.scripting.verification_formatter#function-print-suggestions)
+- [`print_summary_stats`](./dr_plotter.scripting.verification_formatter#function-print-summary-stats)
+- [`print_warning`](./dr_plotter.scripting.verification_formatter#function-print-warning)
+- [`set_default_formatter`](./dr_plotter.scripting.verification_formatter#function-set-default-formatter)
+- [`verify_legend_visibility_with_formatting`](./dr_plotter.scripting.verification_formatter#function-verify-legend-visibility-with-formatting)
+
+
+**Global Variables**
+---------------
+- **LEGEND_CHECK_FAILED**
+- **LEGEND_CHECK_PASSED**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L161"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_default_formatter`
+
+```python
+get_default_formatter() → VerificationFormatter
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L165"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `set_default_formatter`
+
+```python
+set_default_formatter(formatter: 'VerificationFormatter') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L170"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_section_header`
+
+```python
+print_section_header(title: 'str', symbol: 'str' = '🔍') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L176"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_subsection_header`
+
+```python
+print_subsection_header(title: 'str') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L180"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_success`
+
+```python
+print_success(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L184"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_failure`
+
+```python
+print_failure(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L188"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_warning`
+
+```python
+print_warning(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L192"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_critical`
+
+```python
+print_critical(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L196"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_final_success`
+
+```python
+print_final_success(message: 'str') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L200"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_info`
+
+```python
+print_info(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L204"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_summary_stats`
+
+```python
+print_summary_stats(stats: 'dict[str, Any]', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L208"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_item_result`
+
+```python
+print_item_result(
+    item_name: 'str',
+    success: 'bool',
+    message: 'str',
+    indent_level: 'int' = 0
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L214"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_suggestions`
+
+```python
+print_suggestions(suggestions: 'list[str]', indent_level: 'int' = 1) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L218"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_detailed_issues`
+
+```python
+print_detailed_issues(
+    issues: 'list[dict[str, Any]]',
+    indent_level: 'int' = 1
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L222"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_legend_visibility_with_formatting`
+
+```python
+verify_legend_visibility_with_formatting(
+    figure: 'Figure',
+    expected_visible_count: 'int | None' = None,
+    fail_on_missing: 'bool' = True
+) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `VerificationFormatter`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L25"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+VerificationFormatter(output_stream: 'Any' = None) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_critical_message`
+
+```python
+format_critical_message(message: 'str', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L85"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_detailed_issues_list`
+
+```python
+format_detailed_issues_list(
+    issues: 'list[dict[str, Any]]',
+    indent_level: 'int' = 1
+) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_failure_message`
+
+```python
+format_failure_message(message: 'str', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L53"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_final_success_message`
+
+```python
+format_final_success_message(message: 'str') → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L56"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_info_line`
+
+```python
+format_info_line(message: 'str', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L67"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_item_result`
+
+```python
+format_item_result(
+    item_name: 'str',
+    success: 'bool',
+    message: 'str',
+    indent_level: 'int' = 0
+) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_section_header`
+
+```python
+format_section_header(title: 'str', symbol: 'str' = '🔍') → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L34"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_subsection_header`
+
+```python
+format_subsection_header(title: 'str') → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_success_message`
+
+```python
+format_success_message(message: 'str', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L74"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_suggestions_list`
+
+```python
+format_suggestions_list(suggestions: 'list[str]', indent_level: 'int' = 1) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L60"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_summary_stats`
+
+```python
+format_summary_stats(stats: 'dict[str, Any]', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_warning_message`
+
+```python
+format_warning_message(message: 'str', indent_level: 'int' = 0) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L119"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_critical`
+
+```python
+print_critical(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L149"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_detailed_issues`
+
+```python
+print_detailed_issues(
+    issues: 'list[dict[str, Any]]',
+    indent_level: 'int' = 1
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L111"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_failure`
+
+```python
+print_failure(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L123"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_final_success`
+
+```python
+print_final_success(message: 'str') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_info`
+
+```python
+print_info(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L135"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_item_result`
+
+```python
+print_item_result(
+    item_name: 'str',
+    success: 'bool',
+    message: 'str',
+    indent_level: 'int' = 0
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L99"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_section_header`
+
+```python
+print_section_header(title: 'str', symbol: 'str' = '🔍') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_subsection_header`
+
+```python
+print_subsection_header(title: 'str') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L107"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_success`
+
+```python
+print_success(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L143"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_suggestions`
+
+```python
+print_suggestions(suggestions: 'list[str]', indent_level: 'int' = 1) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L131"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_summary_stats`
+
+```python
+print_summary_stats(stats: 'dict[str, Any]', indent_level: 'int' = 0) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/verification_formatter.py#L115"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `print_warning`
+
+```python
+print_warning(message: 'str', indent_level: 'int' = 0) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

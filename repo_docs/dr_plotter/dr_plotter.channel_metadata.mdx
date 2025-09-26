@@ -1,0 +1,111 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `channel_metadata`
+
+
+
+## Table of Contents
+- [`ChannelRegistry`](./dr_plotter.channel_metadata#class-channelregistry)
+	- [`get_legend_behavior`](./dr_plotter.channel_metadata#method-get-legend-behavior)
+	- [`get_spec`](./dr_plotter.channel_metadata#method-get-spec)
+	- [`is_continuous`](./dr_plotter.channel_metadata#method-is-continuous)
+- [`ChannelSpec`](./dr_plotter.channel_metadata#dataclass-channelspec)
+	- [`__init__`](./dr_plotter.channel_metadata#constructor---init--)
+
+
+**Global Variables**
+---------------
+- **CHANNEL_SPECS**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py#L5"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `ChannelSpec`
+ChannelSpec(name: str, channel_type: Literal['categorical', 'continuous'], legend_behavior: Literal['per_value', 'min_max', 'none'])
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ChannelSpec(
+    name: str,
+    channel_type: Literal['categorical', 'continuous'],
+    legend_behavior: Literal['per_value', 'min_max', 'none']
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```channel_type``` (Literal)
+- ```legend_behavior``` (Literal)
+- ```name``` (str)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ChannelRegistry`
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_legend_behavior`
+
+```python
+get_legend_behavior(channel_name: str) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_spec`
+
+```python
+get_spec(channel_name: str) → ChannelSpec
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/channel_metadata.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `is_continuous`
+
+```python
+is_continuous(channel_name: str) → bool
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

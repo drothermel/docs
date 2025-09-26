@@ -1,0 +1,102 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/core.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `core`
+Core analysis and loading functions for Claude conversation parsing.
+
+
+## Table of Contents
+- [`analyze_messages`](./parse_claude.core#function-analyze-messages)
+- [`expand_categories`](./parse_claude.core#function-expand-categories)
+- [`filter_message`](./parse_claude.core#function-filter-message)
+- [`load_messages`](./parse_claude.core#function-load-messages)
+
+
+**Global Variables**
+---------------
+- **UTC**
+- **BLACKLIST**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/core.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_messages`
+
+```python
+load_messages(path: str, use_pydantic: bool = False) → Iterable[dict[str, Any]]
+```
+
+Stream-load a .jsonl file, yielding one parsed JSON object per line.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/core.py#L146"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_message`
+
+```python
+filter_message(msg: dict[str, Any], blacklist: list[str]) → dict[str, Any]
+```
+
+Remove blacklisted keys and null values from message.
+
+Promote content list keys to message level.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/core.py#L175"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `expand_categories`
+
+```python
+expand_categories(category_spec: str) → set[str]
+```
+
+Expand category specifications to handler names.
+
+
+**Examples:**
+
+    "dialogue" -> {"user", "assistant_message", "todo_tool_result"}
+    "tools.files" -> {"Read", "Edit", "MultiEdit", "Write"}
+    "dialogue,thinking" -> {"user", "assistant_message", "todo_tool_result",
+                            "assistant_thinking"}
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/core.py#L380"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_messages`
+
+```python
+analyze_messages(
+    messages: list[dict[str, Any]],
+    allowed_types: set[str],
+    num_examples: int = 1,
+    show_full: bool = False,
+    show_short: bool = False,
+    truncate_length: int | None = None,
+    markdown: bool = False,
+    category: str = 'all'
+) → None
+```
+
+Analyze messages by type and show counts with examples.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

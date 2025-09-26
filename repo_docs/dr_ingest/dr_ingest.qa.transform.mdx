@@ -1,0 +1,88 @@
+---
+title: dr_ingest
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/transform.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `qa.transform`
+Transformation helpers for QA evaluation records.
+
+
+## Table of Contents
+- [`build_file_metadata`](./dr_ingest.qa.transform#function-build-file-metadata)
+- [`extract_question_payloads`](./dr_ingest.qa.transform#function-extract-question-payloads)
+- [`model_output_keys`](./dr_ingest.qa.transform#function-model-output-keys)
+- [`preview_agg_metrics`](./dr_ingest.qa.transform#function-preview-agg-metrics)
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/transform.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `build_file_metadata`
+
+```python
+build_file_metadata(
+    records: 'Iterable[dict[str, Any]]',
+    data: 'str',
+    params: 'str',
+    seed: 'int',
+    task: 'str',
+    step: 'int'
+) → list[dict[str, Any]]
+```
+
+Deduplicate task/model metadata for a QA JSONL file.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/transform.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_question_payloads`
+
+```python
+extract_question_payloads(
+    records: 'Iterable[dict[str, Any]]'
+) → list[dict[str, Any]]
+```
+
+Prepare per-question payloads by stripping metrics and renaming.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/transform.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `preview_agg_metrics`
+
+```python
+preview_agg_metrics(records: 'Iterable[dict[str, Any]]') → list[dict[str, Any]]
+```
+
+Return aggregated metric rows for inspection.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_ingest/blob/main/src/dr_ingest/qa/transform.py#L67"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `model_output_keys`
+
+```python
+model_output_keys(records: 'Iterable[dict[str, Any]]') → list[str]
+```
+
+Return sorted keys present in the first model output payload.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,130 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cross_validation.splitters`
+
+
+
+## Table of Contents
+- [`RecipeAwareGroupKFold`](./ddpred.cross_validation.splitters#class-recipeawaregroupkfold)
+	- [`__init__`](./ddpred.cross_validation.splitters#constructor---init--)
+	- [`get_n_splits`](./ddpred.cross_validation.splitters#method-get-n-splits)
+	- [`split`](./ddpred.cross_validation.splitters#method-split)
+- [`SimpleGroupKFold`](./ddpred.cross_validation.splitters#class-simplegroupkfold)
+	- [`__init__`](./ddpred.cross_validation.splitters#constructor---init--)
+	- [`get_n_splits`](./ddpred.cross_validation.splitters#method-get-n-splits)
+	- [`split`](./ddpred.cross_validation.splitters#method-split)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `RecipeAwareGroupKFold`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+RecipeAwareGroupKFold(
+    n_splits: int = 5,
+    min_recipe_ratio: float = 0.5,
+    random_state: Optional[int] = 42
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L85"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_n_splits`
+
+```python
+get_n_splits(X=None, y=None, groups=None)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L88"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `split`
+
+```python
+split(X, y=None, groups=None)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L97"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SimpleGroupKFold`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SimpleGroupKFold(n_splits: int = 5, random_state: Optional[int] = 42) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L108"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_n_splits`
+
+```python
+get_n_splits(X=None, y=None, groups=None)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/splitters.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `split`
+
+```python
+split(X, y=None, groups=None)
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

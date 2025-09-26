@@ -1,0 +1,264 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `worker.launcher`
+Multi-worker launcher for GPU clusters.
+
+
+## Table of Contents
+- [`WorkerLauncher`](./dr_exp.worker.launcher#class-workerlauncher)
+	- [`__init__`](./dr_exp.worker.launcher#constructor---init--)
+	- [`aggregate_errors`](./dr_exp.worker.launcher#method-aggregate-errors)
+	- [`check_control_files`](./dr_exp.worker.launcher#method-check-control-files)
+	- [`check_worker_health`](./dr_exp.worker.launcher#method-check-worker-health)
+	- [`cleanup`](./dr_exp.worker.launcher#method-cleanup)
+	- [`discover_gpus`](./dr_exp.worker.launcher#method-discover-gpus)
+	- [`finish_current`](./dr_exp.worker.launcher#method-finish-current)
+	- [`has_pending_jobs`](./dr_exp.worker.launcher#method-has-pending-jobs)
+	- [`maintenance`](./dr_exp.worker.launcher#method-maintenance)
+	- [`run`](./dr_exp.worker.launcher#method-run)
+	- [`spawn_worker`](./dr_exp.worker.launcher#method-spawn-worker)
+	- [`stop`](./dr_exp.worker.launcher#method-stop)
+	- [`write_status`](./dr_exp.worker.launcher#method-write-status)
+
+
+**Global Variables**
+---------------
+- **UTC**
+- **TYPE_CHECKING**
+- **STATUS_WRITE_INTERVAL**
+- **MAINTENANCE_INTERVAL**
+- **WORKER_CHECK_INTERVAL**
+- **GRACEFUL_SHUTDOWN_TIMEOUT**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L36"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `WorkerLauncher`
+Launches and monitors multiple workers across GPUs.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WorkerLauncher(
+    job_db: 'JobDB',
+    experiment_name: str,
+    base_log_dir: Path,
+    workers_per_gpu: int = 2,
+    restart_on_failure: bool = True,
+    max_runtime_hours: float = 47
+) → None
+```
+
+Initialize launcher.
+
+
+**Args:**
+
+- <b>`job_db`</b>: JobDB instance
+- <b>`experiment_name`</b>: Name of experiment
+- <b>`base_log_dir`</b>: Base directory for logs
+- <b>`workers_per_gpu`</b>: Number of workers per GPU
+- <b>`restart_on_failure`</b>: Whether to restart failed workers
+- <b>`max_runtime_hours`</b>: Maximum runtime before graceful shutdown
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L271"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `aggregate_errors`
+
+```python
+aggregate_errors() → None
+```
+
+Aggregate errors from worker logs.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L227"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `check_control_files`
+
+```python
+check_control_files() → str | None
+```
+
+Check for control file commands.
+
+
+**Returns:**
+
+    Command if found, None otherwise
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L190"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `check_worker_health`
+
+```python
+check_worker_health() → dict[str, str]
+```
+
+Check health of all workers.
+
+
+**Returns:**
+
+    Dict of worker_id -> status
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L419"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `cleanup`
+
+```python
+cleanup() → None
+```
+
+Final cleanup tasks.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `discover_gpus`
+
+```python
+discover_gpus() → list[int]
+```
+
+Discover available GPUs.
+
+
+**Returns:**
+
+    List of GPU indices
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L398"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `finish_current`
+
+```python
+finish_current() → None
+```
+
+Let workers finish current jobs then stop.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L222"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `has_pending_jobs`
+
+```python
+has_pending_jobs() → bool
+```
+
+Check if there are queued jobs.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L360"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `maintenance`
+
+```python
+maintenance() → None
+```
+
+Run periodic maintenance tasks.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L296"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run`
+
+```python
+run() → None
+```
+
+Run the launcher main loop.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `spawn_worker`
+
+```python
+spawn_worker(gpu_index: int | None, worker_index: int) → str
+```
+
+Spawn a single worker process.
+
+
+**Args:**
+
+- <b>`gpu_index`</b>: GPU to assign (None for CPU)
+- <b>`worker_index`</b>: Worker index on this GPU
+
+
+**Returns:**
+
+Worker ID
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L377"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `stop`
+
+```python
+stop() → None
+```
+
+Stop all workers immediately.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/worker/launcher.py#L245"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `write_status`
+
+```python
+write_status() → None
+```
+
+Write launcher status to file.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

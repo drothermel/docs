@@ -1,0 +1,251 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `wandb_eval.wandb_transforms`
+
+
+
+## Table of Contents
+- [`add_datadecide_columns`](./datadec.wandb_eval.wandb_transforms#function-add-datadecide-columns)
+- [`add_extracted_hyperparameters`](./datadec.wandb_eval.wandb_transforms#function-add-extracted-hyperparameters)
+- [`convert_objects_and_normalize_dtypes`](./datadec.wandb_eval.wandb_transforms#function-convert-objects-and-normalize-dtypes)
+- [`drop_method_specific_columns`](./datadec.wandb_eval.wandb_transforms#function-drop-method-specific-columns)
+- [`drop_wandb_constant_ignored_cols`](./datadec.wandb_eval.wandb_transforms#function-drop-wandb-constant-ignored-cols)
+- [`extract_dataset_from_model_path`](./datadec.wandb_eval.wandb_transforms#function-extract-dataset-from-model-path)
+- [`extract_hyperparameters`](./datadec.wandb_eval.wandb_transforms#function-extract-hyperparameters)
+- [`filter_broken_initial_testing_runs`](./datadec.wandb_eval.wandb_transforms#function-filter-broken-initial-testing-runs)
+- [`filter_dpo_test_runs`](./datadec.wandb_eval.wandb_transforms#function-filter-dpo-test-runs)
+- [`get_columns_for_groups`](./datadec.wandb_eval.wandb_transforms#function-get-columns-for-groups)
+- [`get_created_time_key`](./datadec.wandb_eval.wandb_transforms#function-get-created-time-key)
+- [`infer_training_method`](./datadec.wandb_eval.wandb_transforms#function-infer-training-method)
+- [`map_wandb_dataset_to_datadecide`](./datadec.wandb_eval.wandb_transforms#function-map-wandb-dataset-to-datadecide)
+- [`map_wandb_model_size_to_datadecide`](./datadec.wandb_eval.wandb_transforms#function-map-wandb-model-size-to-datadecide)
+- [`select_column_groups`](./datadec.wandb_eval.wandb_transforms#function-select-column-groups)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_dataset_from_model_path`
+
+```python
+extract_dataset_from_model_path(model_path: str) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L20"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `map_wandb_dataset_to_datadecide`
+
+```python
+map_wandb_dataset_to_datadecide(wandb_dataset: str) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `map_wandb_model_size_to_datadecide`
+
+```python
+map_wandb_model_size_to_datadecide(model_size: int) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_datadecide_columns`
+
+```python
+add_datadecide_columns(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_hyperparameters`
+
+```python
+extract_hyperparameters(
+    run_name: str,
+    ignore: List[str] = None
+) → Dict[str, <built-in function any>]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L185"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_created_time_key`
+
+```python
+get_created_time_key(df: DataFrame) → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L192"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_broken_initial_testing_runs`
+
+```python
+filter_broken_initial_testing_runs(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L196"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_dpo_test_runs`
+
+```python
+filter_dpo_test_runs(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L203"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `drop_wandb_constant_ignored_cols`
+
+```python
+drop_wandb_constant_ignored_cols(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L211"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_objects_and_normalize_dtypes`
+
+```python
+convert_objects_and_normalize_dtypes(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L277"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `infer_training_method`
+
+```python
+infer_training_method(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L287"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_columns_for_groups`
+
+```python
+get_columns_for_groups(df: DataFrame, column_groups: List[str]) → Set[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L301"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_column_groups`
+
+```python
+select_column_groups(
+    df: DataFrame,
+    column_groups: List[str],
+    include_oe_evaluations: bool = False
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L332"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_extracted_hyperparameters`
+
+```python
+add_extracted_hyperparameters(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_transforms.py#L362"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `drop_method_specific_columns`
+
+```python
+drop_method_specific_columns(df: DataFrame, method: str) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

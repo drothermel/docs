@@ -1,0 +1,611 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `core.job_db`
+Simple file-based job database for ML experiments.
+
+
+## Table of Contents
+- [`JobDB`](./dr_exp.core.job_db#class-jobdb)
+	- [`__init__`](./dr_exp.core.job_db#constructor---init--)
+	- [`add_to_sync_queue`](./dr_exp.core.job_db#method-add-to-sync-queue)
+	- [`boost_priority`](./dr_exp.core.job_db#method-boost-priority)
+	- [`claim_next_job`](./dr_exp.core.job_db#method-claim-next-job)
+	- [`claim_reserved_job`](./dr_exp.core.job_db#method-claim-reserved-job)
+	- [`complete_job`](./dr_exp.core.job_db#method-complete-job)
+	- [`create_job`](./dr_exp.core.job_db#method-create-job)
+	- [`download_job_artifacts`](./dr_exp.core.job_db#method-download-job-artifacts)
+	- [`enable_remote_read`](./dr_exp.core.job_db#method-enable-remote-read)
+	- [`fail_job`](./dr_exp.core.job_db#method-fail-job)
+	- [`get_experiment_info`](./dr_exp.core.job_db#method-get-experiment-info)
+	- [`get_experiment_info_remote`](./dr_exp.core.job_db#method-get-experiment-info-remote)
+	- [`get_job`](./dr_exp.core.job_db#method-get-job)
+	- [`get_job_remote`](./dr_exp.core.job_db#method-get-job-remote)
+	- [`get_storage_path`](./dr_exp.core.job_db#method-get-storage-path)
+	- [`get_sync_queue_path`](./dr_exp.core.job_db#method-get-sync-queue-path)
+	- [`heartbeat`](./dr_exp.core.job_db#method-heartbeat)
+	- [`list_jobs`](./dr_exp.core.job_db#method-list-jobs)
+	- [`list_jobs_remote`](./dr_exp.core.job_db#method-list-jobs-remote)
+	- [`mark_job_failed`](./dr_exp.core.job_db#method-mark-job-failed)
+	- [`recover_stale_jobs`](./dr_exp.core.job_db#method-recover-stale-jobs)
+	- [`reserve_job`](./dr_exp.core.job_db#method-reserve-job)
+	- [`sync_mode`](./dr_exp.core.job_db#method-sync-mode)
+	- [`update_job`](./dr_exp.core.job_db#method-update-job)
+
+
+**Global Variables**
+---------------
+- **UTC**
+- **MAX_PRIORITY**
+- **MIN_PRIORITY**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `JobDB`
+File-based job database with priority queue.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+JobDB(base_path: str, experiment_name: str, validate: bool = True) → None
+```
+
+Initialize JobDB with base path and experiment name.
+
+
+**Args:**
+
+- <b>`base_path`</b>: Base directory for all experiments
+    (e.g., /scratch/users/jane/experiments)
+- <b>`experiment_name`</b>: Name of this experiment (e.g., resnet_sweep)
+- <b>`validate`</b>: Whether to validate directory structure exists
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L416"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_to_sync_queue`
+
+```python
+add_to_sync_queue(
+    job_id: str,
+    file_path: str,
+    file_type: str,
+    metadata: dict[str, Any] | None = None
+) → str
+```
+
+Add a file to the sync queue.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job that created this file
+- <b>`file_path`</b>: Path to file to sync
+- <b>`file_type`</b>: Type of file (metrics, logs, model, etc.)
+- <b>`metadata`</b>: Optional metadata about the file
+
+
+**Returns:**
+
+Sync item ID
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L539"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `boost_priority`
+
+```python
+boost_priority(job_ids: list[str], new_priority: int) → int
+```
+
+Boost priority of multiple jobs.
+
+
+**Args:**
+
+- <b>`job_ids`</b>: List of job IDs to boost
+- <b>`new_priority`</b>: New priority value (0-1000)
+
+
+**Returns:**
+
+Number of jobs updated
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L199"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `claim_next_job`
+
+```python
+claim_next_job(worker_id: str) → dict[str, Any] | None
+```
+
+Claim the highest priority unclaimed job with enhanced locking.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L593"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `claim_reserved_job`
+
+```python
+claim_reserved_job(job_id: str, worker_id: str) → dict[str, Any] | None
+```
+
+Claim a previously reserved job.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to claim
+- <b>`worker_id`</b>: Worker claiming the job (must match reservation)
+
+
+**Returns:**
+
+Job data if claimed successfully, None otherwise
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L328"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `complete_job`
+
+```python
+complete_job(job_id: str, metrics: dict[str, Any] | None = None) → bool
+```
+
+Mark a job as completed successfully.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to complete
+- <b>`metrics`</b>: Optional final metrics to store
+
+
+**Returns:**
+
+True if updated, False if job not found
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L91"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_job`
+
+```python
+create_job(
+    config: dict[str, Any],
+    priority: int = 100,
+    tags: list[str] | None = None
+) → str
+```
+
+Create a new job with given config and priority.
+
+
+**Args:**
+
+- <b>`config`</b>: Job configuration dict (must include _target_ field)
+- <b>`priority`</b>: Job priority (0-1000, higher runs first)
+- <b>`tags`</b>: Optional list of tags for the job
+
+
+**Returns:**
+
+- <b>`job_id`</b>: Unique ID for the created job
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L742"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `download_job_artifacts`
+
+```python
+download_job_artifacts(job_id: str, target_dir: Path | None = None) → list[Path]
+```
+
+Download job artifacts from remote storage.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID to download artifacts for
+- <b>`target_dir`</b>: Directory to download to (defaults to storage path)
+
+
+**Returns:**
+
+List of downloaded file paths
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L632"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `enable_remote_read`
+
+```python
+enable_remote_read(
+    supabase_url: str | None = None,
+    supabase_key: str | None = None
+) → bool
+```
+
+Enable remote read operations from Supabase.
+
+
+**Args:**
+
+- <b>`supabase_url`</b>: Supabase URL (uses env var if not provided)
+- <b>`supabase_key`</b>: Supabase key (uses env var if not provided)
+
+
+**Returns:**
+
+True if remote read enabled successfully
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L348"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `fail_job`
+
+```python
+fail_job(job_id: str, error: str) → bool
+```
+
+Mark a job as failed.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to fail
+- <b>`error`</b>: Error message
+
+
+**Returns:**
+
+True if updated, False if job not found
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L456"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_experiment_info`
+
+```python
+get_experiment_info() → dict[str, Any]
+```
+
+Get information about this experiment.
+
+
+**Returns:**
+
+    Dict with experiment metadata
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L710"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_experiment_info_remote`
+
+```python
+get_experiment_info_remote() → dict[str, Any]
+```
+
+Get experiment info from remote Supabase.
+
+
+**Returns:**
+
+    Dict with experiment metadata and stats
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L143"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_job`
+
+```python
+get_job(job_id: str) → dict[str, Any] | None
+```
+
+Retrieve a job by ID.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID to retrieve
+
+
+**Returns:**
+
+Job data dict or None if not found
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L681"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_job_remote`
+
+```python
+get_job_remote(job_id: str) → dict[str, Any] | None
+```
+
+Get a job from remote Supabase database.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID to retrieve
+
+
+**Returns:**
+
+Job data dict or None if not found
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L160"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_storage_path`
+
+```python
+get_storage_path(job_id: str) → Path
+```
+
+Get the storage path for a job's artifacts.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID
+
+
+**Returns:**
+
+Path object for job's storage directory
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L408"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_sync_queue_path`
+
+```python
+get_sync_queue_path() → Path
+```
+
+Get path to sync queue directory.
+
+
+**Returns:**
+
+    Path to sync queue directory
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L366"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `heartbeat`
+
+```python
+heartbeat(job_id: str) → bool
+```
+
+Update job heartbeat timestamp.
+
+Workers should call this periodically to indicate they're alive.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to heartbeat
+
+
+**Returns:**
+
+True if updated, False if job not found
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L381"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `list_jobs`
+
+```python
+list_jobs(status: str | None = None) → list[dict[str, Any]]
+```
+
+List all jobs, optionally filtered by status.
+
+
+**Args:**
+
+- <b>`status`</b>: Optional status filter (queued, running, completed, failed)
+
+
+**Returns:**
+
+List of job data dicts
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L661"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `list_jobs_remote`
+
+```python
+list_jobs_remote(status: str | None = None) → list[dict[str, Any]]
+```
+
+List jobs from remote Supabase database.
+
+
+**Args:**
+
+- <b>`status`</b>: Optional status filter
+
+
+**Returns:**
+
+List of job data dicts from Supabase
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L481"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `mark_job_failed`
+
+```python
+mark_job_failed(job_id: str, reason: str) → bool
+```
+
+Mark a running job as failed (kill it).
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job identifier
+- <b>`reason`</b>: Reason for marking as failed
+
+
+**Returns:**
+
+True if job was marked failed, False if not found or not running
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L503"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `recover_stale_jobs`
+
+```python
+recover_stale_jobs(heartbeat_timeout: int = 300) → list[str]
+```
+
+Reset jobs with stale heartbeats back to queued.
+
+
+**Args:**
+
+- <b>`heartbeat_timeout`</b>: Seconds before considering heartbeat stale
+
+
+**Returns:**
+
+List of recovered job IDs
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L563"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `reserve_job`
+
+```python
+reserve_job(job_id: str, worker_id: str) → bool
+```
+
+Reserve a specific job for a worker.
+
+This is used for special operations like run_one where we want to
+run a specific job immediately, bypassing the queue order.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to reserve
+- <b>`worker_id`</b>: Worker that will run the job
+
+
+**Returns:**
+
+True if reserved successfully
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L792"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `sync_mode`
+
+```python
+sync_mode() → str
+```
+
+Get current sync mode.
+
+
+**Returns:**
+
+    'local', 'remote', or 'hybrid'
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/core/job_db.py#L286"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `update_job`
+
+```python
+update_job(job_id: str, updates: dict[str, Any]) → bool
+```
+
+Update a job atomically.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job to update
+- <b>`updates`</b>: Fields to update
+
+
+**Returns:**
+
+True if updated, False if job not found
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,63 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/determinism_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `determinism_utils`
+
+
+
+## Table of Contents
+- [`seed_worker`](./dr_util.determinism_utils#function-seed-worker)
+- [`set_deterministic`](./dr_util.determinism_utils#function-set-deterministic)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/determinism_utils.py#L7"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `seed_worker`
+
+```python
+seed_worker(worker_id: int) → None
+```
+
+Seeds a DataLoader worker.
+
+This function is intended to be used as the worker_init_fn in a DataLoader.
+It ensures that each worker process has a unique and deterministic seed based
+on the main process's initial seed.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/determinism_utils.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `set_deterministic`
+
+```python
+set_deterministic(seed: int) → Generator
+```
+
+Sets seeds for deterministic behavior in PyTorch, NumPy, and random.
+
+
+**Args:**
+
+- <b>`seed`</b> (int): The seed value.
+
+
+**Returns:**
+
+- <b>`torch.Generator`</b>: A PyTorch generator object seeded with the given seed.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

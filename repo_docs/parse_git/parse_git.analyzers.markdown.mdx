@@ -1,0 +1,93 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/markdown.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyzers.markdown`
+Markdown file analyzer for tracking document lifecycles.
+
+
+## Table of Contents
+- [`MarkdownAnalyzer`](./parse_git.analyzers.markdown#class-markdownanalyzer)
+	- [`analyze`](./parse_git.analyzers.markdown#method-analyze)
+	- [`get_file_id`](./parse_git.analyzers.markdown#method-get-file-id)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/markdown.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MarkdownAnalyzer`
+Analyzes the lifecycle and evolution of markdown files in a Git repository.
+
+This class tracks markdown file creation, modification, deletion, and renaming
+across a specified time period, building comprehensive lifecycle data including
+milestones and associated code commits.
+
+
+
+---
+
+#### <kbd>property</kbd> file_patterns
+
+File extensions this analyzer handles.
+
+
+**Returns:**
+
+    Tuple of markdown file extensions.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/markdown.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `analyze`
+
+```python
+analyze() → list[FileLifecycle]
+```
+
+Perform complete analysis of markdown file lifecycles.
+
+
+**Returns:**
+
+    List of FileLifecycle objects containing detailed information
+    about each markdown file's evolution.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/analyzers/markdown.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_file_id`
+
+```python
+get_file_id(filepath: str) → str
+```
+
+Generate a stable identifier for a file.
+
+
+**Args:**
+
+- <b>`filepath`</b>: Path to the file.
+
+
+**Returns:**
+
+Stable identifier for tracking the file across renames.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

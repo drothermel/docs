@@ -1,0 +1,51 @@
+---
+title: parse_hepta
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/loader.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `loader`
+Data loading utilities for Heptabase exports.
+
+
+## Table of Contents
+- [`load_heptabase_data`](./parse_hepta.loader#function-load-heptabase-data)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/loader.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_heptabase_data`
+
+```python
+load_heptabase_data(dump_path: Path | str) → HeptabaseData
+```
+
+Load Heptabase data from dump directory.
+
+
+**Args:**
+
+- <b>`dump_path`</b>: Path to directory containing All-Data.json
+
+
+**Returns:**
+
+HeptabaseData object with parsed data
+
+
+**Raises:**
+
+- <b>`FileNotFoundError`</b>: If All-Data.json is not found
+- <b>`OSError`</b>: If file cannot be read
+- <b>`ValueError`</b>: If JSON is invalid
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

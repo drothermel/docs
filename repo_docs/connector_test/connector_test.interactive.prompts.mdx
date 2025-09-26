@@ -1,0 +1,118 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `interactive.prompts`
+Prompt and menu helpers for interactive command line tools.
+
+
+## Table of Contents
+- [`prompt_default`](./connector_test.interactive.prompts#function-prompt-default)
+- [`prompt_plot_filename`](./connector_test.interactive.prompts#function-prompt-plot-filename)
+- [`select_annotation_labels`](./connector_test.interactive.prompts#function-select-annotation-labels)
+- [`select_annotations`](./connector_test.interactive.prompts#function-select-annotations)
+- [`select_label`](./connector_test.interactive.prompts#function-select-label)
+- [`select_scale`](./connector_test.interactive.prompts#function-select-scale)
+
+
+**Global Variables**
+---------------
+- **ANNOTATION_PARAM**
+- **ANNOTATION_NON_PARAM**
+- **ANNOTATION_SEGMENTS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prompt_default`
+
+```python
+prompt_default(prompt: 'str', default: 'str | None' = None) → str
+```
+
+Return input from ``prompt`` using ``default`` when empty.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_scale`
+
+```python
+select_scale(name: 'str', default: 'str' = 'linear') → str
+```
+
+Return 'linear' or 'log' for the given axis.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_label`
+
+```python
+select_label(default: 'str') → str
+```
+
+Prompt for an optional legend label override.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_annotations`
+
+```python
+select_annotations(default: 'list[str] | None' = None) → list[str]
+```
+
+Prompt for one or more annotation styles.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L68"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_annotation_labels`
+
+```python
+select_annotation_labels(
+    base: 'str',
+    annos: 'list[str]',
+    defaults: 'dict[str, str] | None' = None
+) → dict[str, str]
+```
+
+Return custom labels for annotation types.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/prompts.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prompt_plot_filename`
+
+```python
+prompt_plot_filename(default: 'str') → str
+```
+
+Return a plot file stem selected by the user.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

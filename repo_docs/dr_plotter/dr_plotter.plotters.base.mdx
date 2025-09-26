@@ -1,0 +1,151 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `plotters.base`
+
+
+
+## Table of Contents
+- [`BasePlotter`](./dr_plotter.plotters.base#class-baseplotter)
+	- [`__init__`](./dr_plotter.plotters.base#constructor---init--)
+	- [`get_plotter`](./dr_plotter.plotters.base#classmethod-get-plotter)
+	- [`list_plotters`](./dr_plotter.plotters.base#classmethod-list-plotters)
+	- [`prepare_data`](./dr_plotter.plotters.base#method-prepare-data)
+	- [`render`](./dr_plotter.plotters.base#method-render)
+- [`as_list`](./dr_plotter.plotters.base#function-as-list)
+- [`fmt_txt`](./dr_plotter.plotters.base#function-fmt-txt)
+- [`ylabel_from_metrics`](./dr_plotter.plotters.base#function-ylabel-from-metrics)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `as_list`
+
+```python
+as_list(x: 'Any | list[Any] | None') → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fmt_txt`
+
+```python
+fmt_txt(text: 'str') → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `ylabel_from_metrics`
+
+```python
+ylabel_from_metrics(metrics: 'list[ColName]') → str | None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `BasePlotter`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L76"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+BasePlotter(
+    data: 'DataFrame',
+    grouping_cfg: 'GroupingConfig',
+    theme: 'Theme | None' = None,
+    figure_manager: 'Any | None' = None,
+    **kwargs: 'Any'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `get_plotter`
+
+```python
+get_plotter(plot_type: 'str') → type
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `list_plotters`
+
+```python
+list_plotters() → list[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L189"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `prepare_data`
+
+```python
+prepare_data() → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/plotters/base.py#L165"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `render`
+
+```python
+render(ax: 'Any') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

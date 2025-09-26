@@ -1,0 +1,244 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `data`
+
+
+
+## Table of Contents
+- [`DataDecide`](./datadec.data#class-datadecide)
+	- [`__init__`](./datadec.data#constructor---init--)
+	- [`aggregate_results`](./datadec.data#method-aggregate-results)
+	- [`filter_data_quality`](./datadec.data#method-filter-data-quality)
+	- [`load_dataframe`](./datadec.data#method-load-dataframe)
+	- [`melt_for_plotting`](./datadec.data#method-melt-for-plotting)
+	- [`prepare_plot_data`](./datadec.data#method-prepare-plot-data)
+	- [`select_data`](./datadec.data#method-select-data)
+	- [`select_params`](./datadec.data#method-select-params)
+	- [`select_subset`](./datadec.data#method-select-subset)
+
+
+**Global Variables**
+---------------
+- **data_utils**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataDecide`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataDecide(
+    data_dir: str = './data',
+    recompute_from: str = None,
+    verbose: bool = True
+)
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> all_data_param_combos
+
+
+
+
+---
+
+#### <kbd>property</kbd> full_eval
+
+
+
+
+---
+
+#### <kbd>property</kbd> full_eval_melted
+
+
+
+
+---
+
+#### <kbd>property</kbd> mean_eval
+
+
+
+
+---
+
+#### <kbd>property</kbd> mean_eval_melted
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L64"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `aggregate_results`
+
+```python
+aggregate_results(
+    input_df: DataFrame,
+    by_seeds: bool = True,
+    return_std: bool = False,
+    verbose: bool = False
+) → Union[DataFrame, Tuple[DataFrame, DataFrame]]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L84"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `filter_data_quality`
+
+```python
+filter_data_quality(
+    input_df: DataFrame,
+    filter_types: List[str] = ['max_steps'],
+    verbose: bool = False
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_dataframe`
+
+```python
+load_dataframe(name: str) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L247"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `melt_for_plotting`
+
+```python
+melt_for_plotting(
+    df: DataFrame,
+    metrics: Optional[List[str]] = None,
+    include_seeds: bool = True,
+    drop_na: bool = True
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L262"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `prepare_plot_data`
+
+```python
+prepare_plot_data(
+    params: Optional[str, List[str]] = None,
+    data: Optional[str, List[str]] = None,
+    metrics: Optional[List[str]] = None,
+    aggregate_seeds: bool = False,
+    input_df: Optional[DataFrame] = None,
+    auto_filter: bool = True,
+    melt: bool = True,
+    verbose: bool = False,
+    **select_subset_kwargs
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L235"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_data`
+
+```python
+select_data(
+    data: Union[str, List[str]] = 'all',
+    exclude: Optional[List[str]] = None
+) → List[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L223"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_params`
+
+```python
+select_params(
+    params: Union[str, List[str]] = 'all',
+    exclude: Optional[List[str]] = None
+) → List[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/data.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_subset`
+
+```python
+select_subset(
+    input_df: DataFrame,
+    data: Optional[str, List[str]] = None,
+    params: Optional[str, List[str]] = None,
+    seeds: Optional[int, List[int]] = None,
+    step_lims: Optional[Tuple[Optional[int], Optional[int]]] = None,
+    token_lims: Optional[Tuple[Optional[int], Optional[int]]] = None,
+    min_params: Optional[str] = None,
+    max_params: Optional[str] = None,
+    data_param_combos: Optional[List[Tuple[str, str]]] = None,
+    columns: Optional[List[str]] = None,
+    metrics: Optional[List[str]] = None,
+    metric_type: Optional[str] = None,
+    include_id_columns: bool = True,
+    verbose: bool = False
+) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

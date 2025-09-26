@@ -1,0 +1,201 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `style_applicator`
+
+
+
+## Table of Contents
+- [`StyleApplicator`](./dr_plotter.style_applicator#class-styleapplicator)
+	- [`__init__`](./dr_plotter.style_applicator#constructor---init--)
+	- [`apply_post_processing`](./dr_plotter.style_applicator#method-apply-post-processing)
+	- [`clear_group_context`](./dr_plotter.style_applicator#method-clear-group-context)
+	- [`create_legend_entry`](./dr_plotter.style_applicator#method-create-legend-entry)
+	- [`get_component_styles`](./dr_plotter.style_applicator#method-get-component-styles)
+	- [`get_computed_style`](./dr_plotter.style_applicator#method-get-computed-style)
+	- [`get_single_component_styles`](./dr_plotter.style_applicator#method-get-single-component-styles)
+	- [`get_style`](./dr_plotter.style_applicator#method-get-style)
+	- [`register_post_processor`](./dr_plotter.style_applicator#method-register-post-processor)
+	- [`set_group_context`](./dr_plotter.style_applicator#method-set-group-context)
+
+
+**Global Variables**
+---------------
+- **TYPE_CHECKING**
+- **VISUAL_CHANNELS**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L25"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `StyleApplicator`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+StyleApplicator(
+    theme: 'Theme',
+    kwargs: 'dict[str, Any]',
+    grouping_cfg: 'GroupingConfig | None' = None,
+    group_values: 'dict[str, Any] | None' = None,
+    figure_manager: 'Any | None' = None,
+    plot_type: 'str | None' = None,
+    style_engine: 'StyleEngine | None' = None
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L83"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `apply_post_processing`
+
+```python
+apply_post_processing(plot_type: 'str', artists: 'dict[str, Any]') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L80"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `clear_group_context`
+
+```python
+clear_group_context() → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_legend_entry`
+
+```python
+create_legend_entry(
+    artist: 'Any',
+    label: 'str',
+    axis: 'Any' = None,
+    artist_type: 'str' = 'main',
+    explicit_channel: 'str | None' = None
+) → LegendEntry | None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_component_styles`
+
+```python
+get_component_styles(
+    plot_type: 'str',
+    phase: 'Phase' = 'plot'
+) → ComponentStyles
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L146"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_computed_style`
+
+```python
+get_computed_style(base_key: 'str', operation: 'str', factor: 'float') → Any
+```
+
+Get computed style value (e.g., size multiplication).
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L60"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_single_component_styles`
+
+```python
+get_single_component_styles(
+    plot_type: 'str',
+    component: 'str',
+    phase: 'Phase' = 'plot'
+) → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L139"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_style`
+
+```python
+get_style(key: 'str', default: 'Any' = None) → Any
+```
+
+Get style with enhanced fallback resolution.
+Priority: kwargs → theme → default
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L71"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `register_post_processor`
+
+```python
+register_post_processor(
+    plot_type: 'str',
+    component: 'str',
+    processor: 'Callable'
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_applicator.py#L77"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `set_group_context`
+
+```python
+set_group_context(group_values: 'dict[str, Any]') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._
