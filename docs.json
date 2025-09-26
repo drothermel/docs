@@ -14,12 +14,9 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Writing content",
+            "group": "Repo Docs",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "repo_docs/dr_ingest/dr_ingest"
             ]
           },
           {
