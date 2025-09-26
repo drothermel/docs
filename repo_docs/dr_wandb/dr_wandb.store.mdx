@@ -1,0 +1,264 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `store`
+
+
+
+## Table of Contents
+- [`ProjectStore`](./dr_wandb.store#class-projectstore)
+	- [`__init__`](./dr_wandb.store#constructor---init--)
+	- [`create_tables`](./dr_wandb.store#method-create-tables)
+	- [`export_to_parquet`](./dr_wandb.store#method-export-to-parquet)
+	- [`get_existing_run_states`](./dr_wandb.store#method-get-existing-run-states)
+	- [`get_history_df`](./dr_wandb.store#method-get-history-df)
+	- [`get_runs_df`](./dr_wandb.store#method-get-runs-df)
+	- [`store_histories`](./dr_wandb.store#method-store-histories)
+	- [`store_history`](./dr_wandb.store#method-store-history)
+	- [`store_run`](./dr_wandb.store#method-store-run)
+	- [`store_run_and_history`](./dr_wandb.store#method-store-run-and-history)
+	- [`store_runs`](./dr_wandb.store#method-store-runs)
+- [`delete_add_history`](./dr_wandb.store#function-delete-add-history)
+- [`delete_history_for_runs`](./dr_wandb.store#function-delete-history-for-runs)
+- [`ensure_database_exists`](./dr_wandb.store#function-ensure-database-exists)
+- [`save_update_run`](./dr_wandb.store#function-save-update-run)
+
+
+**Global Variables**
+---------------
+- **RUN_DATA_COMPONENTS**
+- **DEFAULT_RUNS_FILENAME**
+- **DEFAULT_HISTORY_FILENAME**
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `delete_history_for_runs`
+
+```python
+delete_history_for_runs(session: 'Session', run_ids: 'list[RunId]') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_update_run`
+
+```python
+save_update_run(session: 'Session', run: 'Run') → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L57"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `delete_add_history`
+
+```python
+delete_add_history(
+    session: 'Session',
+    run_id: 'RunId',
+    history: 'History'
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L63"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `ensure_database_exists`
+
+```python
+ensure_database_exists(database_url: 'str') → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L86"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ProjectStore`
+
+
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L87"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ProjectStore(connection_string: 'str', output_dir: 'str | None' = None) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_tables`
+
+```python
+create_tables() → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L168"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `export_to_parquet`
+
+```python
+export_to_parquet(
+    runs_filename: 'str' = 'runs_metadata',
+    history_filename: 'str' = 'runs_history'
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L161"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_existing_run_states`
+
+```python
+get_existing_run_states(
+    kwargs: 'dict[FilterField, Any] | None' = None
+) → dict[RunId, RunState]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L147"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_history_df`
+
+```python
+get_history_df(
+    include_metadata: 'bool' = False,
+    run_ids: 'list[RunId] | None' = None
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L136"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_runs_df`
+
+```python
+get_runs_df(
+    include: 'list[RunDataComponent] | All | None' = None,
+    kwargs: 'dict[FilterField, Any] | None' = None
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L112"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `store_histories`
+
+```python
+store_histories(runs: 'list[Run]', histories: 'list[History]') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L107"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `store_history`
+
+```python
+store_history(run_id: 'RunId', history: 'History') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L96"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `store_run`
+
+```python
+store_run(run: 'Run') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L128"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `store_run_and_history`
+
+```python
+store_run_and_history(run: 'Run', history: 'History') → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/store.py#L101"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `store_runs`
+
+```python
+store_runs(runs: 'list[Run]') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

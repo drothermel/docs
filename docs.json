@@ -16,15 +16,8 @@
           {
             "group": "Repo Docs",
             "pages": [
-              "repo_docs/dr_ingest/dr_ingest"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "repo_docs/dr_ingest/dr_ingest",
+              "repo_docs/dr_wandb/dr_wandb"
             ]
           }
         ]

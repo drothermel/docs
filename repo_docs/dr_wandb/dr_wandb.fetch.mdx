@@ -1,0 +1,73 @@
+---
+title: dr_wandb
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/fetch.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `fetch`
+Lightweight WandB fetch utilities that avoid database storage.
+
+
+## Table of Contents
+- [`fetch_project_runs`](./dr_wandb.fetch#function-fetch-project-runs)
+- [`serialize_history_entry`](./dr_wandb.fetch#function-serialize-history-entry)
+- [`serialize_run`](./dr_wandb.fetch#function-serialize-run)
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/fetch.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `serialize_run`
+
+```python
+serialize_run(run: 'Run') → dict[str, Any]
+```
+
+Convert a WandB run into a JSON-friendly dict.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/fetch.py#L34"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `serialize_history_entry`
+
+```python
+serialize_history_entry(
+    run: 'Run',
+    history_entry: 'dict[str, Any]'
+) → dict[str, Any]
+```
+
+Convert a raw history payload into a structured dict.
+
+
+
+---
+
+<a href="https://github.com/drothermel/dr_wandb/blob/main/src/dr_wandb/fetch.py#L50"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fetch_project_runs`
+
+```python
+fetch_project_runs(
+    entity: 'str',
+    project: 'str',
+    runs_per_page: 'int' = 500,
+    include_history: 'bool' = True,
+    progress_callback: 'ProgressFn | None' = None
+) → tuple[list[dict[str, Any]], list[list[dict[str, Any]]]]
+```
+
+Download runs (and optional history) without requiring Postgres.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._
