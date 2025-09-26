@@ -1,0 +1,196 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `plotting.plot_utils`
+Plotting helper functions for CIFAR10 analysis.
+
+This module previously exposed only :func:`plot_curves` which produced a full
+set of plots for a single hyper-parameter key.  The new utilities make it easy
+to generate customised figures where multiple runs can be compared and
+different annotation styles can be selected.
+
+
+## Table of Contents
+- [`compose_label`](./connector_test.plotting.plot_utils#function-compose-label)
+- [`infer_ylabel`](./connector_test.plotting.plot_utils#function-infer-ylabel)
+- [`plot_curves`](./connector_test.plotting.plot_utils#function-plot-curves)
+- [`plot_lines`](./connector_test.plotting.plot_utils#function-plot-lines)
+- [`plot_metric`](./connector_test.plotting.plot_utils#function-plot-metric)
+
+
+**Global Variables**
+---------------
+- **ANNOTATION_NONE**
+- **ANNOTATION_PARAM**
+- **ANNOTATION_NON_PARAM**
+- **ANNOTATION_SEGMENTS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `compose_label`
+
+```python
+compose_label(key: 'tuple', label_func=None) → str
+```
+
+Return legend label combining custom text with the key.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `infer_ylabel`
+
+```python
+infer_ylabel(metrics: 'Iterable[str]', log_scale: 'bool') → str
+```
+
+Return a default Y-axis label based on metrics and scale.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py#L114"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `plot_metric`
+
+```python
+plot_metric(
+    results: 'dict',
+    keys: 'list[tuple]',
+    metric: 'str',
+    out_path: 'Path',
+    annotation: 'str | Iterable[str]' = 'none',
+    label_func=None,
+    x_scale: 'str' = 'linear',
+    y_scale: 'str | None' = None,
+    window: 'int' = 5,
+    intervals: 'dict[str, tuple[int, int]] | None' = None
+) → None
+```
+
+Plot a single metric for one or more hyper-parameter settings.
+
+Parameters
+----------
+results:
+    Dictionary produced by :func:`combine_seeds`.
+keys:
+    Sequence of keys from ``results`` describing which runs to plot.
+metric:
+    Name of the metric to plot (e.g. ``"train_loss"``).
+out_path:
+    File where the plot image should be written.  The parent directory is
+    created automatically.
+annotation:
+    Annotation style(s) to overlay. Can be a single string or an iterable
+    of styles.
+label_func:
+    Optional callable ``label_func(key)`` returning custom label text.
+x_scale:
+    ``"linear"`` or ``"log"`` scale for the x-axis.
+y_scale:
+    ``"linear"`` or ``"log"`` scale for the y-axis. ``None`` enables log
+    scale automatically for loss metrics.
+window:
+    Sliding window size for non-parametric regression.
+intervals:
+    Mapping of interval names to ``(start, end)`` epoch pairs for parametric
+    fits.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py#L197"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `plot_lines`
+
+```python
+plot_lines(
+    results: 'dict',
+    lines: 'Sequence[dict]',
+    out_path: 'Path',
+    x_scale: 'str' = 'linear',
+    y_scale: 'str' = 'linear',
+    title: 'str | None' = None,
+    xlabel: 'str | None' = None,
+    ylabel: 'str | None' = None,
+    x_range: 'tuple[float, float] | None' = None,
+    y_range: 'tuple[float, float] | None' = None,
+    grid_size: 'tuple[float, float] | None' = None,
+    window: 'int' = 5,
+    intervals: 'dict[str, tuple[int, int]] | None' = None
+) → None
+```
+
+Plot multiple metric lines with shared axis scales.
+
+Parameters
+----------
+results:
+    Aggregated metric dictionary.
+lines:
+    Sequence of line specification dictionaries.
+out_path:
+    Destination for the generated plot.
+x_scale, y_scale:
+    Axis scaling modes (``"linear"`` or ``"log"``).
+title, xlabel, ylabel:
+    Optional labels for the figure.
+x_range, y_range:
+    Axis ranges as ``(min, max)`` tuples.
+grid_size:
+    Desired size of the plotting area in inches.
+window:
+    Sliding window size for non-parametric regression.
+intervals:
+    Mapping of interval names to ``(start, end)`` epoch pairs for parametric
+    fits.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/plot_utils.py#L295"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `plot_curves`
+
+```python
+plot_curves(
+    key: 'tuple',
+    data: 'dict',
+    preds: 'tuple[ndarray, ndarray]',
+    out_base: 'Path'
+) → None
+```
+
+Generate plots of mean metrics with provided regression predictions.
+
+Parameters
+----------
+key:
+    Identifier for the hyper-parameter setting.
+data:
+    Dictionary containing mean and std metric arrays.
+preds:
+    Tuple of ``(pred_full, non_param)`` arrays produced by
+    :func:`connector_test.analysis.regression_analysis`.
+out_base:
+    Directory where the plots should be written.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

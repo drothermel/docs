@@ -1,0 +1,95 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/api_wrappers/aws_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `api_wrappers.aws_utils`
+File adapted from ReFinED repo.
+
+https://github.com/amazon-science/ReFinED/
+    src/refined/resource_management/aws.py
+
+
+## Table of Contents
+- [`S3Manager`](./dr_util.api_wrappers.aws_utils#class-s3manager)
+	- [`__init__`](./dr_util.api_wrappers.aws_utils#constructor---init--)
+	- [`download_file_if_needed`](./dr_util.api_wrappers.aws_utils#method-download-file-if-needed)
+	- [`upload_bytes`](./dr_util.api_wrappers.aws_utils#method-upload-bytes)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/api_wrappers/aws_utils.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `S3Manager`
+High-level abstractions for working with S3.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/api_wrappers/aws_utils.py#L17"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+S3Manager(boto3_session: Session | None = None) → None
+```
+
+Initialize S3Manager.
+
+:param boto3_session: boto3 session (`boto3.Session`) optional,
+if not set will use default session
+High-level abstractions for working with S3.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/api_wrappers/aws_utils.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `download_file_if_needed`
+
+```python
+download_file_if_needed(
+    s3_bucket: str,
+    s3_key: str,
+    output_file_path_str: str
+) → None
+```
+
+Download a file from S3 and store at output_file_path if needed.
+
+Only downloads file if a more recent timestamps exists on S3.
+:param s3_bucket: s3 bucket
+:param s3_key: s3 key
+:param output_file_path: output file path
+:param progress_bar: show progress bar
+:raises botocore.exceptions.ClientError when resource does not exist.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/api_wrappers/aws_utils.py#L65"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `upload_bytes`
+
+```python
+upload_bytes(bytes_to_upload: bytes, s3_bucket: str, s3_key: str) → None
+```
+
+Upload bytes to S3.
+
+:param bytes_to_upload: bytes
+:param s3_bucket: s3 bucket
+:param s3_key: s3 key
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

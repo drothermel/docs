@@ -1,0 +1,126 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `plotting.defaults`
+
+
+
+## Table of Contents
+- [`default_annotation_labels`](./connector_test.plotting.defaults#function-default-annotation-labels)
+- [`default_filename`](./connector_test.plotting.defaults#function-default-filename)
+- [`default_legend_label`](./connector_test.plotting.defaults#function-default-legend-label)
+- [`default_plot_title`](./connector_test.plotting.defaults#function-default-plot-title)
+- [`default_xlabel`](./connector_test.plotting.defaults#function-default-xlabel)
+- [`default_ylabel`](./connector_test.plotting.defaults#function-default-ylabel)
+
+
+**Global Variables**
+---------------
+- **ANNOTATION_PARAM**
+- **ANNOTATION_NON_PARAM**
+- **ANNOTATION_SEGMENTS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_legend_label`
+
+```python
+default_legend_label(key: 'Sequence', metric: 'str') → str
+```
+
+Return default legend label for a run key and metric.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_annotation_labels`
+
+```python
+default_annotation_labels(
+    key: 'Sequence',
+    metric: 'str',
+    annotations: 'Iterable[str]'
+) → dict[str, str]
+```
+
+Return default labels for plot annotations.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_filename`
+
+```python
+default_filename(
+    lines: 'Sequence[Mapping]',
+    x_scale: 'str' = 'linear',
+    y_scale: 'str' = 'linear'
+) → str
+```
+
+Return a default filename stem based on metrics and scales.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L62"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_plot_title`
+
+```python
+default_plot_title(
+    lines: 'Sequence[Mapping]',
+    x_scale: 'str' = 'linear',
+    y_scale: 'str' = 'linear'
+) → str
+```
+
+Return a default plot title for the given configuration.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L69"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_xlabel`
+
+```python
+default_xlabel(x_scale: 'str') → str
+```
+
+Return a default label for the X axis.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plotting/defaults.py#L74"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `default_ylabel`
+
+```python
+default_ylabel(metrics: 'Iterable[str]', y_scale: 'str') → str
+```
+
+Return a default label for the Y axis.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,281 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `config.cv_config`
+
+
+
+## Table of Contents
+- [`CVConfig`](./ddpred.config.cv_config#dataclass-cvconfig)
+	- [`__init__`](./ddpred.config.cv_config#constructor---init--)
+	- [`create_fast_debug_config`](./ddpred.config.cv_config#classmethod-create-fast-debug-config)
+	- [`create_parameter_size_splitter`](./ddpred.config.cv_config#method-create-parameter-size-splitter)
+	- [`create_production_config`](./ddpred.config.cv_config#classmethod-create-production-config)
+- [`ExperimentConfig`](./ddpred.config.cv_config#dataclass-experimentconfig)
+	- [`__init__`](./ddpred.config.cv_config#constructor---init--)
+	- [`create_elasticnet_experiment`](./ddpred.config.cv_config#classmethod-create-elasticnet-experiment)
+	- [`create_gp_experiment`](./ddpred.config.cv_config#classmethod-create-gp-experiment)
+	- [`create_stepvalue_experiment`](./ddpred.config.cv_config#classmethod-create-stepvalue-experiment)
+	- [`from_dict`](./ddpred.config.cv_config#classmethod-from-dict)
+	- [`get_cv_config`](./ddpred.config.cv_config#method-get-cv-config)
+	- [`get_data_config`](./ddpred.config.cv_config#method-get-data-config)
+	- [`to_dict`](./ddpred.config.cv_config#method-to-dict)
+- [`get_cv_config`](./ddpred.config.cv_config#function-get-cv-config)
+- [`set_cv_config`](./ddpred.config.cv_config#function-set-cv-config)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L34"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_cv_config`
+
+```python
+get_cv_config() → CVConfig
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `set_cv_config`
+
+```python
+set_cv_config(config: CVConfig) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L5"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `CVConfig`
+CVConfig(random_state: int = 42, scoring_metric: str = 'decision_accuracy')
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+CVConfig(
+    random_state: int = 42,
+    scoring_metric: str = 'decision_accuracy'
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```random_state``` (int)
+- ```scoring_metric``` (str)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `create_fast_debug_config`
+
+```python
+create_fast_debug_config() → CVConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_parameter_size_splitter`
+
+```python
+create_parameter_size_splitter(splitter_type: str = 'outer')
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `create_production_config`
+
+```python
+create_production_config() → CVConfig
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L43"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `ExperimentConfig`
+ExperimentConfig(system: str = 'modern', random_state: int = 42, scoring_metric: str = 'decision_accuracy', model_type: str = 'elasticnet', metric: str = 'pile-valppl', target_type: str = 'final_perf', features: List[str] = None, step_values: List[int] = None, target_percentages: Optional[List[float]] = None, trainer_class_name: str = 'ElasticNetTrainer', trainer_params: Dict[str, Any] = None, feature_scaler: str = 'none', target_transform: str = 'none', param_grid: Dict[str, List[Any]] = None, outer_cv_splitter: Optional[Any] = None, inner_cv_splitter: Optional[Any] = None, trainer_class: Optional[Any] = None)
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ExperimentConfig(
+    system: str = 'modern',
+    random_state: int = 42,
+    scoring_metric: str = 'decision_accuracy',
+    model_type: str = 'elasticnet',
+    metric: str = 'pile-valppl',
+    target_type: str = 'final_perf',
+    features: List[str] = None,
+    step_values: List[int] = None,
+    target_percentages: Optional[List[float]] = None,
+    trainer_class_name: str = 'ElasticNetTrainer',
+    trainer_params: Dict[str, Any] = None,
+    feature_scaler: str = 'none',
+    target_transform: str = 'none',
+    param_grid: Dict[str, List[Any]] = None,
+    outer_cv_splitter: Optional[Any] = None,
+    inner_cv_splitter: Optional[Any] = None,
+    trainer_class: Optional[Any] = None
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```feature_scaler``` (str)
+- ```features``` (List)
+- ```inner_cv_splitter``` (Optional)
+- ```metric``` (str)
+- ```model_type``` (str)
+- ```outer_cv_splitter``` (Optional)
+- ```param_grid``` (Dict)
+- ```random_state``` (int)
+- ```scoring_metric``` (str)
+- ```step_values``` (List)
+- ```system``` (str)
+- ```target_percentages``` (Optional)
+- ```target_transform``` (str)
+- ```target_type``` (str)
+- ```trainer_class``` (Optional)
+- ```trainer_class_name``` (str)
+- ```trainer_params``` (Dict)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L186"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `create_elasticnet_experiment`
+
+```python
+create_elasticnet_experiment(**kwargs) → ExperimentConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L197"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `create_gp_experiment`
+
+```python
+create_gp_experiment(**kwargs) → ExperimentConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L212"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `create_stepvalue_experiment`
+
+```python
+create_stepvalue_experiment(**kwargs) → ExperimentConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L179"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>classmethod</kbd> `from_dict`
+
+```python
+from_dict(config_dict: Dict[str, Any]) → ExperimentConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L153"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_cv_config`
+
+```python
+get_cv_config() → CVConfig
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L158"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_data_config`
+
+```python
+get_data_config() → Dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/config/cv_config.py#L170"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `to_dict`
+
+```python
+to_dict() → Dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

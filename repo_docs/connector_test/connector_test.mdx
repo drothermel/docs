@@ -1,0 +1,96 @@
+---
+title: connector_test
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`analysis`](./connector_test.analysis#module-connector-testanalysis): Analysis utilities for CIFAR10 experiments.
+- [`analysis.metrics`](./connector_test.analysis.metrics#module-connector-testanalysismetrics): Analysis helper functions for CIFAR10 logs.
+- [`analysis.regression`](./connector_test.analysis.regression#module-connector-testanalysisregression): Regression helper functions.
+- [`interactive`](./connector_test.interactive#module-connector-testinteractive): Interactive command line helpers.
+- [`interactive.config_builder`](./connector_test.interactive.config_builder#module-connector-testinteractiveconfig-builder): General configuration input prompts and interactive builders.
+- [`interactive.prompts`](./connector_test.interactive.prompts#module-connector-testinteractiveprompts): Prompt and menu helpers for interactive command line tools.
+- [`io`](./connector_test.io#module-connector-testio): I/O helpers for CIFAR10 experiments.
+- [`io.log_utils`](./connector_test.io.log_utils#module-connector-testiolog-utils): Input/output utility functions for CIFAR10 log analysis.
+- [`paths`](./connector_test.paths#module-connector-testpaths): Helper functions for common directory locations.
+- [`plot_library`](./connector_test.plot_library#module-connector-testplot-library): Built-in plot configurations.
+- [`plot_library.demo_grid`](./connector_test.plot_library.demo_grid#module-connector-testplot-librarydemo-grid)
+- [`plotting`](./connector_test.plotting#module-connector-testplotting): Plotting utilities for CIFAR10 experiments.
+- [`plotting.defaults`](./connector_test.plotting.defaults#module-connector-testplottingdefaults)
+- [`plotting.plot_config`](./connector_test.plotting.plot_config#module-connector-testplottingplot-config)
+- [`plotting.plot_utils`](./connector_test.plotting.plot_utils#module-connector-testplottingplot-utils): Plotting helper functions for CIFAR10 analysis.
+- [`visualization`](./connector_test.visualization#module-connector-testvisualization): High level visualization helpers.
+- [`visualization.plot_utils`](./connector_test.visualization.plot_utils#module-connector-testvisualizationplot-utils)
+
+## Classes
+
+- No classes
+
+## Functions
+
+- [`metrics.combine_seeds`](./connector_test.analysis.metrics#function-combine-seeds): Combine runs across seeds into mean and std statistics.
+- [`metrics.filter_keys`](./connector_test.analysis.metrics#function-filter-keys): Return result keys matching the specified criteria.
+- [`metrics.find_best_hpm`](./connector_test.analysis.metrics#function-find-best-hpm): Return the top_k hyper-parameter settings with lowest validation loss.
+- [`metrics.format_number`](./connector_test.analysis.metrics#function-format-number)
+- [`metrics.interactive_cli`](./connector_test.analysis.metrics#function-interactive-cli): Interactively browse parsed run information on the command line.
+- [`metrics.key_to_string`](./connector_test.analysis.metrics#function-key-to-string): Return a readable string describing the hyper-parameter key.
+- [`metrics.launch_viewer`](./connector_test.analysis.metrics#function-launch-viewer): Launch a simple Tkinter UI to explore parsed run information.
+- [`metrics.runs_overview_table`](./connector_test.analysis.metrics#function-runs-overview-table): Return a table summarising available runs.
+- [`metrics.save_results`](./connector_test.analysis.metrics#function-save-results): Save aggregated metrics and regression stats to CSV and pickle.
+- [`metrics.summarize_parsed`](./connector_test.analysis.metrics#function-summarize-parsed): Return a human readable summary of parsed run information.
+- [`metrics.val_acc_table`](./connector_test.analysis.metrics#function-val-acc-table): Return a table of validation accuracy per seed.
+- [`regression.fit_full_regression`](./connector_test.analysis.regression#function-fit-full-regression): Return slope, intercept and predictions for a full-range fit.
+- [`regression.fit_interval_regressions`](./connector_test.analysis.regression#function-fit-interval-regressions): Compute regression parameters for a set of epoch intervals.
+- [`regression.fit_linear_regression`](./connector_test.analysis.regression#function-fit-linear-regression): Fit a simple linear regression model.
+- [`regression.regression_analysis`](./connector_test.analysis.regression#function-regression-analysis): Compute regression fits for different epoch ranges.
+- [`regression.rmse_between`](./connector_test.analysis.regression#function-rmse-between): Return the root mean squared error between two arrays.
+- [`regression.sliding_window_predictions`](./connector_test.analysis.regression#function-sliding-window-predictions): Average linear fits over sliding windows and return segment info.
+- [`config_builder.configure_line`](./connector_test.interactive.config_builder#function-configure-line): Interactively create a single line specification.
+- [`config_builder.configure_plot_options`](./connector_test.interactive.config_builder#function-configure-plot-options): Prompt for plot level options.
+- [`config_builder.configure_subplot`](./connector_test.interactive.config_builder#function-configure-subplot): Interactively configure a single subplot.
+- [`config_builder.edit_config`](./connector_test.interactive.config_builder#function-edit-config): Interactively edit an existing configuration.
+- [`config_builder.prompt_filename`](./connector_test.interactive.config_builder#function-prompt-filename): Prompt for a filename, returning ``default_name`` when blank.
+- [`config_builder.prompt_yes_no`](./connector_test.interactive.config_builder#function-prompt-yes-no): Prompt the user with a yes/no question.
+- [`config_builder.select_key`](./connector_test.interactive.config_builder#function-select-key): Prompt the user to choose a run key.
+- [`config_builder.select_layout`](./connector_test.interactive.config_builder#function-select-layout): Prompt for subplot grid layout.
+- [`config_builder.select_metric`](./connector_test.interactive.config_builder#function-select-metric): Prompt for metric name.
+- [`prompts.prompt_default`](./connector_test.interactive.prompts#function-prompt-default): Return input from ``prompt`` using ``default`` when empty.
+- [`prompts.prompt_plot_filename`](./connector_test.interactive.prompts#function-prompt-plot-filename): Return a plot file stem selected by the user.
+- [`prompts.select_annotation_labels`](./connector_test.interactive.prompts#function-select-annotation-labels): Return custom labels for annotation types.
+- [`prompts.select_annotations`](./connector_test.interactive.prompts#function-select-annotations): Prompt for one or more annotation styles.
+- [`prompts.select_label`](./connector_test.interactive.prompts#function-select-label): Prompt for an optional legend label override.
+- [`prompts.select_scale`](./connector_test.interactive.prompts#function-select-scale): Return 'linear' or 'log' for the given axis.
+- [`log_utils.aggregate_logs`](./connector_test.io.log_utils#function-aggregate-logs): Aggregate logs into a dictionary grouped by hyper-parameters.
+- [`log_utils.extract_config`](./connector_test.io.log_utils#function-extract-config): Return the config block from a log file.
+- [`log_utils.load_or_parse_logs`](./connector_test.io.log_utils#function-load-or-parse-logs): Load previously parsed logs or create a new parse.
+- [`log_utils.parse_log_path`](./connector_test.io.log_utils#function-parse-log-path): Extract weight_type, weight_init, lr, wd and seed from ``path``.
+- [`log_utils.parse_logs_with_status`](./connector_test.io.log_utils#function-parse-logs-with-status): Parse all ``train.log`` files under ``log_root`` and return status.
+- [`log_utils.read_log`](./connector_test.io.log_utils#function-read-log): Return metric arrays from ``path`` if ``max_epochs`` epochs exist.
+- [`log_utils.read_log_extended`](./connector_test.io.log_utils#function-read-log-extended): Read a log file capturing all available metrics.
+- [`paths.configs_dir`](./connector_test.paths#function-configs-dir): Return the directory for plot configuration files under ``root``.
+- [`paths.default_log_root`](./connector_test.paths#function-default-log-root): Return the default location used in tests and examples.
+- [`paths.parse_file`](./connector_test.paths#function-parse-file): Return the path of the parsed log cache under ``root``.
+- [`paths.plots_dir`](./connector_test.paths#function-plots-dir): Return the directory for generated plots under ``root``.
+- [`plot_library.list_configs`](./connector_test.plot_library#function-list-configs): Return the available configuration names.
+- [`plot_library.load_config`](./connector_test.plot_library#function-load-config): Load a plot configuration by ``name``.
+- [`defaults.default_annotation_labels`](./connector_test.plotting.defaults#function-default-annotation-labels): Return default labels for plot annotations.
+- [`defaults.default_filename`](./connector_test.plotting.defaults#function-default-filename): Return a default filename stem based on metrics and scales.
+- [`defaults.default_legend_label`](./connector_test.plotting.defaults#function-default-legend-label): Return default legend label for a run key and metric.
+- [`defaults.default_plot_title`](./connector_test.plotting.defaults#function-default-plot-title): Return a default plot title for the given configuration.
+- [`defaults.default_xlabel`](./connector_test.plotting.defaults#function-default-xlabel): Return a default label for the X axis.
+- [`defaults.default_ylabel`](./connector_test.plotting.defaults#function-default-ylabel): Return a default label for the Y axis.
+- [`plot_config.load_plot_config`](./connector_test.plotting.plot_config#function-load-plot-config): Load plot configuration from ``path``.
+- [`plot_config.plot_from_config`](./connector_test.plotting.plot_config#function-plot-from-config): Create a plot from ``config`` and return the output path.
+- [`plot_config.save_plot_config`](./connector_test.plotting.plot_config#function-save-plot-config): Save ``config`` dictionary to ``path`` as JSON.
+- [`plot_utils.compose_label`](./connector_test.plotting.plot_utils#function-compose-label): Return legend label combining custom text with the key.
+- [`plot_utils.infer_ylabel`](./connector_test.plotting.plot_utils#function-infer-ylabel): Return a default Y-axis label based on metrics and scale.
+- [`plot_utils.plot_curves`](./connector_test.plotting.plot_utils#function-plot-curves): Generate plots of mean metrics with provided regression predictions.
+- [`plot_utils.plot_lines`](./connector_test.plotting.plot_utils#function-plot-lines): Plot multiple metric lines with shared axis scales.
+- [`plot_utils.plot_metric`](./connector_test.plotting.plot_utils#function-plot-metric): Plot a single metric for one or more hyper-parameter settings.
+- [`plot_utils.plot_grid`](./connector_test.visualization.plot_utils#function-plot-grid): Create a grid of plots defined by ``subplots``.
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

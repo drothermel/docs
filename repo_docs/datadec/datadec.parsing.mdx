@@ -1,0 +1,212 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `parsing`
+
+
+
+## Table of Contents
+- [`add_lr_cols`](./datadec.parsing#function-add-lr-cols)
+- [`average_mmlu_metrics`](./datadec.parsing#function-average-mmlu-metrics)
+- [`list_col_to_columns`](./datadec.parsing#function-list-col-to-columns)
+- [`make_and_merge_step_to_token_compute_df`](./datadec.parsing#function-make-and-merge-step-to-token-compute-df)
+- [`make_step_to_token_compute_df`](./datadec.parsing#function-make-step-to-token-compute-df)
+- [`map_seed_col_to_int`](./datadec.parsing#function-map-seed-col-to-int)
+- [`merge_all_dfs`](./datadec.parsing#function-merge-all-dfs)
+- [`merge_in_step_to_token_compute_df`](./datadec.parsing#function-merge-in-step-to-token-compute-df)
+- [`parse_downstream_expanded_df`](./datadec.parsing#function-parse-downstream-expanded-df)
+- [`parse_perplexity_df`](./datadec.parsing#function-parse-perplexity-df)
+- [`pivot_task_metrics_to_columns`](./datadec.parsing#function-pivot-task-metrics-to-columns)
+- [`reorder_df_cols`](./datadec.parsing#function-reorder-df-cols)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `reorder_df_cols`
+
+```python
+reorder_df_cols(df: DataFrame, prefix_order: List[str]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `map_seed_col_to_int`
+
+```python
+map_seed_col_to_int(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `make_step_to_token_compute_df`
+
+```python
+make_step_to_token_compute_df(dwn_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `merge_in_step_to_token_compute_df`
+
+```python
+merge_in_step_to_token_compute_df(
+    base_df: DataFrame,
+    step_to_token_compute_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `make_and_merge_step_to_token_compute_df`
+
+```python
+make_and_merge_step_to_token_compute_df(
+    dwn_df: DataFrame,
+    base_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L57"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `list_col_to_columns`
+
+```python
+list_col_to_columns(orig_df: DataFrame, col_name: str) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L67"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `average_mmlu_metrics`
+
+```python
+average_mmlu_metrics(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L79"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `pivot_task_metrics_to_columns`
+
+```python
+pivot_task_metrics_to_columns(dwn_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_downstream_expanded_df`
+
+```python
+parse_downstream_expanded_df(dwn_df_raw: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L106"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_perplexity_df`
+
+```python
+parse_perplexity_df(ppl_df_raw: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L116"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `merge_all_dfs`
+
+```python
+merge_all_dfs(
+    dwn_raw_df: DataFrame,
+    ppl_parsed_df: DataFrame,
+    dwn_parsed_df: DataFrame,
+    dataset_details_df: Optional[DataFrame] = None,
+    model_details_df: Optional[DataFrame] = None,
+    add_token_compute: bool = True
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/parsing.py#L139"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_lr_cols`
+
+```python
+add_lr_cols(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

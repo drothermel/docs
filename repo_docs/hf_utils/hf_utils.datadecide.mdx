@@ -1,0 +1,605 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `datadecide`
+
+
+
+## Table of Contents
+- [`DataDecide`](./hf_utils.datadecide#class-datadecide)
+	- [`__init__`](./hf_utils.datadecide#constructor---init--)
+	- [`average_mmlu_metrics`](./hf_utils.datadecide#method-average-mmlu-metrics)
+	- [`create_full_eval_df`](./hf_utils.datadecide#method-create-full-eval-df)
+	- [`create_mean_std_df`](./hf_utils.datadecide#method-create-mean-std-df)
+	- [`filter_by_max_step_to_use`](./hf_utils.datadecide#method-filter-by-max-step-to-use)
+	- [`get_max_ppl_vals`](./hf_utils.datadecide#method-get-max-ppl-vals)
+	- [`index_dfs`](./hf_utils.datadecide#method-index-dfs)
+	- [`load_df`](./hf_utils.datadecide#method-load-df)
+	- [`load_ds_details_df`](./hf_utils.datadecide#method-load-ds-details-df)
+	- [`merge_in_ds_and_model_details`](./hf_utils.datadecide#method-merge-in-ds-and-model-details)
+	- [`parse_dwn_df`](./hf_utils.datadecide#method-parse-dwn-df)
+	- [`parse_ppl_df`](./hf_utils.datadecide#method-parse-ppl-df)
+	- [`pivot_task_metrics_rows_to_cols`](./hf_utils.datadecide#method-pivot-task-metrics-rows-to-cols)
+	- [`set_step_val_to_max_ppl_val`](./hf_utils.datadecide#method-set-step-val-to-max-ppl-val)
+	- [`setup_all_dfs`](./hf_utils.datadecide#method-setup-all-dfs)
+- [`DataDecideDefaults`](./hf_utils.datadecide#class-datadecidedefaults)
+	- [`__init__`](./hf_utils.datadecide#constructor---init--)
+	- [`calc_batch_size`](./hf_utils.datadecide#method-calc-batch-size)
+	- [`calc_lr_max`](./hf_utils.datadecide#method-calc-lr-max)
+	- [`calc_warmup_tokens`](./hf_utils.datadecide#method-calc-warmup-tokens)
+	- [`fill_all_model_configs`](./hf_utils.datadecide#method-fill-all-model-configs)
+	- [`make_model_config`](./hf_utils.datadecide#method-make-model-config)
+	- [`parse_model_size_str`](./hf_utils.datadecide#method-parse-model-size-str)
+	- [`parse_token_length_str`](./hf_utils.datadecide#method-parse-token-length-str)
+- [`DataDecidePaths`](./hf_utils.datadecide#class-datadecidepaths)
+	- [`__init__`](./hf_utils.datadecide#constructor---init--)
+	- [`dataset_path`](./hf_utils.datadecide#method-dataset-path)
+	- [`parquet_path`](./hf_utils.datadecide#method-parquet-path)
+- [`list_col_to_columns`](./hf_utils.datadecide#function-list-col-to-columns)
+- [`make_step_to_token_compute_df`](./hf_utils.datadecide#function-make-step-to-token-compute-df)
+- [`reorder_df_cols`](./hf_utils.datadecide#function-reorder-df-cols)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L750"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `make_step_to_token_compute_df`
+
+```python
+make_step_to_token_compute_df(dwn_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L760"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `list_col_to_columns`
+
+```python
+list_col_to_columns(orig_df: DataFrame, col_name: str) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L769"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `reorder_df_cols`
+
+```python
+reorder_df_cols(df: DataFrame, prefix_order: list[str]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataDecidePaths`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataDecidePaths()
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> downstream_eval_parsed_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> downstream_eval_raw_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> full_eval_ds_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> mean_eval_ds_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> ppl_eval_parsed_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> ppl_eval_raw_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> std_eval_ds_path
+
+
+
+
+---
+
+#### <kbd>property</kbd> step_to_token_compute_path
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `dataset_path`
+
+```python
+dataset_path(max_params_str: str) → Path
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parquet_path`
+
+```python
+parquet_path(name: str) → Path
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L60"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataDecideDefaults`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataDecideDefaults()
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> model_details_df
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L261"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `calc_batch_size`
+
+```python
+calc_batch_size(model_size_str: str) → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L271"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `calc_lr_max`
+
+```python
+calc_lr_max(model_size_str: str) → float
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L278"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `calc_warmup_tokens`
+
+```python
+calc_warmup_tokens(model_size_str: str) → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L245"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `fill_all_model_configs`
+
+```python
+fill_all_model_configs()
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L178"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `make_model_config`
+
+```python
+make_model_config(model_size_str: str, **kwargs)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L249"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_model_size_str`
+
+```python
+parse_model_size_str(size_str: str) → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L252"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_token_length_str`
+
+```python
+parse_token_length_str(length_str: str, model_size_str: str) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L286"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataDecide`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L287"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataDecide(force_reload=False, verbose=True)
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> all_data_param_combos
+
+
+
+
+---
+
+#### <kbd>property</kbd> ds_details_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> dwn_parsed_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> dwn_raw_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> full_eval_ds
+
+
+
+
+---
+
+#### <kbd>property</kbd> mean_eval_ds
+
+
+
+
+---
+
+#### <kbd>property</kbd> model_details_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> ppl_parsed_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> ppl_raw_df
+
+
+
+
+---
+
+#### <kbd>property</kbd> std_eval_ds
+
+
+
+
+---
+
+#### <kbd>property</kbd> step_to_token_compute_df
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L719"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `average_mmlu_metrics`
+
+```python
+average_mmlu_metrics(df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L678"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_full_eval_df`
+
+```python
+create_full_eval_df(
+    dwn_parsed_df: DataFrame,
+    ppl_parsed_df: DataFrame,
+    step_to_token_compute_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L701"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_mean_std_df`
+
+```python
+create_mean_std_df(merged_df: DataFrame) → tuple[DataFrame, DataFrame]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L521"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `filter_by_max_step_to_use`
+
+```python
+filter_by_max_step_to_use(df)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L537"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_max_ppl_vals`
+
+```python
+get_max_ppl_vals(df: DataFrame)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L649"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `index_dfs`
+
+```python
+index_dfs(df_name, params, data, step)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L644"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_df`
+
+```python
+load_df(df_name: str) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L553"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_ds_details_df`
+
+```python
+load_ds_details_df()
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L526"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_in_ds_and_model_details`
+
+```python
+merge_in_ds_and_model_details(input_df: DataFrame)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L667"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_dwn_df`
+
+```python
+parse_dwn_df(dwn_df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L659"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_ppl_df`
+
+```python
+parse_ppl_df(ppl_df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L734"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `pivot_task_metrics_rows_to_cols`
+
+```python
+pivot_task_metrics_rows_to_cols(dwn_df: DataFrame) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L541"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `set_step_val_to_max_ppl_val`
+
+```python
+set_step_val_to_max_ppl_val(df: DataFrame, step: int = 0)
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/datadecide.py#L566"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `setup_all_dfs`
+
+```python
+setup_all_dfs(force_reload=False, verbose=False)
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

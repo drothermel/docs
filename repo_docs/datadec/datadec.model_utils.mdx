@@ -1,0 +1,273 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `model_utils`
+
+
+
+## Table of Contents
+- [`calc_batch_size`](./datadec.model_utils#function-calc-batch-size)
+- [`calc_lr_max`](./datadec.model_utils#function-calc-lr-max)
+- [`calc_tokens_per_step`](./datadec.model_utils#function-calc-tokens-per-step)
+- [`calc_total_seqs_from_tokens`](./datadec.model_utils#function-calc-total-seqs-from-tokens)
+- [`calc_total_steps_from_tokens`](./datadec.model_utils#function-calc-total-steps-from-tokens)
+- [`calc_total_tokens_from_str`](./datadec.model_utils#function-calc-total-tokens-from-str)
+- [`calc_warmup_tokens`](./datadec.model_utils#function-calc-warmup-tokens)
+- [`calculate_cumulative_lr`](./datadec.model_utils#function-calculate-cumulative-lr)
+- [`create_all_model_configs`](./datadec.model_utils#function-create-all-model-configs)
+- [`create_model_config`](./datadec.model_utils#function-create-model-config)
+- [`get_lr_at_step`](./datadec.model_utils#function-get-lr-at-step)
+- [`get_model_details_df`](./datadec.model_utils#function-get-model-details-df)
+- [`model_size_str_to_true_int`](./datadec.model_utils#function-model-size-str-to-true-int)
+- [`numerical_cosine_integral`](./datadec.model_utils#function-numerical-cosine-integral)
+- [`param_to_numeric`](./datadec.model_utils#function-param-to-numeric)
+- [`round_value_by_multiple`](./datadec.model_utils#function-round-value-by-multiple)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `round_value_by_multiple`
+
+```python
+round_value_by_multiple(value: float, multiple: int) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `model_size_str_to_true_int`
+
+```python
+model_size_str_to_true_int(size_str: str) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L20"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `param_to_numeric`
+
+```python
+param_to_numeric(param_str: str) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L34"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_batch_size`
+
+```python
+calc_batch_size(model_size_str: str) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_total_tokens_from_str`
+
+```python
+calc_total_tokens_from_str(length_str: str, model_size_str: str) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L56"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_warmup_tokens`
+
+```python
+calc_warmup_tokens(model_size_str: str) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L65"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_lr_max`
+
+```python
+calc_lr_max(model_size_str: str) → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L74"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_tokens_per_step`
+
+```python
+calc_tokens_per_step(batch_size: int) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L79"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_total_steps_from_tokens`
+
+```python
+calc_total_steps_from_tokens(total_tokens: int, batch_size: int) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L84"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calc_total_seqs_from_tokens`
+
+```python
+calc_total_seqs_from_tokens(total_tokens: int) → int
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L88"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_model_config`
+
+```python
+create_model_config(model_size_str: str, **kwargs) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L134"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_all_model_configs`
+
+```python
+create_all_model_configs() → Dict[str, Dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L141"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_model_details_df`
+
+```python
+get_model_details_df() → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L153"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `numerical_cosine_integral`
+
+```python
+numerical_cosine_integral(lr_max, lr_final, lr_decay_steps, decay_step)
+```
+
+Numerically integrate the cosine annealing schedule.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L168"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_cumulative_lr`
+
+```python
+calculate_cumulative_lr(
+    step,
+    lr_warmup_start,
+    lr_max,
+    lr_final,
+    warmup_steps,
+    lr_decay_steps
+)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/model_utils.py#L200"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_lr_at_step`
+
+```python
+get_lr_at_step(
+    step,
+    lr_warmup_start,
+    lr_max,
+    lr_final,
+    warmup_steps,
+    lr_decay_steps
+)
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

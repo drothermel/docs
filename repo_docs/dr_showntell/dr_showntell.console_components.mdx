@@ -1,0 +1,183 @@
+---
+title: dr_showntell
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `console_components`
+
+
+
+## Table of Contents
+- [`InfoBlock`](./dr_showntell.console_components#class-infoblock)
+	- [`__init__`](./dr_showntell.console_components#constructor---init--)
+- [`SectionRule`](./dr_showntell.console_components#class-sectionrule)
+	- [`__init__`](./dr_showntell.console_components#constructor---init--)
+- [`SectionTitlePanel`](./dr_showntell.console_components#class-sectiontitlepanel)
+	- [`__init__`](./dr_showntell.console_components#constructor---init--)
+- [`TitlePanel`](./dr_showntell.console_components#class-titlepanel)
+	- [`__init__`](./dr_showntell.console_components#constructor---init--)
+- [`create_counts_table`](./dr_showntell.console_components#function-create-counts-table)
+- [`create_hyperparameter_sweep_table`](./dr_showntell.console_components#function-create-hyperparameter-sweep-table)
+- [`dataframe_to_fancy_tables`](./dr_showntell.console_components#function-dataframe-to-fancy-tables)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_hyperparameter_sweep_table`
+
+```python
+create_hyperparameter_sweep_table(
+    data: DataFrame,
+    fixed_section: dict,
+    swept_section: dict,
+    optimization: Literal['max', 'min'] = 'max',
+    best_performance: dict | None = None,
+    highlight_threshold: float = 0.02
+) → tuple[FancyTable, InfoBlock]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L190"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `dataframe_to_fancy_tables`
+
+```python
+dataframe_to_fancy_tables(
+    df: DataFrame,
+    max_cols_per_table_split: int,
+    title: str | None = None,
+    list_columns_truncate_at: int = 3
+) → list[FancyTable]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L244"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_counts_table`
+
+```python
+create_counts_table(
+    crosstab_df: DataFrame,
+    row_section_title: str,
+    col_section_title: str,
+    present_row_name: str = 'Present',
+    present_col_name: str = 'Present',
+    col_display_transform: Callable | None = None
+) → FancyTable
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `TitlePanel`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+TitlePanel(title: str) → None
+```
+
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SectionRule`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SectionRule(title: str, style: str = 'bold blue') → None
+```
+
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L59"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SectionTitlePanel`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L60"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SectionTitlePanel(label_text: str, *content: Any) → None
+```
+
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L76"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `InfoBlock`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_showntell/console_components.py#L77"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+InfoBlock(text: str, style: str | None = None) → None
+```
+
+
+
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

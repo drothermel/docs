@@ -1,0 +1,127 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/cli/sweep_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cli.sweep_utils`
+Utilities for parameter sweeps.
+
+
+## Table of Contents
+- [`generate_sweep_configs`](./dr_exp.cli.sweep_utils#function-generate-sweep-configs)
+- [`load_hydra_config`](./dr_exp.cli.sweep_utils#function-load-hydra-config)
+- [`parse_sweep_params`](./dr_exp.cli.sweep_utils#function-parse-sweep-params)
+- [`validate_sweep_config`](./dr_exp.cli.sweep_utils#function-validate-sweep-config)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/cli/sweep_utils.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_sweep_params`
+
+```python
+parse_sweep_params(params_str: str) → dict[str, list[str]]
+```
+
+Parse sweep parameters from string format.
+
+Example: "model=resnet18,resnet50 optim.lr=0.001,0.01"
+Returns: {"model": ["resnet18", "resnet50"], "optim.lr": ["0.001", "0.01"]}
+
+
+**Args:**
+
+- <b>`params_str`</b>: String containing sweep parameters
+
+
+**Returns:**
+
+Dictionary mapping parameter names to lists of values
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/cli/sweep_utils.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `generate_sweep_configs`
+
+```python
+generate_sweep_configs(
+    base_config: str,
+    sweep_params: dict[str, list[str]]
+) → list[dict[str, Any]]
+```
+
+Generate all config combinations for a parameter sweep.
+
+
+**Args:**
+
+- <b>`base_config`</b>: Path to base Hydra config file
+- <b>`sweep_params`</b>: Parameters to sweep over
+
+
+**Returns:**
+
+List of composed configs
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/cli/sweep_utils.py#L66"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_hydra_config`
+
+```python
+load_hydra_config(config_path: str, overrides: list[str]) → dict[str, Any]
+```
+
+Load and compose a Hydra config with overrides.
+
+
+**Args:**
+
+- <b>`config_path`</b>: Path to config file
+- <b>`overrides`</b>: List of override strings (e.g., ["model=resnet50", "lr=0.01"])
+
+
+**Returns:**
+
+Composed config as dictionary
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/cli/sweep_utils.py#L92"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_sweep_config`
+
+```python
+validate_sweep_config(config: dict[str, Any]) → None
+```
+
+Validate that a config is ready for job submission.
+
+
+**Args:**
+
+- <b>`config`</b>: Config dictionary to validate
+
+
+**Raises:**
+
+- <b>`AssertionError`</b>: If config is invalid
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

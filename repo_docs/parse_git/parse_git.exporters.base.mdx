@@ -1,0 +1,86 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/base.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `exporters.base`
+Abstract base class and protocol for exporters.
+
+
+## Table of Contents
+- [`BaseExporter`](./parse_git.exporters.base#class-baseexporter)
+	- [`export`](./parse_git.exporters.base#method-export)
+- [`Exporter`](./parse_git.exporters.base#class-exporter)
+	- [`export`](./parse_git.exporters.base#method-export)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/base.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Exporter`
+Protocol for exporting lifecycle data to various formats.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/base.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `export`
+
+```python
+export(lifecycles: list[FileLifecycle], output_path: str | Path) → None
+```
+
+Export lifecycles to specified format.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to export.
+- <b>`output_path`</b>: Path where exported file should be written.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/base.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `BaseExporter`
+Abstract base class for concrete exporters.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/base.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `export`
+
+```python
+export(lifecycles: list[FileLifecycle], output_path: str | Path) → None
+```
+
+Export lifecycles to specified format.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to export.
+- <b>`output_path`</b>: Path where exported file should be written.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

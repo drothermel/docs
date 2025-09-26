@@ -1,0 +1,110 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `trainers.stepvalue_trainer`
+
+
+
+## Table of Contents
+- [`StepValueTrainer`](./ddpred.trainers.stepvalue_trainer#class-stepvaluetrainer)
+	- [`__init__`](./ddpred.trainers.stepvalue_trainer#constructor---init--)
+	- [`fit`](./ddpred.trainers.stepvalue_trainer#method-fit)
+	- [`get_coefficients`](./ddpred.trainers.stepvalue_trainer#method-get-coefficients)
+	- [`predict`](./ddpred.trainers.stepvalue_trainer#method-predict)
+	- [`predict_with_evaluation`](./ddpred.trainers.stepvalue_trainer#method-predict-with-evaluation)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `StepValueTrainer`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+StepValueTrainer(
+    step_choice: int = 0,
+    random_state: int = 42,
+    feature_scaler: str = 'none',
+    target_transform: str = 'none'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `fit`
+
+```python
+fit(X: ndarray, y: ndarray) → StepValueTrainer
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_coefficients`
+
+```python
+get_coefficients() → Dict[str, ndarray]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict`
+
+```python
+predict(X: ndarray) → ndarray
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/stepvalue_trainer.py#L62"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict_with_evaluation`
+
+```python
+predict_with_evaluation(
+    X: ndarray,
+    y: ndarray,
+    groups: Optional[ndarray] = None
+) → Tuple[ndarray, Dict[str, float]]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

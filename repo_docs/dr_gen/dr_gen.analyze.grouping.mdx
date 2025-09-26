@@ -1,0 +1,384 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.grouping`
+
+
+
+## Table of Contents
+- [`HpmGroup`](./dr_gen.analyze.grouping#class-hpmgroup)
+	- [`__init__`](./dr_gen.analyze.grouping#constructor---init--)
+	- [`add_hpm`](./dr_gen.analyze.grouping#method-add-hpm)
+	- [`reset_all_hpms`](./dr_gen.analyze.grouping#method-reset-all-hpms)
+	- [`update_important_keys_by_varying`](./dr_gen.analyze.grouping#method-update-important-keys-by-varying)
+- [`RunGroup`](./dr_gen.analyze.grouping#class-rungroup)
+	- [`__init__`](./dr_gen.analyze.grouping#constructor---init--)
+	- [`display_hpm_key_to_real_key`](./dr_gen.analyze.grouping#method-display-hpm-key-to-real-key)
+	- [`display_hpm_key_val_to_real_val`](./dr_gen.analyze.grouping#method-display-hpm-key-val-to-real-val)
+	- [`filter_rids`](./dr_gen.analyze.grouping#method-filter-rids)
+	- [`get_display_hpm_key`](./dr_gen.analyze.grouping#method-get-display-hpm-key)
+	- [`get_display_hpm_str`](./dr_gen.analyze.grouping#method-get-display-hpm-str)
+	- [`get_display_hpm_val`](./dr_gen.analyze.grouping#method-get-display-hpm-val)
+	- [`get_hpms_sweep_table`](./dr_gen.analyze.grouping#method-get-hpms-sweep-table)
+	- [`get_swept_table_data`](./dr_gen.analyze.grouping#method-get-swept-table-data)
+	- [`ignore_rid`](./dr_gen.analyze.grouping#method-ignore-rid)
+	- [`ignore_runs_by_hpms`](./dr_gen.analyze.grouping#method-ignore-runs-by-hpms)
+	- [`load_run`](./dr_gen.analyze.grouping#method-load-run)
+	- [`load_runs_from_base_dir`](./dr_gen.analyze.grouping#method-load-runs-from-base-dir)
+	- [`select_run_data_by_hpms`](./dr_gen.analyze.grouping#method-select-run-data-by-hpms)
+	- [`select_run_metrics_by_hpms`](./dr_gen.analyze.grouping#method-select-run-metrics-by-hpms)
+	- [`select_run_split_metrics_by_hpms`](./dr_gen.analyze.grouping#method-select-run-split-metrics-by-hpms)
+	- [`update_hpm_sweep_info`](./dr_gen.analyze.grouping#method-update-hpm-sweep-info)
+- [`filter_entries_by_selection`](./dr_gen.analyze.grouping#function-filter-entries-by-selection)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_entries_by_selection`
+
+```python
+filter_entries_by_selection(all_entries, **kwargs: Any)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L30"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `HpmGroup`
+Manages hyperparameter groups and tracks varying hyperparameters across runs.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+HpmGroup() → None
+```
+
+Initialize HpmGroup to track hyperparameter mappings and variations.
+
+
+
+---
+
+#### <kbd>property</kbd> hpm_to_rids
+
+Map hyperparameters to their associated run IDs.
+
+
+---
+
+#### <kbd>property</kbd> ordered_varying_keys
+
+Get sorted list of hyperparameter keys that vary across runs.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `add_hpm`
+
+```python
+add_hpm(hpm, rid) → None
+```
+
+Add a hyperparameter configuration for a specific run ID.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L59"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `reset_all_hpms`
+
+```python
+reset_all_hpms() → None
+```
+
+Reset important keys for all stored hyperparameter configurations.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L64"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `update_important_keys_by_varying`
+
+```python
+update_important_keys_by_varying(exclude_prefixes=None) → None
+```
+
+Update important keys based on which hyperparameters vary across runs.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `RunGroup`
+Manages groups of runs with their hyperparameters and metrics for analysis.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L106"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+RunGroup() → None
+```
+
+Initialize RunGroup with default configuration and remapping settings.
+
+
+
+---
+
+#### <kbd>property</kbd> num_runs
+
+Get total number of runs in this group.
+
+
+---
+
+#### <kbd>property</kbd> rids
+
+Get set of all run IDs in this group.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L170"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `display_hpm_key_to_real_key`
+
+```python
+display_hpm_key_to_real_key(hpm, kstr)
+```
+
+Convert display key string back to actual hyperparameter key.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L180"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `display_hpm_key_val_to_real_val`
+
+```python
+display_hpm_key_val_to_real_val(hpm, kstr, vstr)
+```
+
+Convert display value string back to actual hyperparameter value.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L188"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `filter_rids`
+
+```python
+filter_rids(potential_rids)
+```
+
+Filter run IDs to only those present in this group.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L151"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_display_hpm_key`
+
+```python
+get_display_hpm_key(k)
+```
+
+Convert hyperparameter key to display format using configured remapping.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L161"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_display_hpm_str`
+
+```python
+get_display_hpm_str(hpm)
+```
+
+Generate display string for a hyperparameter configuration.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L155"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_display_hpm_val`
+
+```python
+get_display_hpm_val(k, v)
+```
+
+Convert hyperparameter value to display format using configured remapping.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L242"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_hpms_sweep_table`
+
+```python
+get_hpms_sweep_table()
+```
+
+Generate table showing hyperparameter combinations and run counts.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L229"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_swept_table_data`
+
+```python
+get_swept_table_data()
+```
+
+Get table data showing swept hyperparameter keys and their values.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L194"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `ignore_rid`
+
+```python
+ignore_rid(rid) → None
+```
+
+Mark a run as ignored and remove it from active tracking.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L321"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `ignore_runs_by_hpms`
+
+```python
+ignore_runs_by_hpms(**kwargs: Any) → None
+```
+
+Mark runs matching hyperparameter filters as ignored.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L202"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_run`
+
+```python
+load_run(rid, file_path) → None
+```
+
+Load run data from file and add to group if parsing succeeds.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L213"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_runs_from_base_dir`
+
+```python
+load_runs_from_base_dir(base_dir) → None
+```
+
+Load all JSONL run files from a base directory recursively.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L257"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_run_data_by_hpms`
+
+```python
+select_run_data_by_hpms(**kwargs: Any)
+```
+
+Select run data matching specified hyperparameter filters.
+
+Returns: { hpm: [rdata ...] }
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L303"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_run_metrics_by_hpms`
+
+```python
+select_run_metrics_by_hpms(metric_name, splits=None, **kwargs: Any)
+```
+
+Select metrics across multiple splits filtered by hyperparameters.
+
+Returns: { hpm: { split : [runs [metric_data ...]]}}
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L289"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `select_run_split_metrics_by_hpms`
+
+```python
+select_run_split_metrics_by_hpms(metric_name, split, **kwargs: Any)
+```
+
+Select metrics for specific split filtered by hyperparameters.
+
+Returns: { hpm: [runs [metric_data ...]]}
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/grouping.py#L223"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `update_hpm_sweep_info`
+
+```python
+update_hpm_sweep_info() → None
+```
+
+Update hyperparameter sweep information based on current runs.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

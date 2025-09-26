@@ -1,0 +1,164 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `loader`
+
+
+
+## Table of Contents
+- [`DataFrameLoader`](./datadec.loader#class-dataframeloader)
+	- [`__init__`](./datadec.loader#constructor---init--)
+	- [`clear_cache`](./datadec.loader#method-clear-cache)
+	- [`get_cache_size`](./datadec.loader#method-get-cache-size)
+	- [`is_cached`](./datadec.loader#method-is-cached)
+	- [`load_name`](./datadec.loader#method-load-name)
+	- [`load_path`](./datadec.loader#method-load-path)
+	- [`possible_dataframes`](./datadec.loader#method-possible-dataframes)
+	- [`set_name`](./datadec.loader#method-set-name)
+	- [`written_dataframes`](./datadec.loader#method-written-dataframes)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataFrameLoader`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataFrameLoader(paths: Optional[DataDecidePaths] = None)
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> cached_dataframes
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `clear_cache`
+
+```python
+clear_cache(cache_key: Optional[str] = None) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_cache_size`
+
+```python
+get_cache_size() → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `is_cached`
+
+```python
+is_cached(cache_key: str) → bool
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_name`
+
+```python
+load_name(name: str) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_path`
+
+```python
+load_path(path: Path, name: Optional[str] = None) → DataFrame
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `possible_dataframes`
+
+```python
+possible_dataframes() → list[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `set_name`
+
+```python
+set_name(name: str, df: DataFrame) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/loader.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `written_dataframes`
+
+```python
+written_dataframes() → list[str]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

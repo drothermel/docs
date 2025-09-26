@@ -1,0 +1,60 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/training/dummy_trainer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `training.dummy_trainer`
+Dummy trainer for testing config sweeps.
+
+
+## Table of Contents
+- [`train_dummy`](./dr_exp.training.dummy_trainer#function-train-dummy)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/training/dummy_trainer.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `train_dummy`
+
+```python
+train_dummy(
+    job_id: str,
+    worker_id: str,
+    storage_path: str,
+    epochs: int = 10,
+    batch_size: int = 32,
+    lr: float = 0.001,
+    model: str = 'resnet18',
+    **kwargs: Any
+) → dict[str, Any]
+```
+
+Dummy training function for testing.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID (injected by worker)
+- <b>`worker_id`</b>: Worker ID (injected by worker)
+- <b>`storage_path`</b>: Path to store artifacts (injected by worker)
+- <b>`epochs`</b>: Number of epochs to simulate
+- <b>`batch_size`</b>: Batch size
+- <b>`lr`</b>: Learning rate
+- <b>`model`</b>: Model name
+- <b>`**kwargs`</b>: Additional config parameters
+
+
+**Returns:**
+
+Dict with training results
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

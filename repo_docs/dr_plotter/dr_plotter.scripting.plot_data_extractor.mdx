@@ -1,0 +1,544 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.plot_data_extractor`
+
+
+
+## Table of Contents
+- [`check_all_subplot_legends`](./dr_plotter.scripting.plot_data_extractor#function-check-all-subplot-legends)
+- [`convert_legend_size_to_scatter_size`](./dr_plotter.scripting.plot_data_extractor#function-convert-legend-size-to-scatter-size)
+- [`convert_scatter_size_to_legend_size`](./dr_plotter.scripting.plot_data_extractor#function-convert-scatter-size-to-legend-size)
+- [`debug_legend_detection`](./dr_plotter.scripting.plot_data_extractor#function-debug-legend-detection)
+- [`extract_all_plot_data_from_collections`](./dr_plotter.scripting.plot_data_extractor#function-extract-all-plot-data-from-collections)
+- [`extract_alphas`](./dr_plotter.scripting.plot_data_extractor#function-extract-alphas)
+- [`extract_barcontainers_from_axis`](./dr_plotter.scripting.plot_data_extractor#function-extract-barcontainers-from-axis)
+- [`extract_channel_values_from_collections`](./dr_plotter.scripting.plot_data_extractor#function-extract-channel-values-from-collections)
+- [`extract_collection_properties`](./dr_plotter.scripting.plot_data_extractor#function-extract-collection-properties)
+- [`extract_colors`](./dr_plotter.scripting.plot_data_extractor#function-extract-colors)
+- [`extract_figure_legend_properties`](./dr_plotter.scripting.plot_data_extractor#function-extract-figure-legend-properties)
+- [`extract_images_from_axis`](./dr_plotter.scripting.plot_data_extractor#function-extract-images-from-axis)
+- [`extract_legend_data_with_alphas`](./dr_plotter.scripting.plot_data_extractor#function-extract-legend-data-with-alphas)
+- [`extract_legend_properties`](./dr_plotter.scripting.plot_data_extractor#function-extract-legend-properties)
+- [`extract_lines_from_axis`](./dr_plotter.scripting.plot_data_extractor#function-extract-lines-from-axis)
+- [`extract_markers`](./dr_plotter.scripting.plot_data_extractor#function-extract-markers)
+- [`extract_pathcollections_from_axis`](./dr_plotter.scripting.plot_data_extractor#function-extract-pathcollections-from-axis)
+- [`extract_polycollections_from_axis`](./dr_plotter.scripting.plot_data_extractor#function-extract-polycollections-from-axis)
+- [`extract_positions`](./dr_plotter.scripting.plot_data_extractor#function-extract-positions)
+- [`extract_sizes`](./dr_plotter.scripting.plot_data_extractor#function-extract-sizes)
+- [`extract_styles`](./dr_plotter.scripting.plot_data_extractor#function-extract-styles)
+- [`extract_subplot_properties`](./dr_plotter.scripting.plot_data_extractor#function-extract-subplot-properties)
+- [`filter_main_grid_axes`](./dr_plotter.scripting.plot_data_extractor#function-filter-main-grid-axes)
+- [`get_main_grid_axes_from_figure`](./dr_plotter.scripting.plot_data_extractor#function-get-main-grid-axes-from-figure)
+- [`identify_marker_from_path`](./dr_plotter.scripting.plot_data_extractor#function-identify-marker-from-path)
+- [`is_legend_actually_visible`](./dr_plotter.scripting.plot_data_extractor#function-is-legend-actually-visible)
+- [`validate_axes_access`](./dr_plotter.scripting.plot_data_extractor#function-validate-axes-access)
+- [`validate_figure_list_result`](./dr_plotter.scripting.plot_data_extractor#function-validate-figure-list-result)
+- [`validate_figure_result`](./dr_plotter.scripting.plot_data_extractor#function-validate-figure-result)
+- [`validate_legend_properties`](./dr_plotter.scripting.plot_data_extractor#function-validate-legend-properties)
+- [`validate_subplot_coord_access`](./dr_plotter.scripting.plot_data_extractor#function-validate-subplot-coord-access)
+- [`verify_legend_visibility`](./dr_plotter.scripting.plot_data_extractor#function-verify-legend-visibility)
+- [`verify_legend_visibility_core`](./dr_plotter.scripting.plot_data_extractor#function-verify-legend-visibility-core)
+
+
+**Global Variables**
+---------------
+- **RGB_CHANNEL_COUNT**
+- **RGBA_CHANNEL_COUNT**
+- **DEFAULT_LINE_ALPHA**
+- **LEGEND_CHECK_FAILED**
+- **LEGEND_CHECK_PASSED**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_colors`
+
+```python
+extract_colors(obj: 'Any') → list[RGBA]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L64"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_markers`
+
+```python
+extract_markers(obj: 'Any') → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L96"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_sizes`
+
+```python
+extract_sizes(obj: 'Any') → list[float]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L117"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_positions`
+
+```python
+extract_positions(obj: 'Any') → list[Position]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L125"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_alphas`
+
+```python
+extract_alphas(obj: 'Any') → list[float]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L160"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_styles`
+
+```python
+extract_styles(obj: 'Any') → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L185"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_legend_properties`
+
+```python
+extract_legend_properties(ax: 'Any') → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L220"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_collection_properties`
+
+```python
+extract_collection_properties(
+    obj: 'Any',
+    collection_type: 'str' = 'auto'
+) → CollectionProperties
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L242"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_figure_legend_properties`
+
+```python
+extract_figure_legend_properties(fig: 'Any') → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L286"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_scatter_size_to_legend_size`
+
+```python
+convert_scatter_size_to_legend_size(scatter_size: 'float') → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L290"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_legend_size_to_scatter_size`
+
+```python
+convert_legend_size_to_scatter_size(legend_size: 'float') → float
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L395"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_pathcollections_from_axis`
+
+```python
+extract_pathcollections_from_axis(ax: 'Any') → list[PathCollection]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L403"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_polycollections_from_axis`
+
+```python
+extract_polycollections_from_axis(ax: 'Any') → list[PolyCollection]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L411"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_barcontainers_from_axis`
+
+```python
+extract_barcontainers_from_axis(ax: 'Any') → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L415"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_lines_from_axis`
+
+```python
+extract_lines_from_axis(ax: 'Any') → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L419"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_images_from_axis`
+
+```python
+extract_images_from_axis(ax: 'Any') → list[AxesImage]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L423"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `debug_legend_detection`
+
+```python
+debug_legend_detection(ax: 'Any') → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L444"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_subplot_properties`
+
+```python
+extract_subplot_properties(ax: 'Any') → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L502"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `identify_marker_from_path`
+
+```python
+identify_marker_from_path(path: 'Any') → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L506"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_channel_values_from_collections`
+
+```python
+extract_channel_values_from_collections(
+    collections: 'list[dict[str, Any]]',
+    channel: 'str'
+) → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L538"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_all_plot_data_from_collections`
+
+```python
+extract_all_plot_data_from_collections(
+    collections: 'list[dict[str, Any]]'
+) → dict[str, list[Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L573"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_legend_data_with_alphas`
+
+```python
+extract_legend_data_with_alphas(
+    legend_props: 'dict[str, Any]'
+) → dict[str, list[Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L592"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_legend_properties`
+
+```python
+validate_legend_properties(ax: 'Axes') → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L619"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `is_legend_actually_visible`
+
+```python
+is_legend_actually_visible(
+    ax: 'Axes',
+    figure: 'Figure | None' = None
+) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L722"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `check_all_subplot_legends`
+
+```python
+check_all_subplot_legends(figure: 'Figure') → dict[int, dict[str, Any]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L732"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_legend_visibility`
+
+```python
+verify_legend_visibility(
+    figure: 'Figure',
+    expected_visible_count: 'int | None' = None,
+    fail_on_missing: 'bool' = True
+) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L843"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verify_legend_visibility_core`
+
+```python
+verify_legend_visibility_core(
+    figure: 'Figure',
+    expected_visible_count: 'int | None' = None
+) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L887"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_main_grid_axes`
+
+```python
+filter_main_grid_axes(fig_axes: 'list[Any]') → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L902"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_main_grid_axes_from_figure`
+
+```python
+get_main_grid_axes_from_figure(fig: 'Figure') → list[Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L910"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_subplot_coord_access`
+
+```python
+validate_subplot_coord_access(
+    fig: 'Figure',
+    subplot_coord: 'tuple[int, int]'
+) → Axes
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L923"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_figure_result`
+
+```python
+validate_figure_result(result: 'Any') → Figure
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L939"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_figure_list_result`
+
+```python
+validate_figure_list_result(result: 'Any') → list[Figure]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/scripting/plot_data_extractor.py#L963"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `validate_axes_access`
+
+```python
+validate_axes_access(fig_axes: 'list[Any]', row: 'int', col: 'int') → Axes
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

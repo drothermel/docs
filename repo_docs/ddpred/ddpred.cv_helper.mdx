@@ -1,0 +1,73 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cv_helper.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cv_helper`
+
+
+
+## Table of Contents
+- [`run_cv_experiment_enhanced`](./ddpred.cv_helper#function-run-cv-experiment-enhanced)
+- [`run_cv_sweep`](./ddpred.cv_helper#function-run-cv-sweep)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cv_helper.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `run_cv_sweep`
+
+```python
+run_cv_sweep(
+    trainer_class: Type[BaseEstimator],
+    trainer_params: Dict[str, Any],
+    data_config: Dict[str, Any],
+    param_grid: Optional[Dict[str, List[Any]]] = None,
+    scoring_metric: str = 'decision_accuracy',
+    evaluation_metrics: Optional[List[str]] = None,
+    outer_cv_splitter: Optional[Any] = None,
+    inner_cv_splitter: Optional[Any] = None,
+    verbose: bool = False,
+    target_percentages: Optional[List[float]] = None
+) → Dict[str, Any]
+```
+
+Run a CV sweep using the parameter-size CrossValidationEngine.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cv_helper.py#L53"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `run_cv_experiment_enhanced`
+
+```python
+run_cv_experiment_enhanced(
+    system: str = 'modern',
+    trainer_class: Type[BaseEstimator] = None,
+    trainer_params: Dict[str, Any] = None,
+    data_config: Dict[str, Any] = None,
+    param_grid: Optional[Dict[str, List[Any]]] = None,
+    scoring_metric: str = 'nrmse',
+    feature_scaler: str = 'none',
+    target_transform: str = 'none',
+    target_percentages: Optional[List[float]] = None,
+    save_results: bool = True,
+    output_dir: str = 'results/experiments',
+    **kwargs
+) → Dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,229 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `wandb_eval.wandb_analyzer`
+
+
+
+## Table of Contents
+- [`WandBDataAnalyzer`](./datadec.wandb_eval.wandb_analyzer#class-wandbdataanalyzer)
+	- [`__init__`](./datadec.wandb_eval.wandb_analyzer#constructor---init--)
+	- [`analyze_column_categorization`](./datadec.wandb_eval.wandb_analyzer#method-analyze-column-categorization)
+	- [`generate_comprehensive_report`](./datadec.wandb_eval.wandb_analyzer#method-generate-comprehensive-report)
+- [`analyze_nan_patterns`](./datadec.wandb_eval.wandb_analyzer#function-analyze-nan-patterns)
+- [`analyze_wandb_tags`](./datadec.wandb_eval.wandb_analyzer#function-analyze-wandb-tags)
+- [`categorize_columns_by_key_sets`](./datadec.wandb_eval.wandb_analyzer#function-categorize-columns-by-key-sets)
+- [`convert_cols_to_strings`](./datadec.wandb_eval.wandb_analyzer#function-convert-cols-to-strings)
+- [`filter_constant_and_nanconstant_cols`](./datadec.wandb_eval.wandb_analyzer#function-filter-constant-and-nanconstant-cols)
+- [`handle_object_cols`](./datadec.wandb_eval.wandb_analyzer#function-handle-object-cols)
+- [`main`](./datadec.wandb_eval.wandb_analyzer#function-main)
+- [`split_obj_vs_nonobj_cols`](./datadec.wandb_eval.wandb_analyzer#function-split-obj-vs-nonobj-cols)
+- [`split_oe_cols_vs_rest`](./datadec.wandb_eval.wandb_analyzer#function-split-oe-cols-vs-rest)
+- [`split_pretrain_eval_cols_vs_rest`](./datadec.wandb_eval.wandb_analyzer#function-split-pretrain-eval-cols-vs-rest)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_cols_to_strings`
+
+```python
+convert_cols_to_strings(
+    df: DataFrame,
+    cols: list[str]
+) → tuple[DataFrame, list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_obj_vs_nonobj_cols`
+
+```python
+split_obj_vs_nonobj_cols(df: DataFrame) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `handle_object_cols`
+
+```python
+handle_object_cols(df: DataFrame, rest_cols: list[str]) → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_nan_patterns`
+
+```python
+analyze_nan_patterns(df: DataFrame) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L66"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_wandb_tags`
+
+```python
+analyze_wandb_tags(df: DataFrame) → dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L81"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_oe_cols_vs_rest`
+
+```python
+split_oe_cols_vs_rest(cols: list[str]) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L87"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_pretrain_eval_cols_vs_rest`
+
+```python
+split_pretrain_eval_cols_vs_rest(cols: list[str]) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `categorize_columns_by_key_sets`
+
+```python
+categorize_columns_by_key_sets(
+    all_cols: list[str]
+) → tuple[dict[str, list[str]], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_constant_and_nanconstant_cols`
+
+```python
+filter_constant_and_nanconstant_cols(df: DataFrame) → dict[str, list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L292"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `main`
+
+```python
+main()
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L138"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `WandBDataAnalyzer`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L139"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WandBDataAnalyzer(loader: WandBDataLoader = None)
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L146"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `analyze_column_categorization`
+
+```python
+analyze_column_categorization(
+    runs_df: DataFrame
+) → tuple[DataFrame, dict[str, Any]]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_analyzer.py#L177"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `generate_comprehensive_report`
+
+```python
+generate_comprehensive_report(runs_df: Optional[DataFrame] = None) → str
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

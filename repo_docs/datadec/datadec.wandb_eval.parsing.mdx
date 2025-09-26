@@ -1,0 +1,515 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `wandb_eval.parsing`
+
+
+
+## Table of Contents
+- [`add_datadecide_columns`](./datadec.wandb_eval.parsing#function-add-datadecide-columns)
+- [`add_pretraining_progression_rows`](./datadec.wandb_eval.parsing#function-add-pretraining-progression-rows)
+- [`assert_constant_or_nan_columns`](./datadec.wandb_eval.parsing#function-assert-constant-or-nan-columns)
+- [`assert_exact_match_columns`](./datadec.wandb_eval.parsing#function-assert-exact-match-columns)
+- [`assert_nan_only_columns`](./datadec.wandb_eval.parsing#function-assert-nan-only-columns)
+- [`assert_no_remaining_noise_columns`](./datadec.wandb_eval.parsing#function-assert-no-remaining-noise-columns)
+- [`categorize_columns_by_key_sets`](./datadec.wandb_eval.parsing#function-categorize-columns-by-key-sets)
+- [`convert_objects_and_normalize_dtypes`](./datadec.wandb_eval.parsing#function-convert-objects-and-normalize-dtypes)
+- [`copy_final_oe_to_pretraining_metrics`](./datadec.wandb_eval.parsing#function-copy-final-oe-to-pretraining-metrics)
+- [`create_and_save_pretrain_posttrain_df`](./datadec.wandb_eval.parsing#function-create-and-save-pretrain-posttrain-df)
+- [`create_unified_df`](./datadec.wandb_eval.parsing#function-create-unified-df)
+- [`create_unified_df_with_pretraining`](./datadec.wandb_eval.parsing#function-create-unified-df-with-pretraining)
+- [`drop_wandb_constant_ignored_cols`](./datadec.wandb_eval.parsing#function-drop-wandb-constant-ignored-cols)
+- [`extract_dataset_from_model_path`](./datadec.wandb_eval.parsing#function-extract-dataset-from-model-path)
+- [`extract_oe_eval_metrics_cols`](./datadec.wandb_eval.parsing#function-extract-oe-eval-metrics-cols)
+- [`filter_broken_initial_testing_runs`](./datadec.wandb_eval.parsing#function-filter-broken-initial-testing-runs)
+- [`filter_constant_and_nanconstant_cols`](./datadec.wandb_eval.parsing#function-filter-constant-and-nanconstant-cols)
+- [`filter_dpo_test_runs`](./datadec.wandb_eval.parsing#function-filter-dpo-test-runs)
+- [`filter_pretrain_metric_cols`](./datadec.wandb_eval.parsing#function-filter-pretrain-metric-cols)
+- [`fix_oe_metrics_to_final_step_only`](./datadec.wandb_eval.parsing#function-fix-oe-metrics-to-final-step-only)
+- [`get_created_time_key`](./datadec.wandb_eval.parsing#function-get-created-time-key)
+- [`integrate_pretraining_data`](./datadec.wandb_eval.parsing#function-integrate-pretraining-data)
+- [`map_wandb_dataset_to_datadecide`](./datadec.wandb_eval.parsing#function-map-wandb-dataset-to-datadecide)
+- [`map_wandb_model_size_to_datadecide`](./datadec.wandb_eval.parsing#function-map-wandb-model-size-to-datadecide)
+- [`parse_and_clean_runs_df`](./datadec.wandb_eval.parsing#function-parse-and-clean-runs-df)
+- [`parse_oe_eval_metrics`](./datadec.wandb_eval.parsing#function-parse-oe-eval-metrics)
+- [`parse_wandb_tags`](./datadec.wandb_eval.parsing#function-parse-wandb-tags)
+- [`preprocess_object_columns`](./datadec.wandb_eval.parsing#function-preprocess-object-columns)
+- [`rebuild_run_df`](./datadec.wandb_eval.parsing#function-rebuild-run-df)
+- [`split_obj_vs_nonobj_cols`](./datadec.wandb_eval.parsing#function-split-obj-vs-nonobj-cols)
+- [`split_oe_cols_vs_rest`](./datadec.wandb_eval.parsing#function-split-oe-cols-vs-rest)
+- [`split_pretrain_eval_cols_vs_rest`](./datadec.wandb_eval.parsing#function-split-pretrain-eval-cols-vs-rest)
+
+
+**Global Variables**
+---------------
+- **HARDCODED_SIZE_MAPPING**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_dataset_from_model_path`
+
+```python
+extract_dataset_from_model_path(model_path: str) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L25"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `map_wandb_dataset_to_datadecide`
+
+```python
+map_wandb_dataset_to_datadecide(wandb_dataset: str) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L46"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `map_wandb_model_size_to_datadecide`
+
+```python
+map_wandb_model_size_to_datadecide(model_size: int) → Optional[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_datadecide_columns`
+
+```python
+add_datadecide_columns(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_oe_cols_vs_rest`
+
+```python
+split_oe_cols_vs_rest(remaining_cols: list[str]) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L84"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_pretrain_eval_cols_vs_rest`
+
+```python
+split_pretrain_eval_cols_vs_rest(
+    remaining_cols: list[str]
+) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L92"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_created_time_key`
+
+```python
+get_created_time_key(df: DataFrame) → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L99"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_broken_initial_testing_runs`
+
+```python
+filter_broken_initial_testing_runs(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L103"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_dpo_test_runs`
+
+```python
+filter_dpo_test_runs(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L111"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `drop_wandb_constant_ignored_cols`
+
+```python
+drop_wandb_constant_ignored_cols(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L119"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `split_obj_vs_nonobj_cols`
+
+```python
+split_obj_vs_nonobj_cols(df: DataFrame) → tuple[list[str], list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L130"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_constant_and_nanconstant_cols`
+
+```python
+filter_constant_and_nanconstant_cols(df: DataFrame) → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L163"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_pretrain_metric_cols`
+
+```python
+filter_pretrain_metric_cols(df: DataFrame) → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L167"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_oe_eval_metrics_cols`
+
+```python
+extract_oe_eval_metrics_cols(df: DataFrame) → tuple[DataFrame, list[str]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L175"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_objects_and_normalize_dtypes`
+
+```python
+convert_objects_and_normalize_dtypes(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L237"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `assert_nan_only_columns`
+
+```python
+assert_nan_only_columns(df: DataFrame) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L245"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `assert_constant_or_nan_columns`
+
+```python
+assert_constant_or_nan_columns(df: DataFrame) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L258"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `assert_exact_match_columns`
+
+```python
+assert_exact_match_columns(df: DataFrame) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L272"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `assert_no_remaining_noise_columns`
+
+```python
+assert_no_remaining_noise_columns(col_categories: dict) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L284"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `categorize_columns_by_key_sets`
+
+```python
+categorize_columns_by_key_sets(all_cols)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L294"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_and_clean_runs_df`
+
+```python
+parse_and_clean_runs_df(runs_df)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L340"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `preprocess_object_columns`
+
+```python
+preprocess_object_columns(df: DataFrame) → tuple[DataFrame, dict]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L346"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_wandb_tags`
+
+```python
+parse_wandb_tags(filtered_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L369"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_oe_eval_metrics`
+
+```python
+parse_oe_eval_metrics(filtered_df: DataFrame, oe_cols: list) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L405"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `rebuild_run_df`
+
+```python
+rebuild_run_df(filtered_df: DataFrame, categorized_cols: dict) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L469"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fix_oe_metrics_to_final_step_only`
+
+```python
+fix_oe_metrics_to_final_step_only(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L484"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `copy_final_oe_to_pretraining_metrics`
+
+```python
+copy_final_oe_to_pretraining_metrics(
+    df: DataFrame,
+    pretraining_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L522"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `integrate_pretraining_data`
+
+```python
+integrate_pretraining_data(unified_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L551"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_pretraining_progression_rows`
+
+```python
+add_pretraining_progression_rows(
+    finetuning_df: DataFrame,
+    pretraining_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L602"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_unified_df`
+
+```python
+create_unified_df(runs_df: DataFrame, history_df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L611"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_unified_df_with_pretraining`
+
+```python
+create_unified_df_with_pretraining(
+    runs_df: DataFrame,
+    history_df: DataFrame
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/parsing.py#L618"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_and_save_pretrain_posttrain_df`
+
+```python
+create_and_save_pretrain_posttrain_df(
+    save_path: Optional[str] = None
+) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

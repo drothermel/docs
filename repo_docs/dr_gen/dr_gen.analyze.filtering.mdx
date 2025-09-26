@@ -1,0 +1,115 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/filtering.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.filtering`
+Filtering utilities for experiment analysis.
+
+
+## Table of Contents
+- [`filter_groups`](./dr_gen.analyze.filtering#function-filter-groups)
+- [`filter_groups_interactive`](./dr_gen.analyze.filtering#function-filter-groups-interactive)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/filtering.py#L6"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_groups`
+
+```python
+filter_groups(
+    groups: dict[tuple, Any],
+    hpm_names: list[str],
+    include: dict[str, list[Any]] | None = None,
+    exclude: dict[str, list[Any]] | None = None,
+    include_pairs: list[tuple] | None = None,
+    exclude_pairs: list[tuple] | None = None
+) → dict[tuple, Any]
+```
+
+Filter groups based on hyperparameter values.
+
+Provides flexible filtering with include/exclude logic for individual
+hyperparameters and specific combinations.
+
+
+**Args:**
+
+- <b>`groups`</b>: Dict mapping hyperparameter tuples to data (runs or metric dfs)
+- <b>`hpm_names`</b>: List of hyperparameter names corresponding to tuple positions
+- <b>`include`</b>: Dict of hpm_name -> list of values to include
+- <b>`exclude`</b>: Dict of hpm_name -> list of values to exclude
+- <b>`include_pairs`</b>: List of tuples representing specific combinations to include
+- <b>`exclude_pairs`</b>: List of tuples representing specific combinations to exclude
+
+
+**Returns:**
+
+Filtered groups dict with same structure as input
+
+
+**Example:**
+
+```python
+    >>> # Filter to only lr in [0.01, 0.1] and exclude wd=0.01
+>>> filtered = filter_groups(
+...     groups,
+...     hpm_names=["optim.lr", "optim.weight_decay"],
+...     include={"optim.lr": [0.01, 0.1]},
+...     exclude={"optim.weight_decay": [0.01]},
+... )
+
+>>> # Exclude specific (lr, wd) pairs
+>>> filtered = filter_groups(
+...     groups,
+...     hpm_names=["optim.lr", "optim.weight_decay"],
+...     exclude_pairs=[(0.3, 0.001), (1.0, 0.0001)],
+... )
+    ```
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/filtering.py#L89"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_groups_interactive`
+
+```python
+filter_groups_interactive(
+    groups: dict[tuple, Any],
+    hpm_names: list[str],
+    initial_include: dict[str, list[Any]] | None = None,
+    initial_exclude: dict[str, list[Any]] | None = None
+) → tuple[dict[tuple, Any], dict[str, list[Any]], dict[str, list[Any]]]
+```
+
+Interactive filtering helper that prints current state and returns filters.
+
+Useful for iterative filtering in notebooks where you want to see what's
+currently included and easily modify filters.
+
+
+**Args:**
+
+- <b>`groups`</b>: Dict mapping hyperparameter tuples to data
+- <b>`hpm_names`</b>: List of hyperparameter names
+- <b>`initial_include`</b>: Starting include filters
+- <b>`initial_exclude`</b>: Starting exclude filters
+
+
+**Returns:**
+
+Tuple of (filtered_groups, include_filters, exclude_filters)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

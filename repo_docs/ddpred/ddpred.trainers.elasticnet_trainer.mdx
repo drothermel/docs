@@ -1,0 +1,111 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `trainers.elasticnet_trainer`
+
+
+
+## Table of Contents
+- [`ElasticNetTrainer`](./ddpred.trainers.elasticnet_trainer#class-elasticnettrainer)
+	- [`__init__`](./ddpred.trainers.elasticnet_trainer#constructor---init--)
+	- [`fit`](./ddpred.trainers.elasticnet_trainer#method-fit)
+	- [`get_coefficients`](./ddpred.trainers.elasticnet_trainer#method-get-coefficients)
+	- [`predict`](./ddpred.trainers.elasticnet_trainer#method-predict)
+	- [`predict_with_evaluation`](./ddpred.trainers.elasticnet_trainer#method-predict-with-evaluation)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ElasticNetTrainer`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ElasticNetTrainer(
+    alpha: float = 1.0,
+    l1_ratio: float = 0.5,
+    random_state: int = 42,
+    feature_scaler: str = 'none',
+    target_transform: str = 'none'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L31"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `fit`
+
+```python
+fit(X: ndarray, y: ndarray) → ElasticNetTrainer
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_coefficients`
+
+```python
+get_coefficients() → Dict[str, ndarray]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L43"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict`
+
+```python
+predict(X: ndarray) → ndarray
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/elasticnet_trainer.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict_with_evaluation`
+
+```python
+predict_with_evaluation(
+    X: ndarray,
+    y: ndarray,
+    groups: Optional[ndarray] = None
+) → Tuple[ndarray, Dict[str, float]]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

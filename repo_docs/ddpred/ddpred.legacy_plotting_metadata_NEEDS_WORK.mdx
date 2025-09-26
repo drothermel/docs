@@ -1,0 +1,70 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/legacy_plotting_metadata_NEEDS_WORK.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `legacy_plotting_metadata_NEEDS_WORK`
+LEGACY PLOTTING METADATA EXTRACTION - NEEDS ARCHITECTURAL WORK
+
+This module contains plotting metadata extraction logic moved from
+cross_validation_detailed(). It has known architectural issues:
+
+ISSUE: Assumes 'target_percentage' column exists for all target types,
+       but this column only exists for 'progressive' target types.
+
+TODO: Fix to handle different target types correctly
+TODO: Integrate with modern plotting systems
+TODO: Remove assumptions about data structure
+
+Original functionality preserved for reference and future fixes.
+
+
+## Table of Contents
+- [`extract_legacy_plotting_metadata`](./ddpred.legacy_plotting_metadata_NEEDS_WORK#function-extract-legacy-plotting-metadata)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/legacy_plotting_metadata_NEEDS_WORK.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_legacy_plotting_metadata`
+
+```python
+extract_legacy_plotting_metadata(
+    trainer,
+    fold_data: List[Dict[str, Any]],
+    verbose: bool = False
+) → Dict[str, Any]
+```
+
+DEPRECATED: Extract plotting metadata from CV results.
+
+> [!WARNING] This function assumes target_percentage column exists,
+> which is only true for 'progressive' target types.
+
+
+**Args:**
+
+- <b>`trainer`</b>: Trainer object with feature_df attribute
+- <b>`fold_data`</b>: List of fold results from _run_cv_folds
+- <b>`verbose`</b>: Print debugging information
+
+
+**Returns:**
+
+Dictionary containing plotting metadata
+
+
+**Raises:**
+
+- <b>`KeyError`</b>: If target_percentage column doesn't exist (non-progressive target types)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

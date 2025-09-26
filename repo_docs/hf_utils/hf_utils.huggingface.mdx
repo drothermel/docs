@@ -1,0 +1,279 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `huggingface`
+HuggingFace data management and persistence utilities.
+
+
+## Table of Contents
+- [`clear_branch_cache`](./hf_utils.huggingface#function-clear-branch-cache)
+- [`download_dataset`](./hf_utils.huggingface#function-download-dataset)
+- [`get_cache_info`](./hf_utils.huggingface#function-get-cache-info)
+- [`get_data_path`](./hf_utils.huggingface#function-get-data-path)
+- [`get_metadata_path`](./hf_utils.huggingface#function-get-metadata-path)
+- [`list_cached_repositories`](./hf_utils.huggingface#function-list-cached-repositories)
+- [`load_branch_data`](./hf_utils.huggingface#function-load-branch-data)
+- [`load_metadata`](./hf_utils.huggingface#function-load-metadata)
+- [`load_or_download_dataset`](./hf_utils.huggingface#function-load-or-download-dataset)
+- [`sanitize_repo_name`](./hf_utils.huggingface#function-sanitize-repo-name)
+- [`save_branch_data`](./hf_utils.huggingface#function-save-branch-data)
+- [`save_metadata`](./hf_utils.huggingface#function-save-metadata)
+- [`update_metadata`](./hf_utils.huggingface#function-update-metadata)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L15"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_or_download_dataset`
+
+```python
+load_or_download_dataset(
+    path: Path,
+    repo_id: str,
+    split: str = 'train'
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_dataset`
+
+```python
+download_dataset(
+    path: Path,
+    repo_id: str,
+    split: str = 'train',
+    force_reload: bool = False
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_data_path`
+
+```python
+get_data_path(data_type, name)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `sanitize_repo_name`
+
+```python
+sanitize_repo_name(repo_id: str) → str
+```
+
+Convert repository ID to filesystem-safe name.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID (e.g., "allenai/model-name")
+
+
+**Returns:**
+
+Sanitized name (e.g., "allenai--model-name")
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L50"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_branch_data`
+
+```python
+load_branch_data(repo_id: str) → Optional[Dict[str, Any]]
+```
+
+Load branch data from persistent storage.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+Branch metadata dictionary, or None if not found
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L72"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_branch_data`
+
+```python
+save_branch_data(repo_id: str, data: Dict[str, Any]) → None
+```
+
+Save branch data to persistent storage.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`data`</b>: Branch metadata dictionary to save
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L99"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_metadata_path`
+
+```python
+get_metadata_path() → Path
+```
+
+Get path to the metadata file.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L105"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_metadata`
+
+```python
+load_metadata() → Dict[str, Any]
+```
+
+Load the metadata file.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L119"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_metadata`
+
+```python
+save_metadata(metadata: Dict[str, Any]) → None
+```
+
+Save the metadata file.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L131"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `update_metadata`
+
+```python
+update_metadata(repo_id: str) → None
+```
+
+Update metadata with repository information.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L147"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `list_cached_repositories`
+
+```python
+list_cached_repositories() → List[str]
+```
+
+List all repositories that have cached branch data.
+
+
+**Returns:**
+
+    List of repository IDs
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L157"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_cache_info`
+
+```python
+get_cache_info(repo_id: str) → Optional[Dict[str, Any]]
+```
+
+Get cache information for a repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+Cache info dictionary or None if not cached
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/huggingface.py#L170"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `clear_branch_cache`
+
+```python
+clear_branch_cache(repo_id: str) → bool
+```
+
+Clear cached branch data for a repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+
+
+**Returns:**
+
+True if cache was cleared, False if no cache existed
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

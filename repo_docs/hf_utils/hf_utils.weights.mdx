@@ -1,0 +1,232 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `weights`
+Model weights downloading and analysis functions.
+
+
+## Table of Contents
+- [`analyze_layer_structure`](./hf_utils.weights#function-analyze-layer-structure)
+- [`analyze_model_weights`](./hf_utils.weights#function-analyze-model-weights)
+- [`calculate_global_weight_stats`](./hf_utils.weights#function-calculate-global-weight-stats)
+- [`calculate_tensor_stats`](./hf_utils.weights#function-calculate-tensor-stats)
+- [`calculate_weight_statistics`](./hf_utils.weights#function-calculate-weight-statistics)
+- [`discover_model_weight_files`](./hf_utils.weights#function-discover-model-weight-files)
+- [`download_model_weights`](./hf_utils.weights#function-download-model-weights)
+- [`print_weight_analysis`](./hf_utils.weights#function-print-weight-analysis)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `discover_model_weight_files`
+
+```python
+discover_model_weight_files(repo_id: str, branch: str = 'main') → List[str]
+```
+
+Discover available model weight files in the repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch/revision to check
+
+
+**Returns:**
+
+List of weight file names found
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_model_weights`
+
+```python
+download_model_weights(
+    repo_id: str,
+    branch: str,
+    filename: str,
+    local_dir: Optional[str] = None
+) → Tuple[Optional[str], bool, str]
+```
+
+Download a specific model weight file.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch/revision to download from
+- <b>`filename`</b>: Name of the weight file to download
+- <b>`local_dir`</b>: Local directory to save file (optional)
+
+
+**Returns:**
+
+Tuple of (file_path, success, error_message)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_weight_statistics`
+
+```python
+calculate_weight_statistics(weight_path: str) → Dict[str, Any]
+```
+
+Calculate comprehensive statistics for model weights.
+
+
+**Args:**
+
+- <b>`weight_path`</b>: Path to the weight file
+
+
+**Returns:**
+
+Dictionary containing weight statistics
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L153"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_tensor_stats`
+
+```python
+calculate_tensor_stats(tensor: Tensor) → Dict[str, Any]
+```
+
+Calculate statistics for a single tensor.
+
+
+**Args:**
+
+- <b>`tensor`</b>: PyTorch tensor to analyze
+
+
+**Returns:**
+
+Dictionary with tensor statistics
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L186"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_layer_structure`
+
+```python
+analyze_layer_structure(weights: Dict[str, Tensor]) → Dict[str, Any]
+```
+
+Analyze the layer structure from weight names.
+
+
+**Args:**
+
+- <b>`weights`</b>: Dictionary of weight tensors
+
+
+**Returns:**
+
+Dictionary with layer structure analysis
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L268"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_global_weight_stats`
+
+```python
+calculate_global_weight_stats(weights: Dict[str, Tensor]) → Dict[str, Any]
+```
+
+Calculate global statistics across all model weights.
+
+
+**Args:**
+
+- <b>`weights`</b>: Dictionary of all weight tensors
+
+
+**Returns:**
+
+Dictionary with global weight statistics
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L312"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_model_weights`
+
+```python
+analyze_model_weights(
+    repo_id: str,
+    branch: str,
+    weight_files: Optional[List[str]] = None,
+    delete_after_analysis: bool = False
+) → Dict[str, Any]
+```
+
+Complete model weights analysis workflow.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch to analyze
+- <b>`weight_files`</b>: Specific weight files to analyze (optional, discovers all if None)
+- <b>`delete_after_analysis`</b>: Whether to delete weight files after analysis
+
+
+**Returns:**
+
+Dictionary with complete weights analysis
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/weights.py#L413"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_weight_analysis`
+
+```python
+print_weight_analysis(analysis: Dict[str, Any], branch_name: str = None) → None
+```
+
+Pretty print the weights analysis results.
+
+
+**Args:**
+
+- <b>`analysis`</b>: Weights analysis dictionary
+- <b>`branch_name`</b>: Branch name for header (optional)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

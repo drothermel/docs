@@ -1,0 +1,72 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/text.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `formatting.text`
+Text formatting and wrapping utilities.
+
+
+## Table of Contents
+- [`format_wrapped_field`](./parse_claude.formatting.text#function-format-wrapped-field)
+- [`get_model_short_name`](./parse_claude.formatting.text#function-get-model-short-name)
+- [`truncate_json_values`](./parse_claude.formatting.text#function-truncate-json-values)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/text.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_model_short_name`
+
+```python
+get_model_short_name(model: str) → str
+```
+
+Convert model name to short string.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/text.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_wrapped_field`
+
+```python
+format_wrapped_field(
+    key: str,
+    value: str,
+    max_width: int = 80,
+    truncate_length: int | None = None
+) → list[str]
+```
+
+Format a field with proper wrapping and indentation for short mode.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/formatting/text.py#L74"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `truncate_json_values`
+
+```python
+truncate_json_values(
+    data: dict[str, Any] | list[Any] | str | int | float | bool | None,
+    truncate_length: int
+) → dict[str, Any] | list[Any] | str | int | float | bool | None
+```
+
+Recursively truncate string values in JSON data.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

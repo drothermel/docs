@@ -1,0 +1,94 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/display.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `display`
+
+
+
+## Table of Contents
+- [`format_coverage_table`](./datadec.display#function-format-coverage-table)
+- [`format_dynamics_table`](./datadec.display#function-format-dynamics-table)
+- [`format_table`](./datadec.display#function-format-table)
+- [`load_table_config`](./datadec.display#function-load-table-config)
+
+
+**Global Variables**
+---------------
+- **COVERAGE_TABLE_CONFIG**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/display.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_table`
+
+```python
+format_table(**kwargs: dict) → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/display.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_table_config`
+
+```python
+load_table_config(config_name: str) → dict[str, dict]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/display.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_dynamics_table`
+
+```python
+format_dynamics_table(
+    dynamics_list: list[dict],
+    columns: list[str] = None,
+    output_format: str = 'console',
+    table_style: str = 'lines',
+    disable_numparse: bool = True
+) → str
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/display.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_coverage_table`
+
+```python
+format_coverage_table(
+    df: DataFrame,
+    title: str = 'Column Coverage',
+    output_format: str = 'console',
+    table_style: str = 'lines',
+    disable_numparse: bool = True
+) → str
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

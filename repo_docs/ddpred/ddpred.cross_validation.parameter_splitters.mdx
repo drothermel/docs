@@ -1,0 +1,153 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cross_validation.parameter_splitters`
+
+
+
+## Table of Contents
+- [`ParameterSizeInnerCV`](./ddpred.cross_validation.parameter_splitters#class-parametersizeinnercv)
+	- [`__init__`](./ddpred.cross_validation.parameter_splitters#constructor---init--)
+	- [`get_n_splits`](./ddpred.cross_validation.parameter_splitters#method-get-n-splits)
+	- [`split`](./ddpred.cross_validation.parameter_splitters#method-split)
+- [`ParameterSizeKFold`](./ddpred.cross_validation.parameter_splitters#class-parametersizekfold)
+	- [`__init__`](./ddpred.cross_validation.parameter_splitters#constructor---init--)
+	- [`get_n_splits`](./ddpred.cross_validation.parameter_splitters#method-get-n-splits)
+	- [`split`](./ddpred.cross_validation.parameter_splitters#method-split)
+- [`create_parameter_size_splitter`](./ddpred.cross_validation.parameter_splitters#function-create-parameter-size-splitter)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L131"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_parameter_size_splitter`
+
+```python
+create_parameter_size_splitter(
+    splitter_type: str = 'outer',
+    random_state: int = 42
+)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L5"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ParameterSizeKFold`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L6"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ParameterSizeKFold(random_state: int = 42)
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_n_splits`
+
+```python
+get_n_splits(X=None, y=None, groups=None, metadata=None) → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `split`
+
+```python
+split(
+    X: ndarray,
+    y: ndarray,
+    groups: ndarray = None,
+    metadata: Dict[str, Any] = None
+) → Iterator[Tuple[ndarray, ndarray]]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L66"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ParameterSizeInnerCV`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L67"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ParameterSizeInnerCV(random_state: int = 42)
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L71"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_n_splits`
+
+```python
+get_n_splits(X=None, y=None, groups=None, metadata=None) → int
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/parameter_splitters.py#L83"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `split`
+
+```python
+split(
+    X: ndarray,
+    y: ndarray,
+    groups: ndarray = None,
+    metadata: Dict[str, Any] = None
+) → Iterator[Tuple[ndarray, ndarray]]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

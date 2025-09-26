@@ -1,0 +1,105 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `style_engine`
+
+
+
+## Table of Contents
+- [`StyleEngine`](./dr_plotter.style_engine#class-styleengine)
+	- [`__init__`](./dr_plotter.style_engine#constructor---init--)
+	- [`get_continuous_style`](./dr_plotter.style_engine#method-get-continuous-style)
+	- [`get_styles_for_group`](./dr_plotter.style_engine#method-get-styles-for-group)
+	- [`set_continuous_range`](./dr_plotter.style_engine#method-set-continuous-range)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `StyleEngine`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+StyleEngine(theme: 'Theme', figure_manager: 'Any | None' = None) → None
+```
+
+
+
+
+
+---
+
+#### <kbd>property</kbd> cycle_cfg
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_continuous_style`
+
+```python
+get_continuous_style(
+    channel: 'str',
+    column: 'str',
+    value: 'float'
+) → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_styles_for_group`
+
+```python
+get_styles_for_group(
+    group_values: 'dict[str, Any]',
+    grouping_cfg: 'GroupingConfig'
+) → dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/style_engine.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `set_continuous_range`
+
+```python
+set_continuous_range(
+    channel: 'str',
+    column: 'str',
+    values: 'list[float]'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

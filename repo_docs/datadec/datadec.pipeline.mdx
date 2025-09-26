@@ -1,0 +1,214 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `pipeline`
+
+
+
+## Table of Contents
+- [`DataPipeline`](./datadec.pipeline#class-datapipeline)
+	- [`__init__`](./datadec.pipeline#constructor---init--)
+	- [`create_aggregated_datasets`](./datadec.pipeline#method-create-aggregated-datasets)
+	- [`create_plotting_datasets`](./datadec.pipeline#method-create-plotting-datasets)
+	- [`download_raw_data`](./datadec.pipeline#method-download-raw-data)
+	- [`enrich_dataset`](./datadec.pipeline#method-enrich-dataset)
+	- [`expand_dwn_metrics_column`](./datadec.pipeline#method-expand-dwn-metrics-column)
+	- [`merge_datasets`](./datadec.pipeline#method-merge-datasets)
+	- [`parse_datasets`](./datadec.pipeline#method-parse-datasets)
+	- [`run`](./datadec.pipeline#method-run)
+	- [`run_stage`](./datadec.pipeline#method-run-stage)
+	- [`usage_info`](./datadec.pipeline#method-usage-info)
+- [`download_dataset`](./datadec.pipeline#function-download-dataset)
+- [`verbose_print`](./datadec.pipeline#function-verbose-print)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_dataset`
+
+```python
+download_dataset(path: Path, repo_id: str, split: str) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `verbose_print`
+
+```python
+verbose_print(msg: str, verbose: bool = False) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `DataPipeline`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+DataPipeline(paths: DataDecidePaths)
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L117"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_aggregated_datasets`
+
+```python
+create_aggregated_datasets(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L128"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_plotting_datasets`
+
+```python
+create_plotting_datasets(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L59"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `download_raw_data`
+
+```python
+download_raw_data(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `enrich_dataset`
+
+```python
+enrich_dataset(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L70"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `expand_dwn_metrics_column`
+
+```python
+expand_dwn_metrics_column(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `merge_datasets`
+
+```python
+merge_datasets(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L78"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `parse_datasets`
+
+```python
+parse_datasets(verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L145"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run`
+
+```python
+run(recompute_from: Optional[str] = None, verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L55"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `run_stage`
+
+```python
+run_stage(stage_name: str, verbose: bool = False) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/pipeline.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `usage_info`
+
+```python
+usage_info() → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,91 @@
+---
+title: hf_utils
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`branches`](./hf_utils.branches#module-hf-utilsbranches): Core branch discovery and parsing functions for HuggingFace repositories.
+- [`checkpoints`](./hf_utils.checkpoints#module-hf-utilscheckpoints): Comprehensive checkpoint downloading and analysis functions.
+- [`configs`](./hf_utils.configs#module-hf-utilsconfigs): Model configuration downloading and analysis functions.
+- [`datadecide`](./hf_utils.datadecide#module-hf-utilsdatadecide)
+- [`huggingface`](./hf_utils.huggingface#module-hf-utilshuggingface): HuggingFace data management and persistence utilities.
+- [`paths`](./hf_utils.paths#module-hf-utilspaths)
+- [`weights`](./hf_utils.weights#module-hf-utilsweights): Model weights downloading and analysis functions.
+
+## Classes
+
+- [`datadecide.DataDecide`](./hf_utils.datadecide#class-datadecide)
+- [`datadecide.DataDecideDefaults`](./hf_utils.datadecide#class-datadecidedefaults)
+- [`datadecide.DataDecidePaths`](./hf_utils.datadecide#class-datadecidepaths)
+
+## Functions
+
+- [`branches.create_branch_metadata`](./hf_utils.branches#function-create-branch-metadata): Create comprehensive branch metadata for a repository.
+- [`branches.extract_seed_from_branch`](./hf_utils.branches#function-extract-seed-from-branch): Extract seed configuration from branch name.
+- [`branches.extract_step_from_branch`](./hf_utils.branches#function-extract-step-from-branch): Extract step number from branch name.
+- [`branches.get_all_repo_branches`](./hf_utils.branches#function-get-all-repo-branches): Get all branch names from a HuggingFace repository.
+- [`branches.get_checkpoint_branches`](./hf_utils.branches#function-get-checkpoint-branches): Get all checkpoint branches from a repository.
+- [`branches.get_step_range_for_seed`](./hf_utils.branches#function-get-step-range-for-seed): Get the step range for a list of branches.
+- [`branches.group_branches_by_seed`](./hf_utils.branches#function-group-branches-by-seed): Group branches by their seed configuration.
+- [`branches.is_checkpoint_branch`](./hf_utils.branches#function-is-checkpoint-branch): Check if branch name matches checkpoint pattern.
+- [`branches.parse_branch_name`](./hf_utils.branches#function-parse-branch-name): Parse branch name into components.
+- [`branches.sort_branches_by_step`](./hf_utils.branches#function-sort-branches-by-step): Sort branches by their step number.
+- [`checkpoints.analyze_complete_checkpoint`](./hf_utils.checkpoints#function-analyze-complete-checkpoint): Complete comprehensive checkpoint analysis.
+- [`checkpoints.analyze_optimizer_checkpoint`](./hf_utils.checkpoints#function-analyze-optimizer-checkpoint): Load and analyze PyTorch optimizer checkpoint.
+- [`checkpoints.analyze_optimizer_component`](./hf_utils.checkpoints#function-analyze-optimizer-component): Analyze a specific component of the optimizer checkpoint.
+- [`checkpoints.analyze_single_checkpoint_with_reporting`](./hf_utils.checkpoints#function-analyze-single-checkpoint-with-reporting): Complete single checkpoint analysis workflow with comprehensive reporting and saving.
+- [`checkpoints.create_comprehensive_summary`](./hf_utils.checkpoints#function-create-comprehensive-summary): Create a comprehensive DataFrame summary across all checkpoints.
+- [`checkpoints.create_learning_rate_summary`](./hf_utils.checkpoints#function-create-learning-rate-summary): Create a learning rate focused DataFrame for backward compatibility.
+- [`checkpoints.download_all_checkpoint_components`](./hf_utils.checkpoints#function-download-all-checkpoint-components): Download all checkpoint components (optimizer, config, optionally weights).
+- [`checkpoints.download_optimizer_checkpoint`](./hf_utils.checkpoints#function-download-optimizer-checkpoint): Download optimizer checkpoint from Hugging Face repository.
+- [`checkpoints.extract_learning_rate_info`](./hf_utils.checkpoints#function-extract-learning-rate-info): Extract all learning rate related information from checkpoint.
+- [`checkpoints.generate_analysis_filename`](./hf_utils.checkpoints#function-generate-analysis-filename): Generate standardized filename for checkpoint analysis JSON.
+- [`checkpoints.print_analysis_summary`](./hf_utils.checkpoints#function-print-analysis-summary): Print summary statistics and learning rate progression.
+- [`checkpoints.print_comprehensive_analysis`](./hf_utils.checkpoints#function-print-comprehensive-analysis): Print comprehensive analysis results for all components.
+- [`checkpoints.print_detailed_sample_analyses`](./hf_utils.checkpoints#function-print-detailed-sample-analyses): Print detailed analysis for first N checkpoints (by step number).
+- [`checkpoints.print_optimizer_analysis`](./hf_utils.checkpoints#function-print-optimizer-analysis): Pretty print the optimizer analysis results.
+- [`checkpoints.print_unavailable_checkpoint_info`](./hf_utils.checkpoints#function-print-unavailable-checkpoint-info): Pretty print information about unavailable checkpoint.
+- [`checkpoints.print_unavailable_config_info`](./hf_utils.checkpoints#function-print-unavailable-config-info): Pretty print information about unavailable config.
+- [`checkpoints.print_unavailable_weights_info`](./hf_utils.checkpoints#function-print-unavailable-weights-info): Pretty print information about unavailable weights.
+- [`checkpoints.process_all_checkpoints`](./hf_utils.checkpoints#function-process-all-checkpoints): Process all checkpoints in parallel with comprehensive analysis.
+- [`checkpoints.process_all_checkpoints_with_reporting`](./hf_utils.checkpoints#function-process-all-checkpoints-with-reporting): Complete batch checkpoint processing workflow with comprehensive reporting and file output.
+- [`checkpoints.process_single_checkpoint`](./hf_utils.checkpoints#function-process-single-checkpoint): Process a single checkpoint with comprehensive analysis.
+- [`checkpoints.save_all_analyses_outputs`](./hf_utils.checkpoints#function-save-all-analyses-outputs): Save all checkpoint analyses to comprehensive CSV summary and JSON files.
+- [`checkpoints.save_checkpoint_analysis`](./hf_utils.checkpoints#function-save-checkpoint-analysis): Save checkpoint analysis to JSON file.
+- [`configs.analyze_model_config`](./hf_utils.configs#function-analyze-model-config): Load and analyze model configuration file.
+- [`configs.download_config_file`](./hf_utils.configs#function-download-config-file): Download config.json file from Hugging Face repository.
+- [`configs.estimate_parameter_count`](./hf_utils.configs#function-estimate-parameter-count): Estimate parameter count from architecture info.
+- [`configs.extract_model_architecture_info`](./hf_utils.configs#function-extract-model-architecture-info): Extract key model architecture information from config.
+- [`configs.print_config_analysis`](./hf_utils.configs#function-print-config-analysis): Pretty print the configuration analysis results.
+- [`datadecide.list_col_to_columns`](./hf_utils.datadecide#function-list-col-to-columns)
+- [`datadecide.make_step_to_token_compute_df`](./hf_utils.datadecide#function-make-step-to-token-compute-df)
+- [`datadecide.reorder_df_cols`](./hf_utils.datadecide#function-reorder-df-cols)
+- [`huggingface.clear_branch_cache`](./hf_utils.huggingface#function-clear-branch-cache): Clear cached branch data for a repository.
+- [`huggingface.download_dataset`](./hf_utils.huggingface#function-download-dataset)
+- [`huggingface.get_cache_info`](./hf_utils.huggingface#function-get-cache-info): Get cache information for a repository.
+- [`huggingface.get_data_path`](./hf_utils.huggingface#function-get-data-path)
+- [`huggingface.get_metadata_path`](./hf_utils.huggingface#function-get-metadata-path): Get path to the metadata file.
+- [`huggingface.list_cached_repositories`](./hf_utils.huggingface#function-list-cached-repositories): List all repositories that have cached branch data.
+- [`huggingface.load_branch_data`](./hf_utils.huggingface#function-load-branch-data): Load branch data from persistent storage.
+- [`huggingface.load_metadata`](./hf_utils.huggingface#function-load-metadata): Load the metadata file.
+- [`huggingface.load_or_download_dataset`](./hf_utils.huggingface#function-load-or-download-dataset)
+- [`huggingface.sanitize_repo_name`](./hf_utils.huggingface#function-sanitize-repo-name): Convert repository ID to filesystem-safe name.
+- [`huggingface.save_branch_data`](./hf_utils.huggingface#function-save-branch-data): Save branch data to persistent storage.
+- [`huggingface.save_metadata`](./hf_utils.huggingface#function-save-metadata): Save the metadata file.
+- [`huggingface.update_metadata`](./hf_utils.huggingface#function-update-metadata): Update metadata with repository information.
+- [`paths.get_data_dir`](./hf_utils.paths#function-get-data-dir): Get the data directory from environment variable DATA_DIR.
+- [`paths.get_repo_dir`](./hf_utils.paths#function-get-repo-dir): Get the repository directory from environment variable REPO_DIR.
+- [`weights.analyze_layer_structure`](./hf_utils.weights#function-analyze-layer-structure): Analyze the layer structure from weight names.
+- [`weights.analyze_model_weights`](./hf_utils.weights#function-analyze-model-weights): Complete model weights analysis workflow.
+- [`weights.calculate_global_weight_stats`](./hf_utils.weights#function-calculate-global-weight-stats): Calculate global statistics across all model weights.
+- [`weights.calculate_tensor_stats`](./hf_utils.weights#function-calculate-tensor-stats): Calculate statistics for a single tensor.
+- [`weights.calculate_weight_statistics`](./hf_utils.weights#function-calculate-weight-statistics): Calculate comprehensive statistics for model weights.
+- [`weights.discover_model_weight_files`](./hf_utils.weights#function-discover-model-weight-files): Discover available model weight files in the repository.
+- [`weights.download_model_weights`](./hf_utils.weights#function-download-model-weights): Download a specific model weight file.
+- [`weights.print_weight_analysis`](./hf_utils.weights#function-print-weight-analysis): Pretty print the weights analysis results.
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

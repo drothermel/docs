@@ -17,7 +17,21 @@
             "group": "Repo Docs",
             "pages": [
               "repo_docs/dr_ingest/dr_ingest",
-              "repo_docs/dr_wandb/dr_wandb"
+              "repo_docs/datadec/datadec",
+              "repo_docs/ddpred/ddpred",
+              "repo_docs/dr_wandb/dr_wandb",
+              "repo_docs/dr_plotter/dr_plotter",
+              "repo_docs/dr_setup/dr_setup",
+              "repo_docs/dr_showntell/dr_showntell",
+              "repo_docs/dr_exp/dr_exp",
+              "repo_docs/dr_gen/dr_gen",
+              "repo_docs/dr_util/dr_util",
+              "repo_docs/hf_utils/hf_utils",
+              "repo_docs/connector_test/connector_test",
+              "repo_docs/data_viz/data_viz",
+              "repo_docs/parse_claude/parse_claude",
+              "repo_docs/parse_git/parse_git",
+              "repo_docs/parse_hepta/parse_hepta"
             ]
           }
         ]

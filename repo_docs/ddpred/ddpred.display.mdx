@@ -1,0 +1,102 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/display.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `display`
+
+
+
+## Table of Contents
+- [`display_overall_performance`](./ddpred.display#function-display-overall-performance)
+- [`display_param_performance_table`](./ddpred.display#function-display-param-performance-table)
+- [`display_steps_in_df`](./ddpred.display#function-display-steps-in-df)
+- [`print_param_performance_table`](./ddpred.display#function-print-param-performance-table)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/display.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `display_param_performance_table`
+
+```python
+display_param_performance_table(
+    param_results: Dict[str, Dict[str, Any]],
+    results_df: Optional[DataFrame] = None,
+    param_info: Optional[Dict[str, Dict[str, Any]]] = None,
+    sort_by_size: bool = True
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/display.py#L73"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_param_performance_table`
+
+```python
+print_param_performance_table(
+    param_results: Dict[str, Dict[str, Any]],
+    results_df: Optional[DataFrame] = None,
+    param_info: Optional[Dict[str, Dict[str, Any]]] = None,
+    sort_by_size: bool = True
+) → None
+```
+
+Print a nicely formatted table of performance metrics by parameter.
+
+
+**Args:**
+
+- <b>`param_results`</b>: Dictionary of parameter -> evaluation results from full_eval()
+- <b>`results_df`</b>: DataFrame with 'params' column for counting data points (legacy)
+- <b>`param_info`</b>: Dictionary of parameter -> info dict with 'n_points' (preferred)
+- <b>`sort_by_size: If True, sort parameters by model size (default`</b>: True)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/display.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `display_overall_performance`
+
+```python
+display_overall_performance(overall_results: Dict[str, Any]) → None
+```
+
+Display overall performance metrics in a clean format.
+
+
+**Args:**
+
+- <b>`overall_results`</b>: Results dictionary from full_eval()
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/display.py#L204"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `display_steps_in_df`
+
+```python
+display_steps_in_df(df: DataFrame) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

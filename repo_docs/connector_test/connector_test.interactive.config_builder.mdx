@@ -1,0 +1,208 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `interactive.config_builder`
+General configuration input prompts and interactive builders.
+
+
+## Table of Contents
+- [`configure_line`](./connector_test.interactive.config_builder#function-configure-line)
+- [`configure_plot_options`](./connector_test.interactive.config_builder#function-configure-plot-options)
+- [`configure_subplot`](./connector_test.interactive.config_builder#function-configure-subplot)
+- [`edit_config`](./connector_test.interactive.config_builder#function-edit-config)
+- [`prompt_filename`](./connector_test.interactive.config_builder#function-prompt-filename)
+- [`prompt_yes_no`](./connector_test.interactive.config_builder#function-prompt-yes-no)
+- [`select_key`](./connector_test.interactive.config_builder#function-select-key)
+- [`select_layout`](./connector_test.interactive.config_builder#function-select-layout)
+- [`select_metric`](./connector_test.interactive.config_builder#function-select-metric)
+
+
+**Global Variables**
+---------------
+- **ANNOTATION_PARAM**
+- **ANNOTATION_NON_PARAM**
+- **ANNOTATION_SEGMENTS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L32"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prompt_yes_no`
+
+```python
+prompt_yes_no(prompt: 'str', default: 'bool' = True) → bool
+```
+
+Prompt the user with a yes/no question.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prompt_filename`
+
+```python
+prompt_filename(prompt: 'str', default_name: 'str') → str
+```
+
+Prompt for a filename, returning ``default_name`` when blank.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_key`
+
+```python
+select_key(
+    combined: 'Mapping',
+    default: 'Sequence | None' = None
+) → Sequence | None
+```
+
+Prompt the user to choose a run key.
+
+Parameters
+----------
+combined : Mapping
+    Available run data keyed by identifier tuples.
+default : Sequence | None, optional
+    Previously selected key or ``None``.
+
+Returns
+-------
+Sequence | None
+    The chosen key sequence, or ``None`` if selection was cancelled.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L87"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_metric`
+
+```python
+select_metric(default: 'str | None' = None) → str
+```
+
+Prompt for metric name.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L107"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `configure_line`
+
+```python
+configure_line(
+    combined: 'Mapping',
+    defaults: 'Mapping | None' = None,
+    preset_annotations: 'Sequence[str] | None' = None
+) → Mapping | None
+```
+
+Interactively create a single line specification.
+
+Parameters
+----------
+combined : Mapping
+    Mapping of run keys to metric results.
+defaults : Mapping | None, optional
+    Existing defaults for the line.
+
+Returns
+-------
+Mapping | None
+    Line configuration dictionary, or ``None`` if selection was cancelled.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L150"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `configure_plot_options`
+
+```python
+configure_plot_options(
+    lines: 'Sequence[Mapping]',
+    defaults: 'Mapping | None' = None
+) → Mapping
+```
+
+Prompt for plot level options.
+
+Parameters
+----------
+lines : Sequence[Mapping]
+    Selected line configurations.
+defaults : Mapping | None, optional
+    Existing plot option defaults.
+
+Returns
+-------
+Mapping
+    Dictionary with updated plot options.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L283"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `select_layout`
+
+```python
+select_layout(default: 'tuple[int, int]' = (1, 1)) → tuple[int, int]
+```
+
+Prompt for subplot grid layout.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L298"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `configure_subplot`
+
+```python
+configure_subplot(
+    combined: 'Mapping',
+    defaults: 'Mapping | None' = None
+) → Mapping | None
+```
+
+Interactively configure a single subplot.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/interactive/config_builder.py#L339"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `edit_config`
+
+```python
+edit_config(combined: 'Mapping', config: 'Mapping') → tuple[dict, str]
+```
+
+Interactively edit an existing configuration.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

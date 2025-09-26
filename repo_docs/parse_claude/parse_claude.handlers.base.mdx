@@ -1,0 +1,201 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `handlers.base`
+Base handler classes and registry system for message type handling.
+
+
+## Table of Contents
+- [`CategoryRegistry`](./parse_claude.handlers.base#class-categoryregistry)
+	- [`__init__`](./parse_claude.handlers.base#constructor---init--)
+- [`MessageTypeHandler`](./parse_claude.handlers.base#class-messagetypehandler)
+	- [`__init__`](./parse_claude.handlers.base#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.base#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.base#method-format-short)
+	- [`get_subtype`](./parse_claude.handlers.base#method-get-subtype)
+	- [`matches`](./parse_claude.handlers.base#method-matches)
+- [`MessageTypeRegistry`](./parse_claude.handlers.base#class-messagetyperegistry)
+	- [`__init__`](./parse_claude.handlers.base#constructor---init--)
+	- [`classify_message`](./parse_claude.handlers.base#method-classify-message)
+	- [`get_handler`](./parse_claude.handlers.base#method-get-handler)
+	- [`register`](./parse_claude.handlers.base#method-register)
+
+
+**Global Variables**
+---------------
+- **registry**
+- **category_registry**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L7"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MessageTypeHandler`
+Abstract base class for message type handlers.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MessageTypeHandler(name: str, category: str) → None
+```
+
+Initialize handler with name and category.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format for default pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format for --short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_subtype`
+
+```python
+get_subtype(msg: dict[str, Any]) → str | None
+```
+
+Override to provide more specific subtypes.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if this handler can process this message.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MessageTypeRegistry`
+Registry for managing message type handlers.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L43"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MessageTypeRegistry() → None
+```
+
+Initialize the message type registry.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L53"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `classify_message`
+
+```python
+classify_message(msg: dict[str, Any]) → str
+```
+
+Find type for message.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L61"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_handler`
+
+```python
+get_handler(type_name: str) → MessageTypeHandler | None
+```
+
+Get handler by type name or alias.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `register`
+
+```python
+register(handler: MessageTypeHandler) → None
+```
+
+Register handler.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L66"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `CategoryRegistry`
+Registry for mapping categories to handlers.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/base.py#L69"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+CategoryRegistry() → None
+```
+
+Initialize the category registry.
+
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

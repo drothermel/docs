@@ -1,0 +1,81 @@
+---
+title: dr_util
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`api_wrappers`](./dr_util.api_wrappers#module-dr-utilapi-wrappers)
+- [`api_wrappers.aws_utils`](./dr_util.api_wrappers.aws_utils#module-dr-utilapi-wrappersaws-utils): File adapted from ReFinED repo.
+- [`config_verification`](./dr_util.config_verification#module-dr-utilconfig-verification)
+- [`data_utils`](./dr_util.data_utils#module-dr-utildata-utils)
+- [`determinism_utils`](./dr_util.determinism_utils#module-dr-utildeterminism-utils)
+- [`file_utils`](./dr_util.file_utils#module-dr-utilfile-utils)
+- [`metrics`](./dr_util.metrics#module-dr-utilmetrics)
+- [`print_utils`](./dr_util.print_utils#module-dr-utilprint-utils)
+- [`schema_utils`](./dr_util.schema_utils#module-dr-utilschema-utils)
+- [`schemas`](./dr_util.schemas#module-dr-utilschemas)
+
+## Classes
+
+- [`aws_utils.S3Manager`](./dr_util.api_wrappers.aws_utils#class-s3manager): High-level abstractions for working with S3.
+- [`data_utils.TransformedSubset`](./dr_util.data_utils#class-transformedsubset): A wrapper for a torch.utils.data.Subset that applies a transform.
+- [`metrics.HydraLogger`](./dr_util.metrics#class-hydralogger): Logger that outputs to Hydra's logging system.
+- [`metrics.JsonLogger`](./dr_util.metrics#class-jsonlogger): Logger that outputs to JSON lines file.
+- [`metrics.LoggerType`](./dr_util.metrics#enum-loggertype): Enum for different logger types.
+- [`metrics.MetricType`](./dr_util.metrics#enum-metrictype): Enumeration of supported metric aggregation types.
+- [`metrics.Metrics`](./dr_util.metrics#class-metrics): Main metrics collection and logging system.
+- [`metrics.MetricsSubgroup`](./dr_util.metrics#class-metricssubgroup): Handles metrics collection for a specific group (e.g., train, val).
+- [`schemas.ConfigType`](./dr_util.schemas#enum-configtype): Enumeration of available configuration types.
+- [`schemas.MetricsConfig`](./dr_util.schemas#dataclass-metricsconfig): Configuration for metrics collection and logging.
+- [`schemas.MetricsInitConfig`](./dr_util.schemas#dataclass-metricsinitconfig): Configuration for metrics initialization.
+- [`schemas.UsingMetricsConfig`](./dr_util.schemas#dataclass-usingmetricsconfig): Configuration for systems that use metrics.
+
+## Functions
+
+- [`config_verification.cfg_to_loggable_lines`](./dr_util.config_verification#function-cfg-to-loggable-lines)
+- [`config_verification.get_bad_keys_by_schema`](./dr_util.config_verification#function-get-bad-keys-by-schema)
+- [`config_verification.get_cfg_str`](./dr_util.config_verification#function-get-cfg-str)
+- [`config_verification.validate_cfg`](./dr_util.config_verification#function-validate-cfg)
+- [`data_utils.apply_tensor_transform`](./dr_util.data_utils#function-apply-tensor-transform)
+- [`data_utils.get_cifar_dataset`](./dr_util.data_utils#function-get-cifar-dataset): Loads a specified dataset (CIFAR-10 or CIFAR-100).
+- [`data_utils.get_dataloader`](./dr_util.data_utils#function-get-dataloader)
+- [`data_utils.get_tensor_transform`](./dr_util.data_utils#function-get-tensor-transform)
+- [`data_utils.split_data`](./dr_util.data_utils#function-split-data)
+- [`determinism_utils.seed_worker`](./dr_util.determinism_utils#function-seed-worker): Seeds a DataLoader worker.
+- [`determinism_utils.set_deterministic`](./dr_util.determinism_utils#function-set-deterministic): Sets seeds for deterministic behavior in PyTorch, NumPy, and random.
+- [`file_utils.dump_file`](./dr_util.file_utils#function-dump-file)
+- [`file_utils.dumpjson`](./dr_util.file_utils#function-dumpjson)
+- [`file_utils.dumpjsonl`](./dr_util.file_utils#function-dumpjsonl)
+- [`file_utils.dumpnpy`](./dr_util.file_utils#function-dumpnpy)
+- [`file_utils.dumpomega`](./dr_util.file_utils#function-dumpomega)
+- [`file_utils.dumppkl`](./dr_util.file_utils#function-dumppkl)
+- [`file_utils.dumptxt`](./dr_util.file_utils#function-dumptxt)
+- [`file_utils.fu_help`](./dr_util.file_utils#function-fu-help)
+- [`file_utils.jsonl_generator`](./dr_util.file_utils#function-jsonl-generator)
+- [`file_utils.load_file`](./dr_util.file_utils#function-load-file)
+- [`file_utils.load_files`](./dr_util.file_utils#function-load-files)
+- [`file_utils.loadjsonl`](./dr_util.file_utils#function-loadjsonl)
+- [`file_utils.loadomega`](./dr_util.file_utils#function-loadomega)
+- [`file_utils.loadpkl`](./dr_util.file_utils#function-loadpkl): Load pickle file.
+- [`file_utils.pathlib_help`](./dr_util.file_utils#function-pathlib-help)
+- [`metrics.add_list`](./dr_util.metrics#function-add-list)
+- [`metrics.add_sum`](./dr_util.metrics#function-add-sum)
+- [`metrics.agg_batch_weighted_list_avg`](./dr_util.metrics#function-agg-batch-weighted-list-avg)
+- [`metrics.agg_none`](./dr_util.metrics#function-agg-none)
+- [`metrics.agg_passthrough`](./dr_util.metrics#function-agg-passthrough)
+- [`metrics.create_logger`](./dr_util.metrics#function-create-logger)
+- [`print_utils.cfg_to_loggable_lines`](./dr_util.print_utils#function-cfg-to-loggable-lines)
+- [`print_utils.get_cfg_str`](./dr_util.print_utils#function-get-cfg-str)
+- [`print_utils.get_dict_str`](./dr_util.print_utils#function-get-dict-str)
+- [`print_utils.get_dict_str_list`](./dr_util.print_utils#function-get-dict-str-list)
+- [`print_utils.log_cfg_str`](./dr_util.print_utils#function-log-cfg-str)
+- [`print_utils.print_dataclass`](./dr_util.print_utils#function-print-dataclass)
+- [`print_utils.print_dict`](./dr_util.print_utils#function-print-dict)
+- [`schema_utils.lenient_validate`](./dr_util.schema_utils#function-lenient-validate): A decorator that wraps a dataclass __init__ to ignore extra keyword arguments.
+- [`schemas.get_schema`](./dr_util.schemas#function-get-schema)
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

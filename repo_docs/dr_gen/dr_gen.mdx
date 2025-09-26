@@ -1,0 +1,94 @@
+---
+title: dr_gen
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`analyze`](./dr_gen.analyze#module-dr-genanalyze): Analyze package for dr_gen - utilities for analyzing training runs.
+- [`analyze.database`](./dr_gen.analyze.database#module-dr-genanalyzedatabase): ExperimentDB class for unified analysis API.
+- [`analyze.dataframes`](./dr_gen.analyze.dataframes#module-dr-genanalyzedataframes): Polars DataFrame builders for experiment analysis.
+- [`analyze.filtering`](./dr_gen.analyze.filtering#module-dr-genanalyzefiltering): Filtering utilities for experiment analysis.
+- [`analyze.grouped_runs`](./dr_gen.analyze.grouped_runs#module-dr-genanalyzegrouped-runs): GroupedRuns class for managing experiment run grouping and filtering operations.
+- [`analyze.grouping`](./dr_gen.analyze.grouping#module-dr-genanalyzegrouping)
+- [`analyze.metrics`](./dr_gen.analyze.metrics#module-dr-genanalyzemetrics)
+- [`analyze.parsing`](./dr_gen.analyze.parsing#module-dr-genanalyzeparsing): JSONL parsing utilities and run data extraction for experiment analysis.
+- [`analyze.schemas`](./dr_gen.analyze.schemas#module-dr-genanalyzeschemas): Pydantic models for experiment analysis.
+- [`analyze.stats`](./dr_gen.analyze.stats#module-dr-genanalyzestats)
+- [`analyze.visualization`](./dr_gen.analyze.visualization#module-dr-genanalyzevisualization): Simplified plotting module for dr_gen analysis.
+- [`config`](./dr_gen.config#module-dr-genconfig): Constants used throughout the dr_gen framework.
+- [`data`](./dr_gen.data#module-dr-gendata): Simplified data loading for train/val/eval splits with transforms.
+- [`models`](./dr_gen.models#module-dr-genmodels)
+
+## Classes
+
+- [`database.ExperimentDB`](./dr_gen.analyze.database#class-experimentdb): Database interface for experiment analysis with lazy loading support.
+- [`grouped_runs.GroupedRuns`](./dr_gen.analyze.grouped_runs#class-groupedruns): Immutable class representing grouped experiment runs with filtering and data access operations.
+- [`grouping.HpmGroup`](./dr_gen.analyze.grouping#class-hpmgroup): Manages hyperparameter groups and tracks varying hyperparameters across runs.
+- [`grouping.RunGroup`](./dr_gen.analyze.grouping#class-rungroup): Manages groups of runs with their hyperparameters and metrics for analysis.
+- [`metrics.MetricCurve`](./dr_gen.analyze.metrics#class-metriccurve): Represents a single metric curve with x-values and metric values.
+- [`metrics.MetricCurves`](./dr_gen.analyze.metrics#class-metriccurves): Manages multiple curves for a specific metric.
+- [`metrics.SplitMetrics`](./dr_gen.analyze.metrics#class-splitmetrics): Manages metric curves for a specific split (train/val/eval).
+- [`parsing.Hpm`](./dr_gen.analyze.parsing#class-hpm): A mutable mapping for hyperparameters with important value tracking.
+- [`parsing.RunData`](./dr_gen.analyze.parsing#class-rundata): Container for a single run's data including hyperparameters and metrics.
+- [`schemas.AnalysisConfig`](./dr_gen.analyze.schemas#class-analysisconfig): Configuration for experiment analysis with environment variable support.
+- [`schemas.Hpms`](./dr_gen.analyze.schemas#class-hpms): Model for experiment hyperparameters with flattening support.
+- [`schemas.Run`](./dr_gen.analyze.schemas#class-run): Model for a single experiment run with metrics and metadata.
+- [`visualization.PlotStyle`](./dr_gen.analyze.visualization#class-plotstyle): Type definition for plot styling options.
+
+## Functions
+
+- [`dataframes.find_varying_hparams`](./dr_gen.analyze.dataframes#function-find-varying-hparams): Find hyperparameter columns that vary across runs.
+- [`dataframes.group_by_hparams`](./dr_gen.analyze.dataframes#function-group-by-hparams): Group runs by specified hyperparameters.
+- [`dataframes.query_metrics`](./dr_gen.analyze.dataframes#function-query-metrics): Query metrics DataFrame with optional filters.
+- [`dataframes.remap_display_names`](./dr_gen.analyze.dataframes#function-remap-display-names): Remap column values using display name mappings from config.
+- [`dataframes.runs_to_dataframe`](./dr_gen.analyze.dataframes#function-runs-to-dataframe): Convert list of Run models to Polars DataFrame.
+- [`dataframes.runs_to_metrics_df`](./dr_gen.analyze.dataframes#function-runs-to-metrics-df): Convert runs to long-format metrics DataFrame.
+- [`dataframes.summarize_by_hparams`](./dr_gen.analyze.dataframes#function-summarize-by-hparams): Summarize metrics grouped by hyperparameters.
+- [`filtering.filter_groups`](./dr_gen.analyze.filtering#function-filter-groups): Filter groups based on hyperparameter values.
+- [`filtering.filter_groups_interactive`](./dr_gen.analyze.filtering#function-filter-groups-interactive): Interactive filtering helper that prints current state and returns filters.
+- [`grouping.filter_entries_by_selection`](./dr_gen.analyze.grouping#function-filter-entries-by-selection)
+- [`parsing.check_prefix_exclude`](./dr_gen.analyze.parsing#function-check-prefix-exclude): Check if string starts with any of the excluded prefixes.
+- [`parsing.convert_legacy_format`](./dr_gen.analyze.parsing#function-convert-legacy-format): Convert legacy experiment format to new Run model format.
+- [`parsing.get_config_from_metrics_path`](./dr_gen.analyze.parsing#function-get-config-from-metrics-path)
+- [`parsing.get_config_path`](./dr_gen.analyze.parsing#function-get-config-path)
+- [`parsing.get_logged_metrics_infer_epoch`](./dr_gen.analyze.parsing#function-get-logged-metrics-infer-epoch)
+- [`parsing.get_logged_strings`](./dr_gen.analyze.parsing#function-get-logged-strings)
+- [`parsing.get_run_id`](./dr_gen.analyze.parsing#function-get-run-id)
+- [`parsing.get_train_time`](./dr_gen.analyze.parsing#function-get-train-time)
+- [`parsing.load_runs_from_dir`](./dr_gen.analyze.parsing#function-load-runs-from-dir): Load all runs from JSONL files in a directory.
+- [`parsing.parse_cfg_log_line`](./dr_gen.analyze.parsing#function-parse-cfg-log-line)
+- [`parsing.parse_jsonl_file`](./dr_gen.analyze.parsing#function-parse-jsonl-file): Parse a JSONL file and return valid records and errors.
+- [`parsing.records_to_metrics_dict`](./dr_gen.analyze.parsing#function-records-to-metrics-dict)
+- [`parsing.validate_metrics`](./dr_gen.analyze.parsing#function-validate-metrics)
+- [`stats.ks_analysis`](./dr_gen.analyze.stats#function-ks-analysis): Compute KS test statistics with location of maximum difference.
+- [`visualization.get_color_palette`](./dr_gen.analyze.visualization#function-get-color-palette): Get a colorblind-safe color palette.
+- [`visualization.merge_defaults`](./dr_gen.analyze.visualization#function-merge-defaults): Merge user kwargs with defaults.
+- [`visualization.plot_cdf`](./dr_gen.analyze.visualization#function-plot-cdf): Plot comparative CDFs with KS statistics.
+- [`visualization.plot_grid`](./dr_gen.analyze.visualization#function-plot-grid): Create grid of plots using specified plot function.
+- [`visualization.plot_histogram`](./dr_gen.analyze.visualization#function-plot-histogram): Plot histogram - single or multiple distributions.
+- [`visualization.plot_lines`](./dr_gen.analyze.visualization#function-plot-lines): Plot line curves - single curve or multiple curves.
+- [`visualization.plot_metric_group`](./dr_gen.analyze.visualization#function-plot-metric-group): Plot metrics for one or more groups of runs with mean and standard deviation.
+- [`visualization.plot_splits`](./dr_gen.analyze.visualization#function-plot-splits): Plot training/validation/eval splits with different line styles.
+- [`visualization.plot_summary`](./dr_gen.analyze.visualization#function-plot-summary): Plot mean curve with uncertainty bands (std, sem, or minmax).
+- [`visualization.plot_training_metrics`](./dr_gen.analyze.visualization#function-plot-training-metrics): Draw the *four* panels (train‑loss, val‑loss, train‑acc, val‑acc) with
+- [`visualization.sample_data`](./dr_gen.analyze.visualization#function-sample-data): Randomly sample n items from data.
+- [`visualization.set_plot_defaults`](./dr_gen.analyze.visualization#function-set-plot-defaults): Update default plotting style.
+- [`data.build_transforms`](./dr_gen.data#function-build-transforms): Build transform pipeline from configuration.
+- [`data.create_eval_transform`](./dr_gen.data#function-create-eval-transform): Create evaluation transforms (no data augmentation).
+- [`data.create_train_transform`](./dr_gen.data#function-create-train-transform): Create training transforms (with data augmentation).
+- [`data.get_dataloaders`](./dr_gen.data#function-get-dataloaders): Create train/val/eval dataloaders with simplified logic.
+- [`data.get_dataloaders`](./dr_gen.data#function-get-dataloaders): Create train/val/eval dataloaders with simplified logic.
+- [`data.get_dataset`](./dr_gen.data#function-get-dataset): Load a dataset by name and split.
+- [`models.checkpoint_model`](./dr_gen.models#function-checkpoint-model)
+- [`models.create_lrsched`](./dr_gen.models#function-create-lrsched)
+- [`models.create_model`](./dr_gen.models#function-create-model)
+- [`models.create_optim`](./dr_gen.models#function-create-optim)
+- [`models.create_optim_lrsched`](./dr_gen.models#function-create-optim-lrsched)
+- [`models.get_criterion`](./dr_gen.models#function-get-criterion)
+- [`models.get_model_optim_lrsched`](./dr_gen.models#function-get-model-optim-lrsched)
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,158 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `results.formatter`
+
+
+
+## Table of Contents
+- [`ExperimentMetadata`](./ddpred.results.formatter#dataclass-experimentmetadata)
+	- [`__init__`](./ddpred.results.formatter#constructor---init--)
+- [`ExperimentResultFormatter`](./ddpred.results.formatter#class-experimentresultformatter)
+	- [`__init__`](./ddpred.results.formatter#constructor---init--)
+	- [`create_experiment_id`](./ddpred.results.formatter#method-create-experiment-id)
+	- [`format_comprehensive_results`](./ddpred.results.formatter#method-format-comprehensive-results)
+	- [`save_results`](./ddpred.results.formatter#method-save-results)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `ExperimentMetadata`
+ExperimentMetadata(system: str, trainer_class: str, optimization_metric: str, param_grid: Dict[str, List[Any]], total_folds: int, total_samples: int, parameter_sizes: List[str], model_type: str, metric: str, target_type: str, features: List[str], step_values: List[int], feature_scaling: str = 'none', target_scaling: str = 'none', exclude_params: List[str] = None, exclude_data: List[str] = None, target_percentages: Optional[List[float]] = None, prediction_mode: Optional[str] = None)
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ExperimentMetadata(
+    system: str,
+    trainer_class: str,
+    optimization_metric: str,
+    param_grid: Dict[str, List[Any]],
+    total_folds: int,
+    total_samples: int,
+    parameter_sizes: List[str],
+    model_type: str,
+    metric: str,
+    target_type: str,
+    features: List[str],
+    step_values: List[int],
+    feature_scaling: str = 'none',
+    target_scaling: str = 'none',
+    exclude_params: List[str] = None,
+    exclude_data: List[str] = None,
+    target_percentages: Optional[List[float]] = None,
+    prediction_mode: Optional[str] = None
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```exclude_data``` (List)
+- ```exclude_params``` (List)
+- ```feature_scaling``` (str)
+- ```features``` (List)
+- ```metric``` (str)
+- ```model_type``` (str)
+- ```optimization_metric``` (str)
+- ```param_grid``` (Dict)
+- ```parameter_sizes``` (List)
+- ```prediction_mode``` (Optional)
+- ```step_values``` (List)
+- ```system``` (str)
+- ```target_percentages``` (Optional)
+- ```target_scaling``` (str)
+- ```target_type``` (str)
+- ```total_folds``` (int)
+- ```total_samples``` (int)
+- ```trainer_class``` (str)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ExperimentResultFormatter`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ExperimentResultFormatter() → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_experiment_id`
+
+```python
+create_experiment_id(metadata: ExperimentMetadata) → str
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L59"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_comprehensive_results`
+
+```python
+format_comprehensive_results(
+    raw_results: Dict[str, Any],
+    metadata: ExperimentMetadata,
+    scaling_info: Optional[Dict[str, Any]] = None,
+    target_percentage_data: Optional[Dict[str, Any]] = None
+) → Dict[str, Any]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/results/formatter.py#L378"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `save_results`
+
+```python
+save_results(
+    results: Dict[str, Any],
+    output_dir: str = 'results/experiments'
+) → str
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

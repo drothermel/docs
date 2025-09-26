@@ -1,0 +1,98 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `features.transforms`
+
+
+
+## Table of Contents
+- [`apply_abs_log1p_transform`](./ddpred.features.transforms#function-apply-abs-log1p-transform)
+- [`apply_log1p_transform`](./ddpred.features.transforms#function-apply-log1p-transform)
+- [`apply_log_transform`](./ddpred.features.transforms#function-apply-log-transform)
+- [`apply_scaler_transform`](./ddpred.features.transforms#function-apply-scaler-transform)
+- [`apply_transform`](./ddpred.features.transforms#function-apply-transform)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_transform`
+
+```python
+apply_transform(
+    df: DataFrame,
+    cols: list[str],
+    transform_fxn: Callable[[Series], Series]
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_log_transform`
+
+```python
+apply_log_transform(df: DataFrame, cols: list[str]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_log1p_transform`
+
+```python
+apply_log1p_transform(df: DataFrame, cols: list[str]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py#L30"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_abs_log1p_transform`
+
+```python
+apply_abs_log1p_transform(df: DataFrame, cols: list[str]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/transforms.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_scaler_transform`
+
+```python
+apply_scaler_transform(df: DataFrame, cols: list[str], scaler: Any) → DataFrame
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

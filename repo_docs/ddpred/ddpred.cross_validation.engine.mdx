@@ -1,0 +1,69 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/engine.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cross_validation.engine`
+
+
+
+## Table of Contents
+- [`CrossValidationEngine`](./ddpred.cross_validation.engine#class-crossvalidationengine)
+	- [`__init__`](./ddpred.cross_validation.engine#constructor---init--)
+	- [`evaluate`](./ddpred.cross_validation.engine#method-evaluate)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/engine.py#L162"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `CrossValidationEngine`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/engine.py#L163"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+CrossValidationEngine(pipeline: 'DataPipelineFactory') → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/engine.py#L167"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `evaluate`
+
+```python
+evaluate(
+    trainer_class: 'BaseEstimator',
+    trainer_params: 'dict[str, Any]',
+    param_grid: 'dict[str, list[Any]]',
+    optimization_metric: 'str' = 'decision_accuracy',
+    evaluation_metrics: 'list[str] | None' = None,
+    outer_cv_splitter: 'Any | None' = None,
+    inner_cv_splitter: 'Any | None' = None,
+    verbose: 'bool' = False,
+    **pipeline_kwargs
+) → dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

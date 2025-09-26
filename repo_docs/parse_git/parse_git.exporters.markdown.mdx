@@ -1,0 +1,74 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/markdown.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `exporters.markdown`
+Markdown summary exporter for file lifecycle data.
+
+
+## Table of Contents
+- [`MarkdownSummaryExporter`](./parse_git.exporters.markdown#class-markdownsummaryexporter)
+	- [`__init__`](./parse_git.exporters.markdown#constructor---init--)
+	- [`export`](./parse_git.exporters.markdown#method-export)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/markdown.py#L9"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MarkdownSummaryExporter`
+Exports file lifecycle data as a markdown summary.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/markdown.py#L12"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MarkdownSummaryExporter(
+    start_date: datetime | None = None,
+    end_date: datetime | None = None
+) → None
+```
+
+Initialize the markdown exporter.
+
+
+**Args:**
+
+- <b>`start_date`</b>: Analysis start date for summary header.
+- <b>`end_date`</b>: Analysis end date for summary header.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/exporters/markdown.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `export`
+
+```python
+export(lifecycles: list[FileLifecycle], output_path: str | Path) → None
+```
+
+Export lifecycles to markdown summary file.
+
+
+**Args:**
+
+- <b>`lifecycles`</b>: List of file lifecycles to export.
+- <b>`output_path`</b>: Path where markdown file should be written.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

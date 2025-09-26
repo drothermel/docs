@@ -1,0 +1,237 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `handlers.tool_results`
+Tool result message handlers.
+
+
+## Table of Contents
+- [`GeneralToolResultHandler`](./parse_claude.handlers.tool_results#class-generaltoolresulthandler)
+	- [`__init__`](./parse_claude.handlers.tool_results#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.tool_results#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.tool_results#method-format-short)
+	- [`matches`](./parse_claude.handlers.tool_results#method-matches)
+- [`ReadToolResultHandler`](./parse_claude.handlers.tool_results#class-readtoolresulthandler)
+	- [`__init__`](./parse_claude.handlers.tool_results#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.tool_results#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.tool_results#method-format-short)
+	- [`matches`](./parse_claude.handlers.tool_results#method-matches)
+- [`TodoToolResultHandler`](./parse_claude.handlers.tool_results#class-todotoolresulthandler)
+	- [`__init__`](./parse_claude.handlers.tool_results#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.tool_results#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.tool_results#method-format-short)
+	- [`matches`](./parse_claude.handlers.tool_results#method-matches)
+
+
+**Global Variables**
+---------------
+- **MAX_TOOL_ID_LENGTH**
+- **TOOL_ID_TRUNCATE_LENGTH**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L20"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `TodoToolResultHandler`
+Handler for TodoWrite tool result messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+TodoToolResultHandler() → None
+```
+
+Initialize with todo_tool_result type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L50"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format TodoWrite tool result for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L112"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format TodoWrite tool result for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is a TodoWrite tool result.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L164"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `ReadToolResultHandler`
+Handler for Read tool result messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L167"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+ReadToolResultHandler() → None
+```
+
+Initialize with read_tool_result type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L206"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format Read tool result for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L259"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format Read tool result for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L171"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is a Read tool result.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L307"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `GeneralToolResultHandler`
+Handler for general tool result messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L310"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+GeneralToolResultHandler() → None
+```
+
+Initialize with tool_result type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L328"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format general tool result for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L369"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format general tool result for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/tool_results.py#L314"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is a general tool result.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

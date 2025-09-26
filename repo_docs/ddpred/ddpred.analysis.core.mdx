@@ -1,0 +1,83 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/core.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analysis.core`
+
+
+
+## Table of Contents
+- [`convert_model_size_to_numeric`](./ddpred.analysis.core#function-convert-model-size-to-numeric)
+- [`create_analysis_dataframe`](./ddpred.analysis.core#function-create-analysis-dataframe)
+- [`get_ordered_models`](./ddpred.analysis.core#function-get-ordered-models)
+- [`get_recipe_order`](./ddpred.analysis.core#function-get-recipe-order)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/core.py#L6"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_analysis_dataframe`
+
+```python
+create_analysis_dataframe(results: List[Dict[str, Any]]) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/core.py#L29"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `convert_model_size_to_numeric`
+
+```python
+convert_model_size_to_numeric(df: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/core.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_ordered_models`
+
+```python
+get_ordered_models(data: DataFrame) → List[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/core.py#L44"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_recipe_order`
+
+```python
+get_recipe_order(
+    df: DataFrame,
+    metric: str = 'pile-valppl',
+    ascending: bool = True
+) → List[str]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

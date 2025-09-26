@@ -1,0 +1,170 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.dataframes`
+Polars DataFrame builders for experiment analysis.
+
+
+## Table of Contents
+- [`find_varying_hparams`](./dr_gen.analyze.dataframes#function-find-varying-hparams)
+- [`group_by_hparams`](./dr_gen.analyze.dataframes#function-group-by-hparams)
+- [`query_metrics`](./dr_gen.analyze.dataframes#function-query-metrics)
+- [`remap_display_names`](./dr_gen.analyze.dataframes#function-remap-display-names)
+- [`runs_to_dataframe`](./dr_gen.analyze.dataframes#function-runs-to-dataframe)
+- [`runs_to_metrics_df`](./dr_gen.analyze.dataframes#function-runs-to-metrics-df)
+- [`summarize_by_hparams`](./dr_gen.analyze.dataframes#function-summarize-by-hparams)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `runs_to_dataframe`
+
+```python
+runs_to_dataframe(runs: list[Run]) → DataFrame
+```
+
+Convert list of Run models to Polars DataFrame.
+
+Returns DataFrame with columns: run_id, hyperparameters, metadata
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L30"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `runs_to_metrics_df`
+
+```python
+runs_to_metrics_df(runs: list[Run]) → DataFrame
+```
+
+Convert runs to long-format metrics DataFrame.
+
+Returns DataFrame with columns: run_id, metric, epoch, value
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `find_varying_hparams`
+
+```python
+find_varying_hparams(df: DataFrame) → list[str]
+```
+
+Find hyperparameter columns that vary across runs.
+
+Returns list of column names that have more than one unique value.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L72"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `group_by_hparams`
+
+```python
+group_by_hparams(df: DataFrame, hparams: list[str]) → DataFrame
+```
+
+Group runs by specified hyperparameters.
+
+Returns DataFrame with grouping columns and run_id lists.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L83"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `query_metrics`
+
+```python
+query_metrics(
+    metrics_df: DataFrame,
+    metric_filter: str | None = None,
+    run_filter: list[str] | None = None
+) → DataFrame
+```
+
+Query metrics DataFrame with optional filters.
+
+
+**Args:**
+
+- <b>`metrics_df`</b>: Long-format metrics DataFrame
+- <b>`metric_filter`</b>: Regex pattern to filter metric names
+- <b>`run_filter`</b>: List of run_ids to include
+
+
+**Returns:**
+
+Filtered DataFrame
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `summarize_by_hparams`
+
+```python
+summarize_by_hparams(
+    runs_df: DataFrame,
+    metrics_df: DataFrame,
+    hparams: list[str]
+) → DataFrame
+```
+
+Summarize metrics grouped by hyperparameters.
+
+Returns DataFrame with mean/std/min/max for each metric.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/dataframes.py#L132"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `remap_display_names`
+
+```python
+remap_display_names(
+    df: DataFrame,
+    config: AnalysisConfig,
+    target: str = 'metric'
+) → DataFrame
+```
+
+Remap column values using display name mappings from config.
+
+
+**Args:**
+
+- <b>`df`</b>: DataFrame to remap
+- <b>`config`</b>: Analysis configuration with display mappings
+- <b>`target`</b>: Which column to remap ('metric' or 'hparam')
+
+
+**Returns:**
+
+DataFrame with remapped values
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

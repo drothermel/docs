@@ -1,0 +1,162 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `handlers.system`
+System and summary message handlers.
+
+
+## Table of Contents
+- [`SummaryHandler`](./parse_claude.handlers.system#class-summaryhandler)
+	- [`__init__`](./parse_claude.handlers.system#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.system#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.system#method-format-short)
+	- [`matches`](./parse_claude.handlers.system#method-matches)
+- [`SystemHandler`](./parse_claude.handlers.system#class-systemhandler)
+	- [`__init__`](./parse_claude.handlers.system#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.system#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.system#method-format-short)
+	- [`matches`](./parse_claude.handlers.system#method-matches)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SystemHandler`
+Handler for system messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SystemHandler() → None
+```
+
+Initialize with system type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format system message for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L53"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format system message in compact text format.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is a system message.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L87"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `SummaryHandler`
+Handler for summary messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+SummaryHandler() → None
+```
+
+Initialize with summary type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L98"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    _idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format summary message for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L112"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format summary message for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/system.py#L94"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is a summary message.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

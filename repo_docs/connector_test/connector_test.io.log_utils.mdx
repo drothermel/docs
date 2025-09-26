@@ -1,0 +1,196 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `io.log_utils`
+Input/output utility functions for CIFAR10 log analysis.
+
+
+## Table of Contents
+- [`aggregate_logs`](./connector_test.io.log_utils#function-aggregate-logs)
+- [`extract_config`](./connector_test.io.log_utils#function-extract-config)
+- [`load_or_parse_logs`](./connector_test.io.log_utils#function-load-or-parse-logs)
+- [`parse_log_path`](./connector_test.io.log_utils#function-parse-log-path)
+- [`parse_logs_with_status`](./connector_test.io.log_utils#function-parse-logs-with-status)
+- [`read_log`](./connector_test.io.log_utils#function-read-log)
+- [`read_log_extended`](./connector_test.io.log_utils#function-read-log-extended)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_log_path`
+
+```python
+parse_log_path(
+    path: 'Path'
+) → tuple[str | None, str | None, float | None, float | None, int | None]
+```
+
+Extract weight_type, weight_init, lr, wd and seed from ``path``.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `read_log`
+
+```python
+read_log(path: 'Path', max_epochs: 'int' = 50) → dict[str, ndarray] | None
+```
+
+Return metric arrays from ``path`` if ``max_epochs`` epochs exist.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L111"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `aggregate_logs`
+
+```python
+aggregate_logs(log_paths: 'list[Path]') → dict[tuple, dict[int, dict]]
+```
+
+Aggregate logs into a dictionary grouped by hyper-parameters.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L127"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `parse_logs_with_status`
+
+```python
+parse_logs_with_status(log_root: 'Path', max_epochs: 'int' = 50) → dict
+```
+
+Parse all ``train.log`` files under ``log_root`` and return status.
+
+Parameters
+----------
+log_root:
+    Directory containing log files.
+max_epochs:
+    Number of epochs expected for a complete run.
+
+Returns
+-------
+dict
+    Dictionary with keys ``groups`` and ``status``. ``groups`` mirrors the
+    output of :func:`aggregate_logs` while ``status`` maps each
+    hyper-parameter setting to a mapping of seed -> completion boolean.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L162"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_or_parse_logs`
+
+```python
+load_or_parse_logs(
+    log_root: 'Path',
+    parse_path: 'Path',
+    max_epochs: 'int' = 50
+) → dict
+```
+
+Load previously parsed logs or create a new parse.
+
+Parameters
+----------
+log_root:
+    Directory containing log files.
+parse_path:
+    Path where the parsed pickle should be stored or loaded from.
+max_epochs:
+    Number of epochs expected for a complete run.
+
+Returns
+-------
+dict
+    Parsed log data as returned by :func:`parse_logs_with_status`.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L190"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_config`
+
+```python
+extract_config(path: 'Path') → dict | str | None
+```
+
+Return the config block from a log file.
+
+The configuration is printed near the beginning of each ``train.log`` and
+delimited by lines consisting solely of ``"===================   Config   ==================="``
+and ``"=================================================="``.  If the
+optional :mod:`yaml` package is available, the block is parsed into a
+dictionary.  Otherwise the raw text is returned.
+
+Parameters
+----------
+path:
+    Path to the log file.
+
+Returns
+-------
+dict | str | None
+    Parsed config dictionary, the raw string if ``yaml`` is unavailable or
+    ``None`` if no config block was found.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/io/log_utils.py#L240"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `read_log_extended`
+
+```python
+read_log_extended(
+    path: 'Path',
+    max_epochs: 'int' = 50
+) → dict[str, ndarray] | None
+```
+
+Read a log file capturing all available metrics.
+
+This function extends :func:`read_log` by parsing any numeric fields found
+in ``agg_train``, ``agg_val`` and ``agg_eval`` entries.  The returned keys
+use the pattern ``"{split}_{metric}"`` where ``split`` is one of ``"train"``,
+``"val"`` or ``"eval"``.
+
+Parameters
+----------
+path:
+    Log file to parse.
+max_epochs:
+    Number of epochs expected for a complete run.
+
+Returns
+-------
+dict | None
+    Dictionary mapping metric names to ``numpy.ndarray``. ``None`` is
+    returned if the log does not contain ``max_epochs`` epochs.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

@@ -1,0 +1,71 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/extract.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `features.extract`
+
+
+
+## Table of Contents
+- [`apply_axis_transformations`](./ddpred.features.extract#function-apply-axis-transformations)
+- [`extract_window_features`](./ddpred.features.extract#function-extract-window-features)
+- [`prefix_rename_df_cols`](./ddpred.features.extract#function-prefix-rename-df-cols)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/extract.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `apply_axis_transformations`
+
+```python
+apply_axis_transformations(df: DataFrame, target_col: str, axis_type: str)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/extract.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prefix_rename_df_cols`
+
+```python
+prefix_rename_df_cols(df: DataFrame, prefix: str)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/features/extract.py#L33"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_window_features`
+
+```python
+extract_window_features(
+    base_dfs_by_window: dict[str, DataFrame],
+    window_features: list[WindowFeature],
+    target_col: str,
+    extract_fxn: Callable,
+    only_feat_names: list[str] = [],
+    x_axis_key: str = 'step'
+)
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

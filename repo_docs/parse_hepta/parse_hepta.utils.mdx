@@ -1,0 +1,147 @@
+---
+title: parse_hepta
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `utils`
+Utility functions for file processing and common operations.
+
+
+## Table of Contents
+- [`calculate_nesting_level`](./parse_hepta.utils#function-calculate-nesting-level)
+- [`create_header_with_nesting`](./parse_hepta.utils#function-create-header-with-nesting)
+- [`ensure_output_directory`](./parse_hepta.utils#function-ensure-output-directory)
+- [`process_markdown_files`](./parse_hepta.utils#function-process-markdown-files)
+- [`read_file_safe`](./parse_hepta.utils#function-read-file-safe)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py#L7"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `process_markdown_files`
+
+```python
+process_markdown_files(root_dir: Path) → Generator[Path, None, None]
+```
+
+Generate all markdown files in directory tree, sorted by path.
+
+
+**Args:**
+
+- <b>`root_dir`</b>: Root directory to search
+
+
+**Yields:**
+
+Path objects for each markdown file found
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `read_file_safe`
+
+```python
+read_file_safe(filepath: Path, encoding: str = 'utf-8') → str | None
+```
+
+Safely read a file, returning None on error.
+
+
+**Args:**
+
+- <b>`filepath`</b>: Path to file
+- <b>`encoding`</b>: Text encoding to use
+
+
+**Returns:**
+
+File contents or None if error occurred
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_nesting_level`
+
+```python
+calculate_nesting_level(filepath: Path, root_path: Path) → int
+```
+
+Calculate nesting level of file relative to root.
+
+
+**Args:**
+
+- <b>`filepath`</b>: File path
+- <b>`root_path`</b>: Root directory
+
+
+**Returns:**
+
+Number of directory levels between root and file
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_header_with_nesting`
+
+```python
+create_header_with_nesting(
+    text: str,
+    nesting_level: int,
+    base_level: int = 2
+) → str
+```
+
+Create markdown header with appropriate nesting.
+
+
+**Args:**
+
+- <b>`text`</b>: Header text
+- <b>`nesting_level`</b>: Directory nesting level
+- <b>`base_level: Base header level (default`</b>: 2 for ##)
+
+
+**Returns:**
+
+Formatted markdown header
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_hepta/utils.py#L70"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `ensure_output_directory`
+
+```python
+ensure_output_directory(output_path: Path) → None
+```
+
+Ensure output directory exists, creating if necessary.
+
+
+**Args:**
+
+- <b>`output_path`</b>: Path to output file or directory
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

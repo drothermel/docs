@@ -1,0 +1,225 @@
+---
+title: dr_gen
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analyze.schemas`
+Pydantic models for experiment analysis.
+
+
+## Table of Contents
+- [`AnalysisConfig`](./dr_gen.analyze.schemas#class-analysisconfig)
+- [`Hpms`](./dr_gen.analyze.schemas#class-hpms)
+	- [`flatten`](./dr_gen.analyze.schemas#method-flatten)
+- [`Run`](./dr_gen.analyze.schemas#class-run)
+	- [`best_metric`](./dr_gen.analyze.schemas#method-best-metric)
+	- [`get_important_hpms`](./dr_gen.analyze.schemas#method-get-important-hpms)
+	- [`last_metric`](./dr_gen.analyze.schemas#method-last-metric)
+	- [`metric_names`](./dr_gen.analyze.schemas#method-metric-names)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Hpms`
+Model for experiment hyperparameters with flattening support.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L22"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `flatten`
+
+```python
+flatten(prefix: str = '') → dict[str, Any]
+```
+
+Flatten nested hyperparameters into dot-notation keys.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `Run`
+Model for a single experiment run with metrics and metadata.
+
+
+
+---
+
+#### <kbd>property</kbd> best_train_loss
+
+Get best (minimum) training loss.
+
+
+---
+
+#### <kbd>property</kbd> best_val_acc
+
+Get best (maximum) validation accuracy.
+
+
+---
+
+#### <kbd>property</kbd> final_epoch
+
+Get the final epoch number based on metric length.
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `best_metric`
+
+```python
+best_metric(metric_name: str) → float | None
+```
+
+Get best (minimum) metric.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L63"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_important_hpms`
+
+```python
+get_important_hpms(important_hpms: list[str]) → dict[str, Any]
+```
+
+Get important hyperparameters.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L57"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `last_metric`
+
+```python
+last_metric(metric_name: str) → float | None
+```
+
+Get last metric.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L47"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `metric_names`
+
+```python
+metric_names() → list[str]
+```
+
+Get all metric names.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_gen/analyze/schemas.py#L92"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `AnalysisConfig`
+Configuration for experiment analysis with environment variable support.
+
+
+
+---
+
+#### <kbd>property</kbd> model_extra
+
+Get extra fields set during validation.
+
+
+**Returns:**
+
+    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+
+---
+
+#### <kbd>property</kbd> model_fields_set
+
+Returns the set of fields that have been explicitly set on this model instance.
+
+
+**Returns:**
+
+    A set of strings representing the fields that have been set,
+        i.e. that were not filled from defaults.
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

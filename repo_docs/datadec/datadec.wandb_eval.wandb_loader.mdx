@@ -1,0 +1,98 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_loader.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `wandb_eval.wandb_loader`
+
+
+
+## Table of Contents
+- [`FilterConfig`](./datadec.wandb_eval.wandb_loader#dataclass-filterconfig)
+	- [`__init__`](./datadec.wandb_eval.wandb_loader#constructor---init--)
+- [`WandBDataLoader`](./datadec.wandb_eval.wandb_loader#class-wandbdataloader)
+	- [`__init__`](./datadec.wandb_eval.wandb_loader#constructor---init--)
+	- [`load_data`](./datadec.wandb_eval.wandb_loader#method-load-data)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_loader.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `FilterConfig`
+FilterConfig(method: Optional[str] = 'finetune', completed_only: bool = True, recent_only: bool = True, required_params: Optional[List[str]] = None, column_groups: List[str] = None, include_oe_evaluations: bool = False)
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+FilterConfig(
+    method: Optional[str] = 'finetune',
+    completed_only: bool = True,
+    recent_only: bool = True,
+    required_params: Optional[List[str]] = None,
+    column_groups: List[str] = None,
+    include_oe_evaluations: bool = False
+) → None
+```
+
+
+
+
+### <kbd>attributes</kbd>
+- ```column_groups``` (List)
+- ```completed_only``` (bool)
+- ```include_oe_evaluations``` (bool)
+- ```method``` (Optional)
+- ```recent_only``` (bool)
+- ```required_params``` (Optional)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_loader.py#L37"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `WandBDataLoader`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_loader.py#L38"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+WandBDataLoader()
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/wandb_eval/wandb_loader.py#L41"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `load_data`
+
+```python
+load_data(config: FilterConfig) → tuple[DataFrame, DataFrame]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

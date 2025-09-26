@@ -1,0 +1,161 @@
+---
+title: parse_git
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `repository`
+Git repository wrapper for analysis operations.
+
+
+## Table of Contents
+- [`GitRepository`](./parse_git.repository#class-gitrepository)
+	- [`__init__`](./parse_git.repository#constructor---init--)
+	- [`count_commits_in_range`](./parse_git.repository#method-count-commits-in-range)
+	- [`get_commits_in_range`](./parse_git.repository#method-get-commits-in-range)
+	- [`get_file_changes_in_commit`](./parse_git.repository#method-get-file-changes-in-commit)
+	- [`iter_commits_in_range`](./parse_git.repository#method-iter-commits-in-range)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `GitRepository`
+Wrapper around GitPython with analysis-focused interface.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L17"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+GitRepository(repo_path: str | Path) → None
+```
+
+Initialize repository wrapper.
+
+
+**Args:**
+
+- <b>`repo_path`</b>: Path to the git repository.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L106"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `count_commits_in_range`
+
+```python
+count_commits_in_range(since: datetime, until: datetime) → int
+```
+
+Count commits in a date range efficiently.
+
+
+**Args:**
+
+- <b>`since`</b>: Start date.
+- <b>`until`</b>: End date.
+
+
+**Returns:**
+
+Number of commits in the range.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L118"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_commits_in_range`
+
+```python
+get_commits_in_range(
+    since: datetime,
+    until: datetime,
+    include_files: bool = False
+) → list[dict[str, Any]]
+```
+
+Get detailed commit information in a date range.
+
+
+**Args:**
+
+- <b>`since`</b>: Start date.
+- <b>`until`</b>: End date.
+- <b>`include_files`</b>: Whether to include changed file paths.
+
+
+**Returns:**
+
+List of commit dictionaries with metadata.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_file_changes_in_commit`
+
+```python
+get_file_changes_in_commit(
+    commit: Commit,
+    file_patterns: tuple[str, ] = ('.md', '.markdown')
+) → Iterator[ChangeEvent]
+```
+
+Extract file changes from a commit for specific file types.
+
+
+**Args:**
+
+- <b>`commit`</b>: Git commit to analyze.
+- <b>`file_patterns: File extensions to track (default`</b>: markdown files).
+
+
+**Yields:**
+
+ChangeEvent objects for matching files.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_git/repository.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `iter_commits_in_range`
+
+```python
+iter_commits_in_range(
+    since: datetime | None = None,
+    until: datetime | None = None
+) → Iterator[Commit]
+```
+
+Iterate through commits in a date range.
+
+
+**Args:**
+
+- <b>`since`</b>: Start date for commit iteration.
+- <b>`until`</b>: End date for commit iteration.
+
+
+**Yields:**
+
+Git commit objects in chronological order.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

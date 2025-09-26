@@ -1,0 +1,91 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `cross_validation.scorers`
+
+
+
+## Table of Contents
+- [`MetricScorerFactory`](./ddpred.cross_validation.scorers#class-metricscorerfactory)
+	- [`__init__`](./ddpred.cross_validation.scorers#constructor---init--)
+	- [`create_scorer`](./ddpred.cross_validation.scorers#method-create-scorer)
+	- [`get_available_metrics`](./ddpred.cross_validation.scorers#method-get-available-metrics)
+	- [`is_error_metric`](./ddpred.cross_validation.scorers#method-is-error-metric)
+
+
+**Global Variables**
+---------------
+- **AVAILABLE_OPTIMIZATION_METRICS**
+- **ERROR_METRICS**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `MetricScorerFactory`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+MetricScorerFactory() → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `create_scorer`
+
+```python
+create_scorer(metric_name: str, greater_is_better: Optional[bool] = None) → Any
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py#L54"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_available_metrics`
+
+```python
+get_available_metrics() → List[str]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/cross_validation/scorers.py#L57"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `is_error_metric`
+
+```python
+is_error_metric(metric_name: str) → bool
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

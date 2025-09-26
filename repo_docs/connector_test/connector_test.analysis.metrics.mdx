@@ -1,0 +1,230 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analysis.metrics`
+Analysis helper functions for CIFAR10 logs.
+
+
+## Table of Contents
+- [`combine_seeds`](./connector_test.analysis.metrics#function-combine-seeds)
+- [`filter_keys`](./connector_test.analysis.metrics#function-filter-keys)
+- [`find_best_hpm`](./connector_test.analysis.metrics#function-find-best-hpm)
+- [`format_number`](./connector_test.analysis.metrics#function-format-number)
+- [`interactive_cli`](./connector_test.analysis.metrics#function-interactive-cli)
+- [`key_to_string`](./connector_test.analysis.metrics#function-key-to-string)
+- [`launch_viewer`](./connector_test.analysis.metrics#function-launch-viewer)
+- [`runs_overview_table`](./connector_test.analysis.metrics#function-runs-overview-table)
+- [`save_results`](./connector_test.analysis.metrics#function-save-results)
+- [`summarize_parsed`](./connector_test.analysis.metrics#function-summarize-parsed)
+- [`val_acc_table`](./connector_test.analysis.metrics#function-val-acc-table)
+
+
+**Global Variables**
+---------------
+- **DEFAULT_INTERVALS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L23"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_number`
+
+```python
+format_number(x)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L35"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `combine_seeds`
+
+```python
+combine_seeds(group_data: 'dict', max_epochs: 'int' = 50) → dict
+```
+
+Combine runs across seeds into mean and std statistics.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `key_to_string`
+
+```python
+key_to_string(key: 'Sequence') → str
+```
+
+Return a readable string describing the hyper-parameter key.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L58"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_results`
+
+```python
+save_results(results: 'dict', out_dir: 'Path') → None
+```
+
+Save aggregated metrics and regression stats to CSV and pickle.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L86"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `filter_keys`
+
+```python
+filter_keys(
+    results: 'dict',
+    weight_type: 'str | None' = None,
+    weight_init: 'str | None' = None,
+    lr: 'float | None' = None,
+    wd: 'float | None' = None
+) → list[tuple]
+```
+
+Return result keys matching the specified criteria.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L111"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `find_best_hpm`
+
+```python
+find_best_hpm(results: 'dict', top_k: 'int' = 3) → list[tuple]
+```
+
+Return the top_k hyper-parameter settings with lowest validation loss.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L120"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `launch_viewer`
+
+```python
+launch_viewer(parsed_data: 'dict') → None
+```
+
+Launch a simple Tkinter UI to explore parsed run information.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L155"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `summarize_parsed`
+
+```python
+summarize_parsed(parsed_data: 'dict') → str
+```
+
+Return a human readable summary of parsed run information.
+
+Parameters
+----------
+parsed_data:
+    Dictionary produced by :func:`parse_logs_with_status`.
+
+Returns
+-------
+str
+    Multi-line string containing a summary for each hyper-parameter
+    combination. Incomplete seeds are marked with ``*``.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L205"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `val_acc_table`
+
+```python
+val_acc_table(runs: 'dict[int, dict]', interval: 'int' = 10) → str
+```
+
+Return a table of validation accuracy per seed.
+
+Parameters
+----------
+runs:
+    Mapping of seed -> metric dictionary as produced by
+    :func:`read_log`.
+interval:
+    Epoch spacing between rows of the table.
+
+Returns
+-------
+str
+    Multi-line string representing the table.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L241"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `runs_overview_table`
+
+```python
+runs_overview_table(groups: 'dict') → str
+```
+
+Return a table summarising available runs.
+
+Parameters
+----------
+groups:
+    Mapping of hyper-parameter key -> seed data as produced by
+    :func:`read_log`.
+
+Returns
+-------
+str
+    Multi-line string containing one row per run with columns for the
+    hyper-parameters, number of seeds and the mean validation accuracy at
+    epoch 10 and the final epoch.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/metrics.py#L298"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `interactive_cli`
+
+```python
+interactive_cli(parsed_data: 'dict') → None
+```
+
+Interactively browse parsed run information on the command line.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

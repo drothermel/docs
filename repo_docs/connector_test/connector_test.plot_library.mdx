@@ -1,0 +1,52 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plot_library.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `plot_library`
+Built-in plot configurations.
+
+
+## Table of Contents
+- [`list_configs`](./connector_test.plot_library#function-list-configs)
+- [`load_config`](./connector_test.plot_library#function-load-config)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plot_library.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `load_config`
+
+```python
+load_config(name: 'str') → dict
+```
+
+Load a plot configuration by ``name``.
+
+The function searches for ``<name>.json`` or ``<name>.py`` within the
+library directory. Python files must define a ``CONFIG`` dictionary.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/plot_library.py#L47"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `list_configs`
+
+```python
+list_configs() → list[str]
+```
+
+Return the available configuration names.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

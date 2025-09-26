@@ -1,0 +1,607 @@
+---
+title: hf_utils
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `checkpoints`
+Comprehensive checkpoint downloading and analysis functions.
+
+
+## Table of Contents
+- [`analyze_complete_checkpoint`](./hf_utils.checkpoints#function-analyze-complete-checkpoint)
+- [`analyze_optimizer_checkpoint`](./hf_utils.checkpoints#function-analyze-optimizer-checkpoint)
+- [`analyze_optimizer_component`](./hf_utils.checkpoints#function-analyze-optimizer-component)
+- [`analyze_single_checkpoint_with_reporting`](./hf_utils.checkpoints#function-analyze-single-checkpoint-with-reporting)
+- [`create_comprehensive_summary`](./hf_utils.checkpoints#function-create-comprehensive-summary)
+- [`create_learning_rate_summary`](./hf_utils.checkpoints#function-create-learning-rate-summary)
+- [`download_all_checkpoint_components`](./hf_utils.checkpoints#function-download-all-checkpoint-components)
+- [`download_optimizer_checkpoint`](./hf_utils.checkpoints#function-download-optimizer-checkpoint)
+- [`extract_learning_rate_info`](./hf_utils.checkpoints#function-extract-learning-rate-info)
+- [`generate_analysis_filename`](./hf_utils.checkpoints#function-generate-analysis-filename)
+- [`print_analysis_summary`](./hf_utils.checkpoints#function-print-analysis-summary)
+- [`print_comprehensive_analysis`](./hf_utils.checkpoints#function-print-comprehensive-analysis)
+- [`print_detailed_sample_analyses`](./hf_utils.checkpoints#function-print-detailed-sample-analyses)
+- [`print_optimizer_analysis`](./hf_utils.checkpoints#function-print-optimizer-analysis)
+- [`print_unavailable_checkpoint_info`](./hf_utils.checkpoints#function-print-unavailable-checkpoint-info)
+- [`print_unavailable_config_info`](./hf_utils.checkpoints#function-print-unavailable-config-info)
+- [`print_unavailable_weights_info`](./hf_utils.checkpoints#function-print-unavailable-weights-info)
+- [`process_all_checkpoints`](./hf_utils.checkpoints#function-process-all-checkpoints)
+- [`process_all_checkpoints_with_reporting`](./hf_utils.checkpoints#function-process-all-checkpoints-with-reporting)
+- [`process_single_checkpoint`](./hf_utils.checkpoints#function-process-single-checkpoint)
+- [`save_all_analyses_outputs`](./hf_utils.checkpoints#function-save-all-analyses-outputs)
+- [`save_checkpoint_analysis`](./hf_utils.checkpoints#function-save-checkpoint-analysis)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L16"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_optimizer_checkpoint`
+
+```python
+download_optimizer_checkpoint(
+    repo_id: str,
+    branch: str = 'main',
+    local_dir: Optional[str] = None
+) → Tuple[Optional[str], bool, str]
+```
+
+Download optimizer checkpoint from Hugging Face repository.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID (e.g., "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-60M")
+- <b>`branch`</b>: Branch/revision to download from (e.g., "step0-seed-default")
+- <b>`local_dir`</b>: Local directory to save file (optional)
+
+
+**Returns:**
+
+Tuple of (file_path, success, error_message)
+- <b>`- file_path`</b>: Path to downloaded file if successful, None otherwise
+- <b>`- success`</b>: True if download succeeded, False otherwise
+- <b>`- error_message`</b>: Error description if failed, empty string if succeeded
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L51"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_optimizer_checkpoint`
+
+```python
+analyze_optimizer_checkpoint(checkpoint_path: str) → Dict[str, Any]
+```
+
+Load and analyze PyTorch optimizer checkpoint.
+
+
+**Args:**
+
+- <b>`checkpoint_path`</b>: Path to the optimizer checkpoint file
+
+
+**Returns:**
+
+Dictionary containing optimizer state information
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L92"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_optimizer_component`
+
+```python
+analyze_optimizer_component(
+    component: Any,
+    component_name: str
+) → Dict[str, Any]
+```
+
+Analyze a specific component of the optimizer checkpoint.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L123"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `extract_learning_rate_info`
+
+```python
+extract_learning_rate_info(checkpoint: Dict[str, Any]) → Dict[str, Any]
+```
+
+Extract all learning rate related information from checkpoint.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L155"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `download_all_checkpoint_components`
+
+```python
+download_all_checkpoint_components(
+    repo_id: str,
+    branch: str,
+    include_weights: bool = False,
+    weight_files: Optional[List[str]] = None,
+    local_dir: Optional[str] = None
+) → Dict[str, Tuple[Optional[str], bool, str]]
+```
+
+Download all checkpoint components (optimizer, config, optionally weights).
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch name to download from
+- <b>`include_weights`</b>: Whether to download model weights
+- <b>`weight_files`</b>: Specific weight files to download (optional)
+- <b>`local_dir`</b>: Local directory to save files (optional)
+
+
+**Returns:**
+
+Dictionary mapping component names to (file_path, success, error_message) tuples
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L201"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_complete_checkpoint`
+
+```python
+analyze_complete_checkpoint(
+    repo_id: str,
+    branch: str,
+    include_weights: bool = False,
+    weight_files: Optional[List[str]] = None,
+    delete_weights_after: bool = False
+) → Dict[str, Any]
+```
+
+Complete comprehensive checkpoint analysis.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch name to analyze
+- <b>`include_weights`</b>: Whether to analyze model weights
+- <b>`weight_files`</b>: Specific weight files to analyze (optional)
+- <b>`delete_weights_after`</b>: Delete weight files after analysis
+
+
+**Returns:**
+
+Dictionary with complete checkpoint analysis
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L268"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `process_single_checkpoint`
+
+```python
+process_single_checkpoint(
+    repo_id: str,
+    branch: str,
+    include_weights: bool = False,
+    delete_weights_after: bool = False
+) → Tuple[str, Dict[str, Any]]
+```
+
+Process a single checkpoint with comprehensive analysis.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch name to process
+- <b>`include_weights`</b>: Whether to analyze model weights
+- <b>`delete_weights_after`</b>: Delete weight files after analysis
+
+
+**Returns:**
+
+Tuple of (branch_name, analysis_dict)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L307"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `process_all_checkpoints`
+
+```python
+process_all_checkpoints(
+    repo_id: str,
+    max_workers: int = 4,
+    include_weights: bool = False,
+    delete_weights_after: bool = False
+) → Dict[str, Dict[str, Any]]
+```
+
+Process all checkpoints in parallel with comprehensive analysis.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`max_workers`</b>: Maximum number of parallel downloads
+- <b>`include_weights`</b>: Whether to analyze model weights
+- <b>`delete_weights_after`</b>: Delete weight files after analysis
+
+
+**Returns:**
+
+Dictionary mapping branch names to their analyses
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L357"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_comprehensive_summary`
+
+```python
+create_comprehensive_summary(
+    all_analyses: Dict[str, Dict[str, Any]]
+) → DataFrame
+```
+
+Create a comprehensive DataFrame summary across all checkpoints.
+
+
+**Args:**
+
+- <b>`all_analyses`</b>: Dictionary of all checkpoint analyses
+
+
+**Returns:**
+
+DataFrame with comprehensive checkpoint progression
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L447"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_learning_rate_summary`
+
+```python
+create_learning_rate_summary(
+    all_analyses: Dict[str, Dict[str, Any]]
+) → DataFrame
+```
+
+Create a learning rate focused DataFrame for backward compatibility.
+
+
+**Args:**
+
+- <b>`all_analyses`</b>: Dictionary of all checkpoint analyses
+
+
+**Returns:**
+
+DataFrame with learning rate progression
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L477"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `generate_analysis_filename`
+
+```python
+generate_analysis_filename(branch: str) → str
+```
+
+Generate standardized filename for checkpoint analysis JSON.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name (e.g., "step1250-seed-default")
+
+
+**Returns:**
+
+Sanitized filename for JSON output
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L490"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_checkpoint_analysis`
+
+```python
+save_checkpoint_analysis(
+    analysis: Dict[str, Any],
+    branch: str,
+    output_dir: Optional[str] = None
+) → str
+```
+
+Save checkpoint analysis to JSON file.
+
+
+**Args:**
+
+- <b>`analysis`</b>: Analysis dictionary to save
+- <b>`branch`</b>: Branch name for filename generation
+- <b>`output_dir`</b>: Optional output directory (defaults to current directory)
+
+
+**Returns:**
+
+Path to saved file
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L516"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_unavailable_checkpoint_info`
+
+```python
+print_unavailable_checkpoint_info(branch: str, error_msg: str) → None
+```
+
+Pretty print information about unavailable checkpoint.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name
+- <b>`error_msg`</b>: Error message explaining why checkpoint is unavailable
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L531"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_single_checkpoint_with_reporting`
+
+```python
+analyze_single_checkpoint_with_reporting(
+    repo_id: str,
+    branch: str,
+    include_weights: bool = False,
+    delete_weights_after: bool = False,
+    output_dir: Optional[str] = None
+) → Dict[str, Any]
+```
+
+Complete single checkpoint analysis workflow with comprehensive reporting and saving.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`branch`</b>: Branch name to analyze
+- <b>`include_weights`</b>: Whether to analyze model weights
+- <b>`delete_weights_after`</b>: Delete weight files after analysis
+- <b>`output_dir`</b>: Optional output directory for JSON file
+
+
+**Returns:**
+
+Complete analysis dictionary
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L567"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_comprehensive_analysis`
+
+```python
+print_comprehensive_analysis(
+    analysis: Dict[str, Any],
+    branch_name: str = None
+) → None
+```
+
+Print comprehensive analysis results for all components.
+
+
+**Args:**
+
+- <b>`analysis`</b>: Complete checkpoint analysis dictionary
+- <b>`branch_name`</b>: Branch name for header (optional)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L606"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_unavailable_config_info`
+
+```python
+print_unavailable_config_info(branch: str, error_msg: str) → None
+```
+
+Pretty print information about unavailable config.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name
+- <b>`error_msg`</b>: Error message explaining why config is unavailable
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L621"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_unavailable_weights_info`
+
+```python
+print_unavailable_weights_info(branch: str, error_msg: str) → None
+```
+
+Pretty print information about unavailable weights.
+
+
+**Args:**
+
+- <b>`branch`</b>: Branch name
+- <b>`error_msg`</b>: Error message explaining why weights are unavailable
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L636"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `save_all_analyses_outputs`
+
+```python
+save_all_analyses_outputs(
+    all_analyses: Dict[str, Dict[str, Any]],
+    output_dir: Optional[str] = None
+) → Tuple[str, str, str]
+```
+
+Save all checkpoint analyses to comprehensive CSV summary and JSON files.
+
+
+**Args:**
+
+- <b>`all_analyses`</b>: Dictionary of all checkpoint analyses
+- <b>`output_dir`</b>: Optional output directory (defaults to current directory)
+
+
+**Returns:**
+
+Tuple of (comprehensive_csv_path, lr_csv_path, json_path) for saved files
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L682"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_analysis_summary`
+
+```python
+print_analysis_summary(all_analyses: Dict[str, Dict[str, Any]]) → None
+```
+
+Print summary statistics and learning rate progression.
+
+
+**Args:**
+
+- <b>`all_analyses`</b>: Dictionary of all checkpoint analyses
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L700"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_detailed_sample_analyses`
+
+```python
+print_detailed_sample_analyses(
+    all_analyses: Dict[str, Dict[str, Any]],
+    sample_count: int = 3
+) → None
+```
+
+Print detailed analysis for first N checkpoints (by step number).
+
+
+**Args:**
+
+- <b>`all_analyses`</b>: Dictionary of all checkpoint analyses
+- <b>`sample_count`</b>: Number of checkpoints to show detailed analysis for
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L726"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `process_all_checkpoints_with_reporting`
+
+```python
+process_all_checkpoints_with_reporting(
+    repo_id: str,
+    max_workers: int = 6,
+    include_weights: bool = False,
+    delete_weights_after: bool = False,
+    output_dir: Optional[str] = None,
+    sample_count: int = 3
+) → Dict[str, Dict[str, Any]]
+```
+
+Complete batch checkpoint processing workflow with comprehensive reporting and file output.
+
+
+**Args:**
+
+- <b>`repo_id`</b>: HuggingFace repository ID
+- <b>`max_workers`</b>: Maximum number of parallel downloads
+- <b>`include_weights`</b>: Whether to analyze model weights
+- <b>`delete_weights_after`</b>: Delete weight files after analysis
+- <b>`output_dir`</b>: Optional output directory for files
+- <b>`sample_count`</b>: Number of detailed analyses to show
+
+
+**Returns:**
+
+Dictionary of all checkpoint analyses
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/hf_utils/checkpoints.py#L777"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `print_optimizer_analysis`
+
+```python
+print_optimizer_analysis(
+    analysis: Dict[str, Any],
+    branch_name: str = None
+) → None
+```
+
+Pretty print the optimizer analysis results.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

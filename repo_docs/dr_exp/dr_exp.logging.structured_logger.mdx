@@ -1,0 +1,177 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `logging.structured_logger`
+Structured logging for ML experiments.
+
+
+## Table of Contents
+- [`StructuredLogger`](./dr_exp.logging.structured_logger#class-structuredlogger)
+	- [`__init__`](./dr_exp.logging.structured_logger#constructor---init--)
+	- [`get_summary`](./dr_exp.logging.structured_logger#method-get-summary)
+	- [`log_artifact`](./dr_exp.logging.structured_logger#method-log-artifact)
+	- [`log_config`](./dr_exp.logging.structured_logger#method-log-config)
+	- [`log_event`](./dr_exp.logging.structured_logger#method-log-event)
+	- [`log_metrics`](./dr_exp.logging.structured_logger#method-log-metrics)
+	- [`phase`](./dr_exp.logging.structured_logger#method-phase)
+
+
+**Global Variables**
+---------------
+- **UTC**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L24"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `StructuredLogger`
+Logger that writes structured data (metrics, configs, etc.) to files.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L27"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+StructuredLogger(log_dir: str | Path, job_id: str, worker_id: str) → None
+```
+
+Initialize structured logger.
+
+
+**Args:**
+
+- <b>`log_dir`</b>: Directory to write logs to
+- <b>`job_id`</b>: Job ID for this run
+- <b>`worker_id`</b>: Worker ID running this job
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L142"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_summary`
+
+```python
+get_summary() → dict[str, Any]
+```
+
+Get a summary of the logged data.
+
+
+**Returns:**
+
+    Summary dictionary
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L107"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log_artifact`
+
+```python
+log_artifact(
+    artifact_path: Path,
+    artifact_type: str,
+    metadata: dict[str, Any] | None = None
+) → None
+```
+
+Log that an artifact was created.
+
+
+**Args:**
+
+- <b>`artifact_path`</b>: Path to the artifact
+- <b>`artifact_type`</b>: Type of artifact (model, plot, etc.)
+- <b>`metadata`</b>: Optional metadata about the artifact
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L63"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log_config`
+
+```python
+log_config(config: dict[str, Any]) → None
+```
+
+Log the configuration used for this run.
+
+
+**Args:**
+
+- <b>`config`</b>: Configuration dictionary
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L91"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log_event`
+
+```python
+log_event(event_type: str, data: dict[str, Any] | None = None) → None
+```
+
+Log a training event (start, end, checkpoint, etc.).
+
+
+**Args:**
+
+- <b>`event_type`</b>: Type of event
+- <b>`data`</b>: Optional event data
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L75"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `log_metrics`
+
+```python
+log_metrics(metrics: dict[str, Any], step: int | None = None) → None
+```
+
+Log metrics for a training step.
+
+
+**Args:**
+
+- <b>`metrics`</b>: Dictionary of metric values
+- <b>`step`</b>: Optional step number (epoch, iteration, etc.)
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/logging/structured_logger.py#L129"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `phase`
+
+```python
+phase(phase_name: str) → Any
+```
+
+Context manager for logging training phases.
+
+
+**Args:**
+
+- <b>`phase_name`</b>: Name of the phase (train, eval, etc.)
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

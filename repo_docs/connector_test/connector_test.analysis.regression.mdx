@@ -1,0 +1,149 @@
+---
+title: connector_test
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analysis.regression`
+Regression helper functions.
+
+
+## Table of Contents
+- [`fit_full_regression`](./connector_test.analysis.regression#function-fit-full-regression)
+- [`fit_interval_regressions`](./connector_test.analysis.regression#function-fit-interval-regressions)
+- [`fit_linear_regression`](./connector_test.analysis.regression#function-fit-linear-regression)
+- [`regression_analysis`](./connector_test.analysis.regression#function-regression-analysis)
+- [`rmse_between`](./connector_test.analysis.regression#function-rmse-between)
+- [`sliding_window_predictions`](./connector_test.analysis.regression#function-sliding-window-predictions)
+
+
+**Global Variables**
+---------------
+- **DEFAULT_INTERVALS**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L10"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fit_linear_regression`
+
+```python
+fit_linear_regression(x: 'ndarray', y: 'ndarray') → tuple[float, float, ndarray]
+```
+
+Fit a simple linear regression model.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fit_full_regression`
+
+```python
+fit_full_regression(
+    values: 'ndarray',
+    log_scale: 'bool' = True
+) → tuple[float, float, ndarray]
+```
+
+Return slope, intercept and predictions for a full-range fit.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L28"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `fit_interval_regressions`
+
+```python
+fit_interval_regressions(
+    values: 'ndarray',
+    intervals: 'dict[str, tuple[int, int]]',
+    log_scale: 'bool' = True
+) → dict[str, float]
+```
+
+Compute regression parameters for a set of epoch intervals.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `sliding_window_predictions`
+
+```python
+sliding_window_predictions(
+    values: 'ndarray',
+    window: 'int' = 5,
+    log_scale: 'bool' = True
+) → tuple[ndarray, list[tuple[int, int, float, float]]]
+```
+
+Average linear fits over sliding windows and return segment info.
+
+Parameters
+----------
+values:
+    Sequence of metric values to fit.
+window:
+    Size of the sliding window used for each linear regression.
+log_scale:
+    Whether to fit in log space.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L77"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `rmse_between`
+
+```python
+rmse_between(a: 'ndarray', b: 'ndarray') → float
+```
+
+Return the root mean squared error between two arrays.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/connector_test/analysis/regression.py#L85"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `regression_analysis`
+
+```python
+regression_analysis(
+    mean_curve: 'ndarray',
+    log_scale: 'bool' = True,
+    window: 'int' = 5,
+    intervals: 'dict[str, tuple[int, int]] | None' = None
+) → tuple[dict[str, float], ndarray, ndarray, list[tuple[int, int, float, float]]]
+```
+
+Compute regression fits for different epoch ranges.
+
+Parameters
+----------
+mean_curve:
+    Sequence of metric values to fit.
+log_scale:
+    Whether to perform the regression in log space.
+window:
+    Sliding window size for non-parametric fits.
+intervals:
+    Mapping of interval names to ``(start, end)`` epoch pairs used for
+    reporting separate linear fits.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

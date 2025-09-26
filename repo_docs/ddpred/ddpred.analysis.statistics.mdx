@@ -1,0 +1,178 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `analysis.statistics`
+
+
+
+## Table of Contents
+- [`analyze_degradation_patterns`](./ddpred.analysis.statistics#function-analyze-degradation-patterns)
+- [`analyze_horizon_performance`](./ddpred.analysis.statistics#function-analyze-horizon-performance)
+- [`analyze_mmlu_eval_focused_density`](./ddpred.analysis.statistics#function-analyze-mmlu-eval-focused-density)
+- [`analyze_prediction_horizons`](./ddpred.analysis.statistics#function-analyze-prediction-horizons)
+- [`analyze_seed_data_density`](./ddpred.analysis.statistics#function-analyze-seed-data-density)
+- [`analyze_seed_data_density_filtered`](./ddpred.analysis.statistics#function-analyze-seed-data-density-filtered)
+- [`calculate_confidence_intervals`](./ddpred.analysis.statistics#function-calculate-confidence-intervals)
+- [`detect_overfitting_patterns`](./ddpred.analysis.statistics#function-detect-overfitting-patterns)
+- [`summarize_performance_by_group`](./ddpred.analysis.statistics#function-summarize-performance-by-group)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `calculate_confidence_intervals`
+
+```python
+calculate_confidence_intervals(
+    data: Series,
+    confidence: float = 0.95
+) → Tuple[float, float]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L31"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `detect_overfitting_patterns`
+
+```python
+detect_overfitting_patterns(train_r2: Series, eval_r2: Series) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L69"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `summarize_performance_by_group`
+
+```python
+summarize_performance_by_group(
+    results_df: DataFrame,
+    group_col: str
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L102"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_seed_data_density`
+
+```python
+analyze_seed_data_density(
+    seed_data: DataFrame,
+    target_metric: str,
+    analysis_mode: str = 'dual_filter'
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L255"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_seed_data_density_filtered`
+
+```python
+analyze_seed_data_density_filtered(seed_data: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L259"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_mmlu_eval_focused_density`
+
+```python
+analyze_mmlu_eval_focused_density(seed_data: DataFrame) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L265"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_prediction_horizons`
+
+```python
+analyze_prediction_horizons(
+    predictions,
+    targets,
+    target_percentages,
+    actual_percentages
+)
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L273"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_horizon_performance`
+
+```python
+analyze_horizon_performance(
+    X_eval: ndarray,
+    y_eval: ndarray,
+    predictions: ndarray,
+    target_percentages_actual: ndarray,
+    target_percentages_list: List[float],
+    std_predictions: Optional[ndarray] = None
+) → Dict[str, Any]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/analysis/statistics.py#L318"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `analyze_degradation_patterns`
+
+```python
+analyze_degradation_patterns(
+    horizon_metrics: Dict[float, Dict[str, Any]]
+) → Dict[str, Any]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

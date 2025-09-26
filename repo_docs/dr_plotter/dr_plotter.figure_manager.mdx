@@ -1,0 +1,110 @@
+---
+title: dr_plotter
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `figure_manager`
+
+
+
+## Table of Contents
+- [`FigureManager`](./dr_plotter.figure_manager#class-figuremanager)
+	- [`__init__`](./dr_plotter.figure_manager#constructor---init--)
+	- [`finalize_layout`](./dr_plotter.figure_manager#method-finalize-layout)
+	- [`get_axes`](./dr_plotter.figure_manager#method-get-axes)
+	- [`plot`](./dr_plotter.figure_manager#method-plot)
+	- [`register_legend_entry`](./dr_plotter.figure_manager#method-register-legend-entry)
+
+
+**Global Variables**
+---------------
+- **FACETING_PARAM_NAMES**
+- **DEFAULT_MARGIN**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L39"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `FigureManager`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L40"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+FigureManager(config: 'PlotConfig | None' = None) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L93"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `finalize_layout`
+
+```python
+finalize_layout() → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L195"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_axes`
+
+```python
+get_axes(row: 'int | None' = None, col: 'int | None' = None) → Axes
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L248"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `plot`
+
+```python
+plot(
+    data: 'DataFrame',
+    plot_type: 'str',
+    faceting: 'FacetingConfig | None' = None,
+    **kwargs: 'Any'
+) → None
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_plotter/figure_manager.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `register_legend_entry`
+
+```python
+register_legend_entry(entry: 'LegendEntry') → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

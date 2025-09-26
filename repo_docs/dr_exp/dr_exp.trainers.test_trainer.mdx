@@ -1,0 +1,56 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/trainers/test_trainer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `trainers.test_trainer`
+Simple test trainer for worker testing.
+
+
+## Table of Contents
+- [`train`](./dr_exp.trainers.test_trainer#function-train)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/trainers/test_trainer.py#L11"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `train`
+
+```python
+train(
+    job_id: str,
+    worker_id: str,
+    storage_path: str,
+    epochs: int = 10,
+    fail_rate: float = 0.0,
+    **kwargs: Any
+) → dict[str, Any]
+```
+
+Simple test training function.
+
+
+**Args:**
+
+- <b>`job_id`</b>: Job ID (injected by worker)
+- <b>`worker_id`</b>: Worker ID (injected by worker)
+- <b>`storage_path`</b>: Path to store artifacts (injected by worker)
+- <b>`epochs`</b>: Number of epochs to simulate
+- <b>`fail_rate`</b>: Probability of failure (for testing)
+- <b>`**kwargs`</b>: Additional config parameters
+
+
+**Returns:**
+
+Dict with training results
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

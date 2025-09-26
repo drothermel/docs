@@ -1,0 +1,164 @@
+---
+title: datadec
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `scripting.bump_utils`
+
+
+
+## Table of Contents
+- [`add_bump_ranking_labels`](./datadec.scripting.bump_utils#function-add-bump-ranking-labels)
+- [`add_bump_value_annotations`](./datadec.scripting.bump_utils#function-add-bump-value-annotations)
+- [`create_bump_theme_with_colors`](./datadec.scripting.bump_utils#function-create-bump-theme-with-colors)
+- [`create_extended_color_palette`](./datadec.scripting.bump_utils#function-create-extended-color-palette)
+- [`prepare_bump_ranking_data`](./datadec.scripting.bump_utils#function-prepare-bump-ranking-data)
+- [`prepare_datadecide_bump_data`](./datadec.scripting.bump_utils#function-prepare-datadecide-bump-data)
+- [`render_bump_plot`](./datadec.scripting.bump_utils#function-render-bump-plot)
+
+
+**Global Variables**
+---------------
+- **BUMP_COLS**
+- **MIN_TIME_POINTS**
+- **EXTENDED_COLOR_PALETTE**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L62"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prepare_datadecide_bump_data`
+
+```python
+prepare_datadecide_bump_data(
+    kwargs: 'dict[str, Any]',
+    transformations: 'list[Callable[[DataFrame, dict[str, Any]], DataFrame]]',
+    time_col: 'str',
+    category_col: 'str',
+    **attrs: 'Any'
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L91"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_extended_color_palette`
+
+```python
+create_extended_color_palette() → list[str]
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L95"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `create_bump_theme_with_colors`
+
+```python
+create_bump_theme_with_colors(
+    num_categories: 'int',
+    theme_name: 'str' = 'bump_custom'
+) → Theme
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L109"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `prepare_bump_ranking_data`
+
+```python
+prepare_bump_ranking_data(
+    df: 'DataFrame',
+    time_col: 'str',
+    category_col: 'str',
+    value_col: 'str',
+    invert_score: 'bool' = True
+) → DataFrame
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L161"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_bump_ranking_labels`
+
+```python
+add_bump_ranking_labels(
+    ax: 'Axes',
+    bump_data: 'DataFrame',
+    left_color: 'str' = 'lightblue',
+    right_color: 'str' = 'lightgreen',
+    left_edge_color: 'str' = 'navy',
+    right_edge_color: 'str' = 'darkgreen',
+    fontsize: 'int' = 9
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L190"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `add_bump_value_annotations`
+
+```python
+add_bump_value_annotations(
+    ax: 'Axes',
+    bump_data: 'DataFrame',
+    formatter_func: 'Any' = <function format_perplexity at 0x1343acae0>,
+    fontsize: 'int' = 8,
+    offset_x: 'int' = 5,
+    offset_y: 'int' = 8
+) → None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/datadec/scripting/bump_utils.py#L227"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `render_bump_plot`
+
+```python
+render_bump_plot(
+    bump_data: 'DataFrame',
+    plot_config: 'PlotConfig',
+    output_params: 'dict[str, Any]',
+    custom_axis_formatter: 'Any' = None
+) → None
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

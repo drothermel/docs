@@ -1,0 +1,95 @@
+---
+title: dr_util
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `schemas`
+
+
+
+## Table of Contents
+- [`ConfigType`](./dr_util.schemas#enum-configtype)
+- [`MetricsConfig`](./dr_util.schemas#dataclass-metricsconfig)
+- [`MetricsInitConfig`](./dr_util.schemas#dataclass-metricsinitconfig)
+- [`UsingMetricsConfig`](./dr_util.schemas#dataclass-usingmetricsconfig)
+- [`get_schema`](./dr_util.schemas#function-get-schema)
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py#L14"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `get_schema`
+
+```python
+get_schema(config_type: str) → type[Any] | None
+```
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py#L8"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>enum</kbd> `ConfigType`
+Enumeration of available configuration types.
+
+
+### <kbd>symbols</kbd>
+- **USES_METRICS** = uses_metrics
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py#L26"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `MetricsInitConfig`
+Configuration for metrics initialization.
+
+
+### <kbd>attributes</kbd>
+- ```batch_size``` (str)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py#L34"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `MetricsConfig`
+Configuration for metrics collection and logging.
+
+
+### <kbd>attributes</kbd>
+- ```init``` (type)
+- ```loggers``` (list)
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_util/schemas.py#L48"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>dataclass</kbd> `UsingMetricsConfig`
+Configuration for systems that use metrics.
+
+
+### <kbd>attributes</kbd>
+- ```metrics``` (type)
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

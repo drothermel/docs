@@ -1,0 +1,335 @@
+---
+title: parse_claude
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `handlers.assistant`
+Assistant message handlers for different content types.
+
+
+## Table of Contents
+- [`AssistantMessageHandler`](./parse_claude.handlers.assistant#class-assistantmessagehandler)
+	- [`__init__`](./parse_claude.handlers.assistant#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.assistant#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.assistant#method-format-short)
+	- [`matches`](./parse_claude.handlers.assistant#method-matches)
+- [`AssistantThinkingHandler`](./parse_claude.handlers.assistant#class-assistantthinkinghandler)
+	- [`__init__`](./parse_claude.handlers.assistant#constructor---init--)
+	- [`format_pretty`](./parse_claude.handlers.assistant#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.assistant#method-format-short)
+	- [`matches`](./parse_claude.handlers.assistant#method-matches)
+- [`AssistantToolHandler`](./parse_claude.handlers.assistant#class-assistanttoolhandler)
+	- [`__init__`](./parse_claude.handlers.assistant#constructor---init--)
+	- [`extract_tool_input`](./parse_claude.handlers.assistant#method-extract-tool-input)
+	- [`extract_tool_name`](./parse_claude.handlers.assistant#method-extract-tool-name)
+	- [`format_pretty`](./parse_claude.handlers.assistant#method-format-pretty)
+	- [`format_short`](./parse_claude.handlers.assistant#method-format-short)
+	- [`format_tool_content`](./parse_claude.handlers.assistant#method-format-tool-content)
+	- [`format_tool_header_summary`](./parse_claude.handlers.assistant#method-format-tool-header-summary)
+	- [`get_relative_path`](./parse_claude.handlers.assistant#method-get-relative-path)
+	- [`matches`](./parse_claude.handlers.assistant#method-matches)
+- [`format_todo_list`](./parse_claude.handlers.assistant#function-format-todo-list)
+
+
+**Global Variables**
+---------------
+- **MAX_DETAILED_EDITS**
+- **DETAIL_PREVIEW_LENGTH**
+- **TRUNCATE_RATIO**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L21"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `format_todo_list`
+
+```python
+format_todo_list(todos: list[dict[str, Any]], title: str) → list[str]
+```
+
+Format a list of todos for display.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L42"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `AssistantMessageHandler`
+Handler for assistant text messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L45"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+AssistantMessageHandler() → None
+```
+
+Initialize with assistant_message type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L71"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format assistant message for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L110"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format assistant message for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L52"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is an assistant text message.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L117"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `AssistantToolHandler`
+Handler for assistant tool use messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L120"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+AssistantToolHandler() → None
+```
+
+Initialize with assistant_tool type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L183"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `extract_tool_input`
+
+```python
+extract_tool_input(msg: dict[str, Any]) → dict[str, Any]
+```
+
+Extract tool input from message.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L172"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `extract_tool_name`
+
+```python
+extract_tool_name(msg: dict[str, Any]) → str
+```
+
+Extract tool name from message.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L143"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format assistant tool message for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L352"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format assistant tool message in compact text format.
+
+With enhanced tool-specific display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L332"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_tool_content`
+
+```python
+format_tool_content(
+    tool_name: str,
+    tool_input: dict[str, Any],
+    cwd: str,
+    truncate_length: int | None
+) → list[str]
+```
+
+Generate detailed content lines for write operations.
+
+Similar to tool results.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L207"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_tool_header_summary`
+
+```python
+format_tool_header_summary(
+    tool_name: str,
+    tool_input: dict[str, Any],
+    cwd: str
+) → str
+```
+
+Generate concise header summary.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L195"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `get_relative_path`
+
+```python
+get_relative_path(full_path: str, cwd: str) → str
+```
+
+Convert absolute file path to relative path from cwd.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L124"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is an assistant tool use message.
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L413"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `AssistantThinkingHandler`
+Handler for assistant thinking messages.
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L416"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+AssistantThinkingHandler() → None
+```
+
+Initialize with assistant_thinking type and aliases.
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L442"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_pretty`
+
+```python
+format_pretty(
+    msg: dict[str, Any],
+    idx: int,
+    truncate_length: int | None = None
+) → str
+```
+
+Format assistant thinking message for pretty display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L479"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `format_short`
+
+```python
+format_short(msg: dict[str, Any], truncate_length: int | None = None) → str
+```
+
+Format assistant thinking message for short display.
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/parse_claude/handlers/assistant.py#L423"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `matches`
+
+```python
+matches(msg: dict[str, Any]) → bool
+```
+
+Check if message is an assistant thinking message.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

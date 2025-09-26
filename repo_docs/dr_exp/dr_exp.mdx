@@ -1,0 +1,72 @@
+---
+title: dr_exp
+icon: "user-astronaut"
+---
+
+## Modules
+
+- [`api`](./dr_exp.api#module-dr-expapi): Public API for dr_exp.
+- [`api.simple_api`](./dr_exp.api.simple_api#module-dr-expapisimple-api): Simple FastAPI application for remote monitoring.
+- [`cli`](./dr_exp.cli#module-dr-expcli)
+- [`cli.commands`](./dr_exp.cli.commands#module-dr-expclicommands): CLI commands package.
+- [`cli.commands.slurm`](./dr_exp.cli.commands.slurm#module-dr-expclicommandsslurm): SLURM job management commands.
+- [`cli.commands.sweep`](./dr_exp.cli.commands.sweep#module-dr-expclicommandssweep): Sweep command for parameter exploration.
+- [`cli.main`](./dr_exp.cli.main#module-dr-expclimain): Main CLI entry point for dr_exp.
+- [`cli.sweep_utils`](./dr_exp.cli.sweep_utils#module-dr-expclisweep-utils): Utilities for parameter sweeps.
+- [`core`](./dr_exp.core#module-dr-expcore)
+- [`core.job_db`](./dr_exp.core.job_db#module-dr-expcorejob-db): Simple file-based job database for ML experiments.
+- [`logging`](./dr_exp.logging#module-dr-explogging)
+- [`logging.structured_logger`](./dr_exp.logging.structured_logger#module-dr-exploggingstructured-logger): Structured logging for ML experiments.
+- [`sync`](./dr_exp.sync#module-dr-expsync)
+- [`sync.queue`](./dr_exp.sync.queue#module-dr-expsyncqueue): Sync queue for managing file uploads.
+- [`sync.supabase_client`](./dr_exp.sync.supabase_client#module-dr-expsyncsupabase-client): Supabase client for remote storage and database operations.
+- [`sync.sync_handler`](./dr_exp.sync.sync_handler#module-dr-expsyncsync-handler): Sync handler that connects sync queue to Supabase.
+- [`trainers`](./dr_exp.trainers#module-dr-exptrainers)
+- [`trainers.test_trainer`](./dr_exp.trainers.test_trainer#module-dr-exptrainerstest-trainer): Simple test trainer for worker testing.
+- [`training`](./dr_exp.training#module-dr-exptraining)
+- [`training.dummy_trainer`](./dr_exp.training.dummy_trainer#module-dr-exptrainingdummy-trainer): Dummy trainer for testing config sweeps.
+- [`utils`](./dr_exp.utils#module-dr-exputils): Utility helpers for the experiment manager.
+- [`utils.gpu_discovery`](./dr_exp.utils.gpu_discovery#module-dr-exputilsgpu-discovery): GPU discovery utilities for the experiment management system.
+- [`utils.job_reaper`](./dr_exp.utils.job_reaper#module-dr-exputilsjob-reaper): Utility for marking jobs with stale heartbeats as failed.
+- [`worker`](./dr_exp.worker#module-dr-expworker)
+- [`worker.base`](./dr_exp.worker.base#module-dr-expworkerbase): Base worker implementation for job execution.
+- [`worker.launcher`](./dr_exp.worker.launcher#module-dr-expworkerlauncher): Multi-worker launcher for GPU clusters.
+
+## Classes
+
+- [`job_db.JobDB`](./dr_exp.core.job_db#class-jobdb): File-based job database with priority queue.
+- [`structured_logger.StructuredLogger`](./dr_exp.logging.structured_logger#class-structuredlogger): Logger that writes structured data (metrics, configs, etc.) to files.
+- [`queue.SyncItem`](./dr_exp.sync.queue#dataclass-syncitem): Represents an item to be synced.
+- [`supabase_client.SupabaseClient`](./dr_exp.sync.supabase_client#class-supabaseclient): Client for interacting with Supabase storage and database.
+- [`sync_handler.SyncHandler`](./dr_exp.sync.sync_handler#class-synchandler): Handles syncing files from queue to Supabase.
+- [`base.Worker`](./dr_exp.worker.base#class-worker): Base worker that executes jobs from JobDB with background sync.
+- [`launcher.WorkerLauncher`](./dr_exp.worker.launcher#class-workerlauncher): Launches and monitors multiple workers across GPUs.
+
+## Functions
+
+- [`api.submit_job`](./dr_exp.api#function-submit-job): Submit a job to dr_exp programmatically.
+- [`api.submit_jobs`](./dr_exp.api#function-submit-jobs): Submit a job to dr_exp programmatically.
+- [`simple_api.download_job_artifacts`](./dr_exp.api.simple_api#function-download-job-artifacts): Download all artifacts for a job.
+- [`simple_api.get_experiment_info`](./dr_exp.api.simple_api#function-get-experiment-info): Get experiment information and statistics.
+- [`simple_api.get_job`](./dr_exp.api.simple_api#function-get-job): Get details for a specific job.
+- [`simple_api.get_queue_stats`](./dr_exp.api.simple_api#function-get-queue-stats): Get job queue statistics.
+- [`simple_api.health_check`](./dr_exp.api.simple_api#function-health-check): Health check endpoint.
+- [`simple_api.list_job_artifacts`](./dr_exp.api.simple_api#function-list-job-artifacts): List artifacts for a job.
+- [`simple_api.list_jobs`](./dr_exp.api.simple_api#function-list-jobs): List jobs in the experiment.
+- [`simple_api.root`](./dr_exp.api.simple_api#function-root): API root endpoint.
+- [`simple_api.startup_event`](./dr_exp.api.simple_api#function-startup-event): Initialize JobDB with remote read enabled.
+- [`main.main`](./dr_exp.cli.main#function-main): Main entry point.
+- [`sweep_utils.generate_sweep_configs`](./dr_exp.cli.sweep_utils#function-generate-sweep-configs): Generate all config combinations for a parameter sweep.
+- [`sweep_utils.load_hydra_config`](./dr_exp.cli.sweep_utils#function-load-hydra-config): Load and compose a Hydra config with overrides.
+- [`sweep_utils.parse_sweep_params`](./dr_exp.cli.sweep_utils#function-parse-sweep-params): Parse sweep parameters from string format.
+- [`sweep_utils.validate_sweep_config`](./dr_exp.cli.sweep_utils#function-validate-sweep-config): Validate that a config is ready for job submission.
+- [`test_trainer.train`](./dr_exp.trainers.test_trainer#function-train): Simple test training function.
+- [`dummy_trainer.train_dummy`](./dr_exp.training.dummy_trainer#function-train-dummy): Dummy training function for testing.
+- [`gpu_discovery.discover_gpus`](./dr_exp.utils.gpu_discovery#function-discover-gpus): Discover available GPUs from environment.
+- [`gpu_discovery.validate_gpu_ids`](./dr_exp.utils.gpu_discovery#function-validate-gpu-ids): Validate that GPU IDs are properly formatted.
+- [`job_reaper.reap_stale_jobs`](./dr_exp.utils.job_reaper#function-reap-stale-jobs): Mark running jobs with stale heartbeats as failed.
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

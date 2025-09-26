@@ -1,0 +1,138 @@
+---
+title: ddpred
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `trainers.gpssm_trainer`
+
+
+
+## Table of Contents
+- [`GPSSMTrainer`](./ddpred.trainers.gpssm_trainer#class-gpssmtrainer)
+	- [`__init__`](./ddpred.trainers.gpssm_trainer#constructor---init--)
+	- [`fit`](./ddpred.trainers.gpssm_trainer#method-fit)
+	- [`predict`](./ddpred.trainers.gpssm_trainer#method-predict)
+	- [`predict_full_evaluation`](./ddpred.trainers.gpssm_trainer#method-predict-full-evaluation)
+	- [`predict_with_evaluation`](./ddpred.trainers.gpssm_trainer#method-predict-with-evaluation)
+	- [`predict_with_uncertainty`](./ddpred.trainers.gpssm_trainer#method-predict-with-uncertainty)
+
+
+**Global Variables**
+---------------
+- **SUPPORTED_KERNEL_TYPES**
+- **MATERN_NU_VALUES**
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L18"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>class</kbd> `GPSSMTrainer`
+
+
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L19"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>constructor</kbd> `__init__`
+
+```python
+GPSSMTrainer(
+    kernel_type: str = 'rbf',
+    alpha: float = 1e-10,
+    n_restarts_optimizer: int = 9,
+    random_state: int = 42,
+    sequence_length: int = 3,
+    feature_scaler: str = 'none',
+    target_transform: str = 'none',
+    use_temporal_features: bool = True,
+    use_ard_kernels: bool = True,
+    matern_nu: str = 'once_diff'
+) → None
+```
+
+
+
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L49"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `fit`
+
+```python
+fit(X: ndarray, y: ndarray) → GPSSMTrainer
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L90"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict`
+
+```python
+predict(X: ndarray) → ndarray
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L135"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict_full_evaluation`
+
+```python
+predict_full_evaluation(
+    X: ndarray,
+    y: ndarray,
+    groups: Optional[ndarray] = None
+) → Tuple[ndarray, ndarray, Dict[str, float]]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L104"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict_with_evaluation`
+
+```python
+predict_with_evaluation(
+    X: ndarray,
+    y: ndarray,
+    groups: Optional[ndarray] = None
+) → Tuple[ndarray, Dict[str, float]]
+```
+
+
+
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/ddpred/trainers/gpssm_trainer.py#L115"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+### <kbd>method</kbd> `predict_with_uncertainty`
+
+```python
+predict_with_uncertainty(X: ndarray) → Tuple[ndarray, ndarray]
+```
+
+
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._

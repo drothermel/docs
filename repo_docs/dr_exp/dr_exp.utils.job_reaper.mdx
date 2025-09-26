@@ -1,0 +1,51 @@
+---
+title: dr_exp
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/utils/job_reaper.py"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+# <kbd>module</kbd> `utils.job_reaper`
+Utility for marking jobs with stale heartbeats as failed.
+
+
+## Table of Contents
+- [`reap_stale_jobs`](./dr_exp.utils.job_reaper#function-reap-stale-jobs)
+
+
+**Global Variables**
+---------------
+- **UTC**
+
+---
+
+<a href="https://github.com/drothermel/%24%7BREPO%7D/blob/main/src/dr_exp/utils/job_reaper.py#L13"><img align="right" style={{"float":"right"}} src="https://img.shields.io/badge/-source-cccccc?style=flat-square" /></a>
+
+## <kbd>function</kbd> `reap_stale_jobs`
+
+```python
+reap_stale_jobs(client: 'Any', max_age_mins: 'int') → int
+```
+
+Mark running jobs with stale heartbeats as failed.
+
+Parameters
+----------
+client : object
+    Client implementing ``list_jobs()`` and ``update_job()``.
+max_age_mins : int
+    Maximum allowed age of the heartbeat in minutes.
+
+
+**Returns:**
+
+-------
+int
+    Number of jobs updated.
+
+
+
+
+
+---
+
+_This file was automatically generated via [lazydocs](https://github.com/ml-tooling/lazydocs)._
